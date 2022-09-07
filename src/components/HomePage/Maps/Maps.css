@@ -1,0 +1,25 @@
+#contact {
+  background-image: url("https://wallpapercave.com/wp/wp1936868.jpg");
+  background-size: 100%;
+  width: 118.5%;
+  text-align: center;
+  margin-left: -10%;
+}
+#mapsbtn {
+  margin: 10rem;
+  margin-top: 11rem;
+  background-color: black;
+  color: white;
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: 10px double whitesmoke;
+}
+#mapsbtn:hover {
+  margin: 10rem;
+  margin-top: 11rem;
+  background-color: whitesmoke;
+  color: black;
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: 10px double black;
+}
