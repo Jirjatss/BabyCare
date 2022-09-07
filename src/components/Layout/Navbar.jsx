@@ -8,7 +8,7 @@ const Navbar = () => {
         <nav class="navbar navbar-expand-lg fixed-top">
           <div class="container">
             <a class="navbar-brand" href="/">
-              <img style={{ width: 50 }} src={require("../../assets/brand.png")} alt="" />
+              <img style={{ width: 40 }} src={require("../../assets/brand.png")} alt="" />
             </a>
             <a class="navbar-brand" href="">
               Login
@@ -37,7 +37,7 @@ const Navbar = () => {
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="">
+                      <a class="dropdown-item" href="/News">
                         News
                       </a>
                     </li>

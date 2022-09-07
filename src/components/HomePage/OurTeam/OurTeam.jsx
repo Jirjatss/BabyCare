@@ -11,7 +11,7 @@ function OurTeam() {
             <h2 id="tagline" class="section-heading">
               Tim Terbaik
             </h2>
-            <h5 class="section-subheading text-muted">Kenalan dulu sama Pegawainya</h5>
+            <h5 class="section-subheading">Kenalan dulu sama Pegawainya</h5>
             <hr />
           </div>
           <div class="row d-flex justify-content-between">
