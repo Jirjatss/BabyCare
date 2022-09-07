@@ -13,11 +13,10 @@ function CardNews(props) {
             <h5 class="Populer-caption-heading" style={{ marginBottom: "1rem" }}>
               {props.title}
             </h5>
-            <p>{props.desc}</p>
           </div>
         </div>
 
-        <a href={props.URL}>
+        <a href={props.URL} target="_blank">
           <button style={{ marginBottom: "1.5rem" }} className="Populerbtn">
             Selengkapnya
           </button>

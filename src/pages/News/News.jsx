@@ -6,7 +6,7 @@ import "./News.css";
 function News() {
   return (
     <>
-      <div id="containerservices">
+      <div id="containernews">
         <div data-aos="zoom-out-up" data-aos-duration="1500">
           <div id="services">
             <div class="text-center">
@@ -20,9 +20,9 @@ function News() {
           <div class="container-fluid">
             <div class="row d-flex justify-content-center">
               {datas.map((data) => (
-                <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="col-lg-3 col-sm-6 mb-3" style={{ marginLeft: "1rem", marginRight: "1rem" }}>
                   <div key={data.id}>
-                    <CardNews title={data.title} picture={data.picture} desc={data.desc} URL={data.URL} id={data.id} />
+                    <CardNews title={data.title} picture={data.picture} URL={data.URL} id={data.id} />
                   </div>
                 </div>
               ))}

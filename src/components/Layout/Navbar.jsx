@@ -27,12 +27,12 @@ const Navbar = () => {
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     <li>
-                      <a class="dropdown-item" href="#About">
+                      <a class="dropdown-item" href="/#About">
                         About Us
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#services">
+                      <a class="dropdown-item" href="/#services">
                         Services
                       </a>
                     </li>
