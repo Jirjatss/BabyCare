@@ -8,6 +8,15 @@
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
+.bg {
+  background-color: white;
+  background-size: 100%;
+  width: 118.6%;
+  padding: 3rem;
+  text-align: center;
+  margin-left: -10%;
+}
+
 .bg-light {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
