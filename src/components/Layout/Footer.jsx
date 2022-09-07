@@ -11,7 +11,7 @@ function Footer() {
               <div class="ml-36">
                 <img style={{ width: 40 }} class="text-left" src={require("../../assets/brand.png")} alt="" />
               </div>
-              <div class="text-center mt-2">© 2022 Copyright : Baby Care</div>
+              <div class="text-center">© 2022 Copyright : Baby Care</div>
             </div>
           </div>
         </footer>
