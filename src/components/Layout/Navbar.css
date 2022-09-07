@@ -13,7 +13,7 @@
   color: whitesmoke;
 }
 .navbar a:hover {
-  color: aqua;
+  color: rgb(223, 206, 206);
 }
 .dropdown a {
   color: black;

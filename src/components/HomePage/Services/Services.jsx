@@ -5,13 +5,13 @@ import "./Services.css";
 function Services() {
   return (
     <>
-      <div data-aos="flip-in" data-aos-anchor-placement="center-center" data-aos-duration="1500">
+      <div data-aos="flip-in" data-aos-anchor-placement="center-center" data-aos-duration="1500" class="bg">
         <div id="services" class="text-center mt-24">
           <div class="text-center">
             <h1 id="tagline" class="section-heading">
               Services
             </h1>
-            <h5 class="section-subheading text-muted">Kasih sayang terbaik tehadap bayi anda</h5>
+            <h5 class="section-subheading">Kasih sayang terbaik tehadap bayi anda</h5>
             <hr />
           </div>
         </div>
