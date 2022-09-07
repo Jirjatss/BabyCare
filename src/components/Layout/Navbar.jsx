@@ -1,64 +1,49 @@
 import React from "react";
+import "./Navbar.css";
 import { Link } from "react-router-dom";
 
-function Navbar() {
+const Navbar = () => {
   return (
     <>
-      <section id="jumbotron" className="jumbotron jumbotron-fluid">
-        <nav className="navbar navbar-expand-lg fixed-top">
-          <div className="container">
-            <Link className="navbar-brand" to="index.html">
-              GreenStore
+      <section id="jumbotron" class="jumbotron jumbotron-fluid">
+        <nav class="navbar navbar-expand-lg fixed-top">
+          <div class="container">
+            <Link class="navbar-brand" to="/">
+              <img style={{ width: 50 }} src={require("../../assets/brand.png")} alt="" />
             </Link>
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon" style={{ color: "whitesmoke" }}>
+            <Link class="navbar-brand" to="">
+              Login
+            </Link>
+            <Link class="navbar-brand" to="">
+              Consultation
+            </Link>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon" style={{ color: "whitesmoke" }}>
                 Menu
               </span>
             </button>
-            <div className="collapse navbar-collapse" id="navbarNav">
-              <ul className="navbar-nav ms-auto">
-                <li className="nav-item">
-                  <Link className="nav-<Link" to="">
-                    List Barang
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <Link class="nav-link" to="">
+                    About
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link className="nav-<Link" to="">
+                <li class="nav-item">
+                  <Link class="nav-link" to="">
+                    Services
+                  </Link>
+                </li>
+                <li class="nav-item">
+                  <Link class="nav-link" to="">
                     Team
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link className="nav-<Link" to="">
-                    Contact
+                <li class="nav-item">
+                  <Link class="nav-link" to="">
+                    Baby Shop
                   </Link>
                 </li>
-                <div className="dropdown" style={{ marginTop: "0.3rem" }}>
-                  <Link style={{ color: "white" }} className="btn dropdown-toggle" to="" role="button" id="dropdownMenu<Link" data-bs-toggle="dropdown" aria-expanded="false">
-                    <span className="material-icons"> account_circle </span>{" "}
-                  </Link>
-                  <ul className="dropdown-menu" aria-labelledby="dropdownMenu<Link">
-                    <li>
-                      <Link className="dropdown-item" to="">
-                        Login
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="dropdown-item" to="">
-                        Keranjang
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="dropdown-item" to="">
-                        Pembayaran
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="dropdown-item" to="">
-                        Pemesanan
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
               </ul>
             </div>
           </div>
@@ -66,6 +51,6 @@ function Navbar() {
       </section>
     </>
   );
-}
+};
 
 export default Navbar;
