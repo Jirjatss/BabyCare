@@ -1,7 +1,9 @@
-#containerservices {
-  background-color: white;
+#containernews {
+  padding-top: 10rem !important;
+  background-image: url("https://img.freepik.com/free-vector/sunny-weather-background-vector-pastel-yellow-with-glittery-cute-doodle-illustration-kids_53876-117253.jpg?w=2000");
+  background-size: 120%;
   padding: 3rem;
-  padding-top: 10rem;
+
   text-align: center;
   font-family: "Sarabun", sans-serif;
 }
@@ -25,4 +27,8 @@
   padding: 1rem;
   background-color: White;
   color: black;
+}
+
+.populer-item h5 {
+  font-weight: bolder;
 }
