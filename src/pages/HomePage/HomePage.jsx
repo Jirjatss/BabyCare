@@ -4,20 +4,24 @@ import OurTeam from "../../components/HomePage/OurTeam/OurTeam";
 import About from "../../components/HomePage/About/About";
 import Services from "../../components/HomePage/Services/Services";
 import Maps from "../../components/HomePage/Maps/Maps";
+import "./HomePage.css";
 
 function HomePage() {
   return (
     <>
       <Masthead />
-      <div class="container mx-auto px-24">
-        <div data-aos="fade-up" data-aos-duration="3000">
-          <About />
-          <Services />
-        </div>
 
-        <OurTeam />
-        <Maps />
+      <div data-aos="fade-up" data-aos-duration="3000">
+        <About />
       </div>
+      <div data-aos="fade-down" data-aos-duration="2000">
+        <Services />
+      </div>
+      <div data-aos="fade-right" data-aos-duration="2000">
+        <OurTeam />
+      </div>
+
+      <Maps />
     </>
   );
 }

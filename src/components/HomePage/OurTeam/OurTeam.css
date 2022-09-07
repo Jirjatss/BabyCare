@@ -9,11 +9,12 @@
   border-radius: 100%;
   border: 10px double black;
 }
-#team {
-  font-family: "Sarabun", sans-serif;
-}
-#team h4 {
+
+#ourteam h5,
+#ourteam h2,
+#ourteam h4 {
   margin-bottom: 1rem;
+  font-weight: bolder;
 }
 
 #team .container {
@@ -24,4 +25,6 @@
 #ourteam {
   padding: 2rem;
   padding-top: 6rem;
+  font-family: "Sarabun", sans-serif;
+  font-weight: bolder;
 }

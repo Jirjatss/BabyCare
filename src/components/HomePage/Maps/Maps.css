@@ -1,9 +1,8 @@
 #contact {
   background-image: url("https://wallpapercave.com/wp/wp1936868.jpg");
   background-size: 100%;
-  width: 118.6%;
   text-align: center;
-  margin-left: -10%;
+  font-family: "Sarabun", sans-serif;
 }
 #mapsbtn {
   margin: 10rem;
