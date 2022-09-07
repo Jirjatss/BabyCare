@@ -8,6 +8,7 @@
 
 .img-fluid {
   width: 100%;
+  height: 280px !important;
 }
 .Populerbtn {
   border: 10px double whitesmoke;
