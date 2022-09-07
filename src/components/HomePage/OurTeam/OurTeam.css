@@ -1,0 +1,23 @@
+.team-member {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.team-member img {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 1rem;
+  border-radius: 100%;
+  border: 10px double black;
+}
+#team {
+  font-family: "Sarabun", sans-serif;
+}
+#team h4 {
+  margin-bottom: 1rem;
+}
+
+#team .container {
+  font-family: "Sarabun", sans-serif;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}

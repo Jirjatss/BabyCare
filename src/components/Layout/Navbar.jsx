@@ -1,6 +1,5 @@
 import React from "react";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -8,15 +7,15 @@ const Navbar = () => {
       <section id="jumbotron" class="jumbotron jumbotron-fluid">
         <nav class="navbar navbar-expand-lg fixed-top">
           <div class="container">
-            <Link class="navbar-brand" to="/">
+            <a class="navbar-brand" to="/">
               <img style={{ width: 50 }} src={require("../../assets/brand.png")} alt="" />
-            </Link>
-            <Link class="navbar-brand" to="">
+            </a>
+            <a class="navbar-brand" href="">
               Login
-            </Link>
-            <Link class="navbar-brand" to="">
+            </a>
+            <a class="navbar-brand" href="">
               Consultation
-            </Link>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon" style={{ color: "whitesmoke" }}>
                 Menu
@@ -25,24 +24,24 @@ const Navbar = () => {
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                  <Link class="nav-link" to="">
+                  <a class="nav-link" href="">
                     About
-                  </Link>
+                  </a>
                 </li>
                 <li class="nav-item">
-                  <Link class="nav-link" to="">
+                  <a class="nav-link" href="">
                     Services
-                  </Link>
+                  </a>
                 </li>
                 <li class="nav-item">
-                  <Link class="nav-link" to="">
+                  <a class="nav-link" href="#ourteam">
                     Team
-                  </Link>
+                  </a>
                 </li>
                 <li class="nav-item">
-                  <Link class="nav-link" to="">
+                  <a class="nav-link" href="">
                     Baby Shop
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>

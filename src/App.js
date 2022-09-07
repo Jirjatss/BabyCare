@@ -1,12 +1,15 @@
 import "./App.css";
-import Masthead from "./components/HomePage/Masthead/Masthead";
 import Navbar from "./components/Layout/Navbar";
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage/HomePage";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <Masthead />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+      </Routes>
     </div>
   );
 }
