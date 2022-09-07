@@ -54,7 +54,7 @@ let data = [
         ],
     },
     {
-        Obat Bayi: [
+        Obat_Bayi: [
         // stok dan harga dalam unit
         { name: "Young Living RC", type: "medicine", price: "155000", stock: "12", 
         picture: "https://ecs7.tokopedia.net/blog-tokopedia-com/uploads/2021/02/Young-Living-RC-420x420.jpg"},
@@ -79,7 +79,7 @@ let data = [
         ],
     },
     {
-        Makanan Bayi: [
+        Makanan_Bayi: [
         // stok dan harga dalam unit
         { name: "Bubur Bayi Organik Nayz", type: "food", price: "24000", stock: "14", 
         picture: "https://ecs7.tokopedia.net/blog-tokopedia-com/uploads/2019/01/1.-Bubur-Bayi-Organik-Nayz-300x300.jpg"},
@@ -104,7 +104,7 @@ let data = [
         ],
     },
     {
-        Perlengkapan Bayi: [
+        Perlengkapan_Bayi: [
         // stok dan harga dalam unit
         { name: "Kiddy Baby Gift Set Little Cat", type: "equipment", price: "79000", stock: "9", 
         picture: "https://ds393qgzrxwzn.cloudfront.net/resize/m720x480/cat1/img/images/0/tj6yWEc63G.jpg"},
