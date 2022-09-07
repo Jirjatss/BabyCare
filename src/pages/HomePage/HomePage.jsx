@@ -7,9 +7,10 @@ function HomePage() {
     <>
       <Masthead />
       <div class="container mx-auto px-24">
-        <div data-aos="fade-up" data-aos-duration="3000"></div>
+        <div data-aos="fade-up" data-aos-duration="3000">
+          <OurTeam />
+        </div>
       </div>
-      <OurTeam />
     </>
   );
 }

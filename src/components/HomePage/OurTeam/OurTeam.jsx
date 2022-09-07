@@ -9,9 +9,9 @@ function OurTeam() {
         <div class="container">
           <div class="text-center">
             <h2 id="tagline" class="section-heading">
-              Penjual Terbaik
+              Tim Terbaik
             </h2>
-            <h5 class="section-subheading text-muted">Kenalan dulu sama Penjualnya</h5>
+            <h5 class="section-subheading text-muted">Kenalan dulu sama Pegawainya</h5>
             <hr />
           </div>
           <div class="row d-flex justify-content-between">

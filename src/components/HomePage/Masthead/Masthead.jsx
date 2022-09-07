@@ -4,7 +4,7 @@ import "./Masthead.css";
 function Masthead() {
   return (
     <>
-      <div className="container halaman">
+      <div className="container-fluid halaman">
         <div style={{ backgroundColor: "rgba(0, 0, 0, 0.7)", borderRadius: "10px", padding: "1rem" }}>
           <div class="container mx-auto px-24">
             <div class="flex justify-left items-center h-full">
