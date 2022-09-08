@@ -2,6 +2,7 @@ import React from "react";
 import "./Navbar.css";
 
 const Navbar = () => {
+  const user = localStorage.getItem("token");
   return (
     <>
       <section id="jumbotron" class="jumbotron jumbotron-fluid">
@@ -10,9 +11,19 @@ const Navbar = () => {
             <a class="navbar-brand" href="/">
               <img style={{ width: 40 }} src={require("../../assets/brand.png")} alt="" />
             </a>
-            <a class="navbar-brand" href="">
-              Login
-            </a>
+            {user ? (
+              <a href="login">
+                <div class="pl-3 pr-6">
+                  <img style={{ width: 35 }} src={require("../../assets/baseline_account_circle_white_24dp.png")} alt="" />{" "}
+                </div>
+              </a>
+            ) : (
+              <>
+                <a href="/login" ripple="light" style={{ textDecoration: "none" }}>
+                  Login
+                </a>
+              </>
+            )}
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon" style={{ color: "whitesmoke" }}>
