@@ -30,7 +30,7 @@ function Services() {
             <div style={{ textAlign: "center" }}>
               {user ? (
                 <>
-                  <a class="Populerbtn" href="/News">
+                  <a class="Populerbtn" href="/Consultation">
                     Konsultasi
                   </a>
                 </>
