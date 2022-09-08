@@ -7,6 +7,7 @@ import News from "./pages/News/News";
 import Login from "./pages/Login/Login";
 import Registrasi from "./pages/Registrasi/Registrasi";
 import BabyShop from "./pages/BabyShop/BabyShop";
+import Consultation from "./pages/Consultation/Consultation";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/Registrasi" element={<Registrasi />} />
         <Route path="/BabyShop" element={<BabyShop />} />
+        <Route path="/Consultation" element={<Consultation />} />
       </Routes>
       <Footer />
     </div>

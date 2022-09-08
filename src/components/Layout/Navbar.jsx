@@ -79,11 +79,19 @@ const Navbar = () => {
                     Baby Shop
                   </a>
                 )}
-                <li class="nav-item">
-                  <a class="nav-link" href="">
-                    Consultation
+                {user ? (
+                  <>
+                    <li>
+                      <a class="nav-link" href="/Consultation">
+                        Consult
+                      </a>
+                    </li>
+                  </>
+                ) : (
+                  <a class="nav-link" href="/Login">
+                    Consult
                   </a>
-                </li>
+                )}
               </ul>
             </div>
           </div>
