@@ -66,11 +66,19 @@ const Navbar = () => {
                     Team
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="">
+                {user ? (
+                  <>
+                    <li>
+                      <a class="nav-link" href="/BabyShop">
+                        Baby Shop
+                      </a>
+                    </li>
+                  </>
+                ) : (
+                  <a class="nav-link" href="/Login">
                     Baby Shop
                   </a>
-                </li>
+                )}
                 <li class="nav-item">
                   <a class="nav-link" href="">
                     Consultation
