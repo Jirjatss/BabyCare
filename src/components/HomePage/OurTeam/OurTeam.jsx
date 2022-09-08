@@ -28,7 +28,7 @@ function OurTeam() {
               <CardTeam nama={"Dwi Wahyuni"} role={"Bidan"} url={"https://scintillating-mermaid-05a0ff.netlify.app/Image/Team/Dwi.PNG"} />
             </div>
             <div class="col-lg-2 col-sm-6 mb-4">
-              <CardTeam nama={"Bayu"} role={"Web Developer"} url={"https://scintillating-mermaid-05a0ff.netlify.app/Image/Team/Bayu.PNG"} />
+              <CardTeam nama={"Bayu"} role={"Office Boy"} url={"https://scintillating-mermaid-05a0ff.netlify.app/Image/Team/Bayu.PNG"} />
             </div>
           </div>
         </div>

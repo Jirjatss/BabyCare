@@ -55,7 +55,7 @@ const Navbar = () => {
                   </ul>
                 </div>
                 <li class="nav-item">
-                  <a class="nav-link" href="#ourteam">
+                  <a class="nav-link" href="/#ourteam">
                     Team
                   </a>
                 </li>
