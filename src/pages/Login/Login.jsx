@@ -41,17 +41,19 @@ function Login() {
   return (
     <>
       <div id="containerlogin">
-        <div data-aos="flip-in" data-aos-anchor-placement="center-center" data-aos-duration="1500">
-          <div id="services">
-            <h1 id="tagline" class="section-heading">
-              Login
-            </h1>
-            <h5 class="section-subheading">Silahkan Login terlebih dahulu</h5>
-            <hr />
-            <br />
+        <div className="row d-flex justify-content-center">
+          <div data-aos="flip-in" data-aos-anchor-placement="center-center" data-aos-duration="1500">
+            <div id="services">
+              <h1 id="tagline" class="section-heading">
+                Login
+              </h1>
+              <h5 class="section-subheading">Silahkan Login terlebih dahulu</h5>
+              <hr />
+              <br />
+            </div>
           </div>
           <div className="row d-flex justify-content-center">
-            <div class="col-4" style={{ textAlign: "center" }}>
+            <div class="col-12" style={{ textAlign: "center" }}>
               {user ? (
                 <>
                   <br />
@@ -77,10 +79,11 @@ function Login() {
                   <br />
                 </>
               ) : (
-                <div className="container">
+                <div className="container d-flex justify-content-center">
                   <div className="row d-flex justify-content-between">
-                    <div className="col">
-                      <form style={{ border: "10px double black", padding: "1rem", marginBottom: "1rem", borderRadius: "10px" }}>
+                    <div className="col-md-12">
+                      <form style={{ border: "10px double black", padding: "3rem", marginBottom: "1rem", borderRadius: "10px" }}>
+                        <h5>Login</h5>
                         <div class="mb-12">
                           <label for="exampleInputEmail1" class="form-label">
                             Email address
@@ -99,34 +102,23 @@ function Login() {
                             We'll never share your password with anyone else.
                           </div>
                         </div>
-                        <div class="row mb-4">
-                          <div class="col d-flex justify-content-center">
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
-                              <label class="form-check-label" for="form2Example31">
-                                Remember me
-                              </label>
-                            </div>
-                          </div>
-                          <div class="col-12">
-                            <a href="#!">Forgot password?</a>
-                          </div>
-                        </div>
-                        <div style={{ textAlign: "center" }}>
+                        <div className="mt-3 mb-0 " style={{ textAlign: "center" }}>
                           <button type="button" class="btn btn-primary btn-block mb-4">
-                            Sign in
+                            Login
                           </button>
                         </div>
-
+                        <div className="col-12 mb-3">
+                          <GoogleLogin clientId={clientId} buttonText="Continue With Google" onSuccess={loginSuccess} onFailure={failureSuccess} cookiePolicy={"single_host_origin"} />
+                        </div>
                         <div class="text-center">
                           <p>
-                            Not a member? <a href="/Registrasi">Register</a>
+                            Not a member?
+                            <a style={{ textDecoration: "none" }} href="/Registrasi">
+                              Register
+                            </a>
                           </p>
                         </div>
                       </form>
-                    </div>
-                    <div className="col-12">
-                      <GoogleLogin clientId={clientId} buttonText="Continue With Google" onSuccess={loginSuccess} onFailure={failureSuccess} cookiePolicy={"single_host_origin"} />
                     </div>
                   </div>
                 </div>

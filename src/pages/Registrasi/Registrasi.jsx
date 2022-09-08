@@ -16,7 +16,7 @@ function Registrasi() {
       <div className="container d-flex justify-content-center">
         <div className="row d-flex justify-content-between">
           <div className="col-md-12">
-            <form style={{ border: "10px double black", padding: "1rem", marginBottom: "1rem", borderRadius: "10px" }}>
+            <form style={{ border: "10px double black", padding: "3rem", marginBottom: "1rem", borderRadius: "10px", marginBottom: "2rem" }}>
               <div class="mb-12">
                 <label for="exampleInputEmail1" class="form-label">
                   Name
@@ -56,10 +56,18 @@ function Registrasi() {
                   We'll never share your password with anyone else.
                 </div>
               </div>
-              <div className="mt-5 mb-0 " style={{ textAlign: "center" }}>
+              <div className="mt-3 mb-0 " style={{ textAlign: "center" }}>
                 <button type="button" class="btn btn-primary btn-block mb-4">
                   Registrasi
                 </button>
+              </div>
+              <div class="text-center">
+                <p>
+                  Already have an Account?{" "}
+                  <a style={{ textDecoration: "none" }} href="/Login">
+                    Login
+                  </a>
+                </p>
               </div>
             </form>
           </div>
