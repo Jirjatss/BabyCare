@@ -6,6 +6,7 @@ import Footer from "./components/Layout/Footer";
 import News from "./pages/News/News";
 import Login from "./pages/Login/Login";
 import Registrasi from "./pages/Registrasi/Registrasi";
+import BabyShop from "./pages/BabyShop/BabyShop";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/News" element={<News />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Registrasi" element={<Registrasi />} />
+        <Route path="/BabyShop" element={<BabyShop />} />
       </Routes>
       <Footer />
     </div>
