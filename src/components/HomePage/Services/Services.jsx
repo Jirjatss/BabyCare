@@ -3,6 +3,7 @@ import CardServices from "../CardServices/CardServices";
 import "./Services.css";
 
 function Services() {
+  const user = localStorage.getItem("token");
   return (
     <>
       <div id="containerservices">
@@ -27,9 +28,17 @@ function Services() {
               <CardServices nama={"Playground"} url={"https://www.homydaycare.com/wp-content/uploads/2020/06/40141547_1965863106806360_238915295371067392_n.jpg"} />
             </div>
             <div style={{ textAlign: "center" }}>
-              <a class="Populerbtn" href="/">
-                Konsultasi Sekarang
-              </a>
+              {user ? (
+                <>
+                  <a class="Populerbtn" href="/News">
+                    Konsultasi
+                  </a>
+                </>
+              ) : (
+                <a class="Populerbtn" href="/Login">
+                  Konsultasi
+                </a>
+              )}
             </div>
           </div>
         </div>

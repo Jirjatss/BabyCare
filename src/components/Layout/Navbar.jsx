@@ -47,13 +47,20 @@ const Navbar = () => {
                         Services
                       </a>
                     </li>
-                    <li>
-                      <a class="dropdown-item" href="/News">
+                    {user ? (
+                      <>
+                        <a class="dropdown-item" href="/News">
+                          News
+                        </a>
+                      </>
+                    ) : (
+                      <a class="dropdown-item" href="/Login">
                         News
                       </a>
-                    </li>
+                    )}
                   </ul>
                 </div>
+
                 <li class="nav-item">
                   <a class="nav-link" href="/#ourteam">
                     Team
