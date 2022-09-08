@@ -4,6 +4,7 @@
   background-color: rgb(0, 0, 0, 0.7);
   border-radius: 10px;
   width: 90%;
+  z-index: -1;
 }
 .navbar a {
   font-family: "Sarabun", sans-serif;
