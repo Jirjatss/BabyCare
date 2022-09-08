@@ -14,7 +14,7 @@ const Navbar = () => {
             {user ? (
               <a href="login">
                 <div class="pl-3 pr-6">
-                  <img style={{ width: 35 }} src={require("../../assets/baseline_account_circle_white_24dp.png")} alt="" />{" "}
+                  <img style={{ width: 35 }} src={require("../../assets/baseline_account_circle_white_24dp.png")} alt="" />
                 </div>
               </a>
             ) : (
