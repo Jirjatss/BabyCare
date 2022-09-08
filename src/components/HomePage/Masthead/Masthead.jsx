@@ -5,11 +5,12 @@ function Masthead() {
   return (
     <>
       <div className="container-fluid halaman">
-        <div class="container" style={{ backgroundColor: "rgba(0, 0, 0, 0.7)", borderRadius: "10px", padding: "1rem" }}>
+        <div class="container" style={{ borderRadius: "10px", padding: "1rem" }}>
           <div class="flex justify-content items-center">
             <div>
-              <h1 style={{ color: "whitesmoke" }}>BABY CARE</h1>
-              <h3 style={{ color: "whitesmoke" }}>Your Baby Solution</h3>
+              <img src={"https://see.fontimg.com/api/renderfont4/K7axe/eyJyIjoiZnMiLCJoIjoxMTYsInciOjEyNTAsImZzIjo5MywiZmdjIjoiIzEyMTIxMiIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/QmFieSBDYXJl/hugh-is-life-personal-use-italic.png"} alt="" />
+              <br />
+              <img src={"https://see.fontimg.com/api/renderfont4/gv11/eyJyIjoiZnMiLCJoIjo1MSwidyI6MTI1MCwiZnMiOjQxLCJmZ2MiOiIjMTIxMjEyIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/eW91ciBiYWJ5IHNvbHV0aW9ucw/cookiemonster.png"} alt="" />
             </div>
           </div>
         </div>
