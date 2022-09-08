@@ -33,3 +33,6 @@ form {
   font-family: "Sarabun", sans-serif;
   text-align: center;
 }
+.container-form {
+  margin-bottom: 3rem;
+}

@@ -13,7 +13,7 @@ function Registrasi() {
           </div>
         </div>
       </div>
-      <div className="container d-flex justify-content-center">
+      <div className="container-form d-flex justify-content-center">
         <div className="row d-flex justify-content-between">
           <div className="col-md-12">
             <form style={{ border: "10px double black", padding: "3rem", marginBottom: "1rem", borderRadius: "10px", marginBottom: "2rem" }}>
