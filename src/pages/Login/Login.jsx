@@ -120,7 +120,7 @@ function Login() {
 
                         <div class="text-center">
                           <p>
-                            Not a member? <a href="#!">Register</a>
+                            Not a member? <a href="/Registrasi">Register</a>
                           </p>
                         </div>
                       </form>
