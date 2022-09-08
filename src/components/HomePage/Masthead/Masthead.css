@@ -1,13 +1,6 @@
 .halaman {
   text-align: center;
-  background-image: url(../../../assets/1.jpg);
+  background-image: url(../../../assets/1.png);
   background-size: 100%;
-  padding-top: 15%;
-  padding-bottom: 15%;
-}
-.halaman h1 {
-  font-family: "Bangers", cursive;
-}
-.halaman h3 {
-  font-family: "Gloria Hallelujah", cursive;
+  padding: 10%;
 }
