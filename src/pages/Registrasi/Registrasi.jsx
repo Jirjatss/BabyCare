@@ -16,7 +16,8 @@ function Registrasi() {
       <div className="container d-flex justify-content-center">
         <div className="row d-flex justify-content-between">
           <div className="col-md-12">
-            <form style={{ border: "10px double black", padding: "3rem", marginBottom: "1rem", borderRadius: "10px", marginBottom: "2rem" }}>
+            <form style={{ border: "10px double black", padding: "3rem", marginBottom: "2rem", borderRadius: "10px" }}>
+              <h5 className="text-center">Register</h5>
               <div class="mb-12">
                 <label for="exampleInputEmail1" class="form-label">
                   Name
