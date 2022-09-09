@@ -1,7 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Consultation.css";
+import Aos from "aos";
+import Swal from "sweetalert2";
 
 function Consultation() {
+  Aos.init();
+
+  const [nama, setNama] = useState("");
+  const [phonenumber, setPhoneNumber] = useState("");
+  const [layanan, setLayanan] = useState("");
+  const [keluhan, setKeluhan] = useState("");
+
+  const formhandle = () => {
+    Swal.fire({
+      title: "Sweet!",
+      text: "Berhasil",
+      imageUrl: "https://pbs.twimg.com/media/FcL2eAVakAIOVdC?format=png&name=360x360",
+      imageWidth: 300,
+      imageHeight: 300,
+      imageAlt: "Custom image",
+      confirmButtonText: `<a href="/BabyShop" style="text-decoration: none; color: white;"> Belanja keperluan si kecil!! </a>`,
+    });
+    let datakonsul = {
+      nama,
+      layanan,
+      phonenumber,
+      keluhan,
+    };
+    localStorage.setItem("formkonsul", JSON.stringify(datakonsul));
+  };
   return (
     <>
       <div id="containerConsult">
@@ -23,7 +50,7 @@ function Consultation() {
                 <label for="exampleInputEmail1" class="form-label">
                   Name
                 </label>
-                <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                <input type="name" class="form-control" onChange={(e) => setNama(e.target.value)} />
                 <div id="emailHelp" class="form-text">
                   Enter your full name.
                 </div>
@@ -31,9 +58,9 @@ function Consultation() {
               <br />
               <div class="mb-12">
                 <label for="exampleInputEmail1" class="form-label">
-                  Email address
+                  Phone Number
                 </label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                <input type="number" class="form-control" onChange={(e) => setPhoneNumber(e.target.value)} />
                 <div id="emailHelp" class="form-text">
                   We'll never share your email with anyone else.
                 </div>
@@ -43,13 +70,13 @@ function Consultation() {
                 <label for="exampleInputEmail1" class="form-label">
                   Pelayanan
                 </label>
-                <select class="form-select text-center" aria-label="Default select example">
+                <select class="form-select text-center" aria-label="Default select example" onChange={(e) => setLayanan(e.target.value)}>
                   <option selected>Open this select menu</option>
-                  <option value="1">Konsultasi</option>
-                  <option value="2">Posyandu</option>
-                  <option value="3">MPASI</option>
-                  <option value="4">Playground</option>
-                  <option value="5">Baby Spa</option>
+                  <option value="Konsultasi">Konsultasi</option>
+                  <option value="Posyandu">Posyandu</option>
+                  <option value="MPASI">MPASI</option>
+                  <option value="Playground">Playground</option>
+                  <option value="BabySpa">Baby Spa</option>
                 </select>
               </div>
               <br />
@@ -57,10 +84,10 @@ function Consultation() {
                 <label for="exampleInputEmail1" class="form-label">
                   Konsultasi
                 </label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" onChange={(e) => setKeluhan(e.target.value)}></textarea>
               </div>
               <div className="mt-3 mb-0 " style={{ textAlign: "center" }}>
-                <button type="button" class="btn btn-primary btn-block mb-4">
+                <button type="button" class="btn btn-primary btn-block mb-4" onClick={() => formhandle()}>
                   Kirim
                 </button>
               </div>
