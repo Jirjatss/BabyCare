@@ -39,7 +39,7 @@ function Login() {
       title: "Anda ingin Logout?",
       imageUrl: "https://scintillating-mermaid-05a0ff.netlify.app/Image/Team/Riska.PNG",
       imageWidth: 300,
-      imageHeight: 250,
+      imageHeight: 300,
       imageAlt: "Custom image",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -52,7 +52,7 @@ function Login() {
           text: "Anda telah Logout",
           imageUrl: "https://scintillating-mermaid-05a0ff.netlify.app/Image/Team/Riska.PNG",
           imageWidth: 300,
-          imageHeight: 250,
+          imageHeight: 300,
           imageAlt: "Custom image",
           confirmButtonText: `<a href="/Login" style="text-decoration: none; color: white;"> Silahkan Login kembali </a>`,
         });
