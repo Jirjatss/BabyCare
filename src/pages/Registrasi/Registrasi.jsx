@@ -1,6 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Registrasi.css";
+import Swal from "sweetalert2";
+
 function Registrasi() {
+  // const [user, setUserData] = useState({});
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [role, setRole] = useState("");
+
+  const setUser = () => {
+    Swal.fire({
+      title: "Sweet!",
+      text: "Selamat anda berhasil Register",
+      imageUrl: "https://pbs.twimg.com/media/FcL2eAVakAIOVdC?format=png&name=360x360",
+      imageWidth: 300,
+      imageHeight: 300,
+      imageAlt: "Custom image",
+      confirmButtonText: `<a href="/Login" style="text-decoration: none; color: white;"> Login </a>`,
+    });
+    localStorage.setItem("user", JSON.stringify({ name, email, password, role }));
+  };
+
   return (
     <>
       <div id="containerRegistrasi">
@@ -22,7 +43,7 @@ function Registrasi() {
                 <label for="exampleInputEmail1" class="form-label">
                   Name
                 </label>
-                <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                <input type="name" class="form-control" onChange={(e) => setName(e.target.value)} />
                 <div id="emailHelp" class="form-text">
                   Enter your full name.
                 </div>
@@ -32,7 +53,13 @@ function Registrasi() {
                 <label for="exampleInputEmail1" class="form-label">
                   Email address
                 </label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                <input
+                  type="email"
+                  class="form-control"
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                />
                 <div id="emailHelp" class="form-text">
                   We'll never share your email with anyone else.
                 </div>
@@ -42,10 +69,10 @@ function Registrasi() {
                 <label for="exampleInputEmail1" class="form-label">
                   Daftar Sebagai
                 </label>
-                <select class="form-select text-center" aria-label="Default select example">
+                <select class="form-select text-center" aria-label="Default select example" onChange={(e) => setRole(e.target.value)}>
                   <option selected>Open this select menu</option>
-                  <option value="1">Dokter</option>
-                  <option value="2">Pasien</option>
+                  <option value="Dokter">Dokter</option>
+                  <option value="Pengguna">Pasien</option>
                 </select>
               </div>
               <br />
@@ -53,29 +80,21 @@ function Registrasi() {
                 <label for="exampleInputPassword1" class="form-label">
                   Password
                 </label>
-                <input type="password" class="form-control" id="exampleInputPassword1" />
+                <input type="password" class="form-control" onChange={(e) => setPassword(e.target.value)} />
                 <div id="emailHelp" class="form-text">
                   We'll never share your password with anyone else.
                 </div>
               </div>
               <br />
-              <div class="mb-12">
-                <label for="exampleInputPassword1" class="form-label">
-                  Konfirmasi Password
-                </label>
-                <input type="password" class="form-control" id="exampleInputPassword1" />
-                <div id="emailHelp" class="form-text">
-                  We'll never share your password with anyone else.
-                </div>
-              </div>
+
               <div className="mt-3 mb-0 " style={{ textAlign: "center" }}>
-                <button type="button" class="btn btn-primary btn-block mb-4">
+                <button type="button" class="btn btn-primary btn-block mb-4" onClick={() => setUser()}>
                   Registrasi
                 </button>
               </div>
               <div class="text-center">
                 <p>
-                  Already have an Account?{" "}
+                  Already have an Account?
                   <a style={{ textDecoration: "none" }} href="/Login">
                     Login
                   </a>
