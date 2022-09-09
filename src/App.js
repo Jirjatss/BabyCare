@@ -8,6 +8,7 @@ import Login from "./pages/Login/Login";
 import Registrasi from "./pages/Registrasi/Registrasi";
 import BabyShop from "./pages/BabyShop/BabyShop";
 import Consultation from "./pages/Consultation/Consultation";
+import ListKonsultasi from "./pages/List-Konsultasi/ListKonsultasi";
 import Swal from "sweetalert2";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/Registrasi" element={<Registrasi />} />
         <Route path="/BabyShop" element={<BabyShop />} />
         <Route path="/Consultation" element={<Consultation />} />
+        <Route path="/ListKonsultasi" element={<ListKonsultasi />} />
       </Routes>
       <Footer />
     </div>
