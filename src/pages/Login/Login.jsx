@@ -37,7 +37,10 @@ function Login() {
   const signoutSuccess = () => {
     Swal.fire({
       title: "Anda ingin Logout?",
-      icon: "warning",
+      imageUrl: "https://scintillating-mermaid-05a0ff.netlify.app/Image/Team/Riska.PNG",
+      imageWidth: 300,
+      imageHeight: 250,
+      imageAlt: "Custom image",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
