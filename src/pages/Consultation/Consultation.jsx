@@ -12,7 +12,30 @@ function Consultation() {
   const [keluhan, setKeluhan] = useState("");
   const [isikonsul, setIsikonsul] = useState([]);
 
+  const getConsul = () => {
+    const formData = localStorage.getItem("formkonsul");
+    setIsikonsul(JSON.parse(formData));
+  };
+
   const formhandle = () => {
+    let datakonsul = {
+      nama,
+      layanan,
+      phonenumber,
+      keluhan,
+    };
+
+    if (isikonsul === null) {
+      setIsikonsul([datakonsul]);
+      localStorage.setItem("formkonsul", JSON.stringify([datakonsul]));
+    } else {
+      console.log([...isikonsul, datakonsul]);
+      setIsikonsul([...isikonsul, datakonsul]);
+      localStorage.setItem("formkonsul", JSON.stringify(isikonsul));
+      console.log(isikonsul);
+      console.log("ini nambahin ud ada");
+    }
+
     Swal.fire({
       title: "Sweet!",
       text: "Data Berhasil terkirim",
@@ -21,30 +44,10 @@ function Consultation() {
       imageHeight: 300,
       imageAlt: "Custom image",
     });
-    let datakonsul = {
-      nama,
-      layanan,
-      phonenumber,
-      keluhan,
-    };
-    const UserData = JSON.parse(localStorage.getItem("formkonsul"));
-
-    if (UserData === null) {
-      localStorage.setItem("formkonsul", JSON.stringify(datakonsul));
-      setIsikonsul(datakonsul);
-    }
-    const formData = localStorage.getItem("formkonsul");
-    setIsikonsul(JSON.parse([...isikonsul, formData]));
-
-    localStorage.setItem("formkonsul", JSON.stringify(isikonsul));
   };
   useEffect(() => {
-    console.log(isikonsul);
-    const formData = localStorage.getItem("formkonsul");
-    setIsikonsul(JSON.parse(formData));
-    // const formData = localStorage.getItem("formkonsul");
-    // setIsikonsul(JSON.parse(formData));
-  }, [isikonsul]);
+    getConsul();
+  }, []);
   return (
     <>
       <div id="containerConsult">
