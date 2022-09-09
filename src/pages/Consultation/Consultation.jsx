@@ -43,12 +43,13 @@ function Consultation() {
                 <label for="exampleInputEmail1" class="form-label">
                   Pelayanan
                 </label>
-                <select class="form-control text-center">
-                  <option>Konsultasi</option>
-                  <option>Baby Spa</option>
-                  <option>Posyandu</option>
-                  <option>MPASI</option>
-                  <option>Playground</option>
+                <select class="form-select text-center" aria-label="Default select example">
+                  <option selected>Open this select menu</option>
+                  <option value="1">Konsultasi</option>
+                  <option value="2">Posyandu</option>
+                  <option value="3">MPASI</option>
+                  <option value="4">Playground</option>
+                  <option value="5">Baby Spa</option>
                 </select>
               </div>
               <br />

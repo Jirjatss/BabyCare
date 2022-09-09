@@ -39,6 +39,17 @@ function Registrasi() {
               </div>
               <br />
               <div class="mb-12">
+                <label for="exampleInputEmail1" class="form-label">
+                  Daftar Sebagai
+                </label>
+                <select class="form-select text-center" aria-label="Default select example">
+                  <option selected>Open this select menu</option>
+                  <option value="1">Dokter</option>
+                  <option value="2">Pasien</option>
+                </select>
+              </div>
+              <br />
+              <div class="mb-12">
                 <label for="exampleInputPassword1" class="form-label">
                   Password
                 </label>
