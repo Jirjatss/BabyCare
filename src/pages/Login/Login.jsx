@@ -17,7 +17,7 @@ function Login() {
     Swal.fire({
       title: "Sweet!",
       text: "Selamat anda berhasil Login",
-      imageUrl: "https://scintillating-mermaid-05a0ff.netlify.app/Image/Team/Riska.PNG",
+      imageUrl: "https://pbs.twimg.com/media/FcL2eAVakAIOVdC?format=png&name=360x360",
       imageWidth: 300,
       imageHeight: 300,
       imageAlt: "Custom image",
@@ -50,7 +50,7 @@ function Login() {
         Swal.fire({
           title: "Oops!",
           text: "Anda telah Logout",
-          imageUrl: "https://scintillating-mermaid-05a0ff.netlify.app/Image/Team/Riska.PNG",
+          imageUrl: "https://pbs.twimg.com/media/FcLzbbfaQAEURCc?format=png&name=small",
           imageWidth: 300,
           imageHeight: 300,
           imageAlt: "Custom image",
