@@ -15,9 +15,10 @@ function Consultation() {
   const getConsul = () => {
     const formData = localStorage.getItem("formkonsul");
     setIsikonsul(JSON.parse(formData));
-  };
+  }
 
   const formhandle = () => {
+    
     let datakonsul = {
       nama,
       layanan,
@@ -29,11 +30,8 @@ function Consultation() {
       setIsikonsul([datakonsul]);
       localStorage.setItem("formkonsul", JSON.stringify([datakonsul]));
     } else {
-      console.log([...isikonsul, datakonsul]);
+      localStorage.setItem("formkonsul", JSON.stringify([...isikonsul, datakonsul]));
       setIsikonsul([...isikonsul, datakonsul]);
-      localStorage.setItem("formkonsul", JSON.stringify(isikonsul));
-      console.log(isikonsul);
-      console.log("ini nambahin ud ada");
     }
 
     Swal.fire({
@@ -46,8 +44,12 @@ function Consultation() {
     });
   };
   useEffect(() => {
-    getConsul();
+    getConsul()
   }, []);
+
+  useEffect(() => {
+    console.log(isikonsul);
+  }, [isikonsul]);
   return (
     <>
       <div id="containerConsult">
