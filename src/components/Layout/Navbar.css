@@ -21,3 +21,12 @@
   background-color: rgba(0, 0, 0, 0.1);
   color: black;
 }
+
+a {
+  margin: 0.2rem;
+}
+
+.user {
+  font-size: 1rem;
+  color: whitesmoke;
+}

@@ -20,11 +20,14 @@ const Navbar = () => {
                 <img style={{ width: 40 }} src={require("../../assets/brand.png")} alt="" />
               </a>
               {user || userData ? (
-                <a href="login">
-                  <div class="pl-3 pr-6">
-                    <img style={{ width: 35 }} src={require("../../assets/baseline_account_circle_white_24dp.png")} alt="" />
-                  </div>
-                </a>
+                <>
+                  <a href="login">
+                    <div class="pl-3 pr-3">
+                      <img style={{ width: 35 }} src={require("../../assets/baseline_account_circle_white_24dp.png")} alt="" />
+                    </div>
+                  </a>
+                  <a className="nav-link user">{userData}</a>
+                </>
               ) : (
                 <>
                   <a href="/login" ripple="light" style={{ textDecoration: "none" }}>
