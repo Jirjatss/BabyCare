@@ -56,13 +56,13 @@ function Login() {
           imageAlt: "Custom image",
           confirmButtonText: `<a href="/Login" style="text-decoration: none; color: white;"> Silahkan Login kembali </a>`,
         });
+        setLoginButton(true);
+        setLogoutButton(false);
+        setForm(true);
+        localStorage.removeItem("token");
+        console.clear();
       }
     });
-    setLoginButton(true);
-    setLogoutButton(false);
-    setForm(true);
-    localStorage.removeItem("token");
-    console.clear();
   };
 
   const user = localStorage.getItem("token");
