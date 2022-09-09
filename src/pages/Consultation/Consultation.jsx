@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Consultation.css";
 import Aos from "aos";
 import Swal from "sweetalert2";
@@ -10,16 +10,16 @@ function Consultation() {
   const [phonenumber, setPhoneNumber] = useState("");
   const [layanan, setLayanan] = useState("");
   const [keluhan, setKeluhan] = useState("");
+  const [isikonsul, setIsikonsul] = useState([]);
 
   const formhandle = () => {
     Swal.fire({
       title: "Sweet!",
-      text: "Berhasil",
+      text: "Data Berhasil terkirim",
       imageUrl: "https://pbs.twimg.com/media/FcL2eAVakAIOVdC?format=png&name=360x360",
       imageWidth: 300,
       imageHeight: 300,
       imageAlt: "Custom image",
-      confirmButtonText: `<a href="/BabyShop" style="text-decoration: none; color: white;"> Belanja keperluan si kecil!! </a>`,
     });
     let datakonsul = {
       nama,
@@ -27,8 +27,24 @@ function Consultation() {
       phonenumber,
       keluhan,
     };
-    localStorage.setItem("formkonsul", JSON.stringify(datakonsul));
+    const UserData = JSON.parse(localStorage.getItem("formkonsul"));
+
+    if (UserData === null) {
+      localStorage.setItem("formkonsul", JSON.stringify(datakonsul));
+      setIsikonsul(datakonsul);
+    }
+    const formData = localStorage.getItem("formkonsul");
+    setIsikonsul(JSON.parse([...isikonsul, formData]));
+
+    localStorage.setItem("formkonsul", JSON.stringify(isikonsul));
   };
+  useEffect(() => {
+    console.log(isikonsul);
+    const formData = localStorage.getItem("formkonsul");
+    setIsikonsul(JSON.parse(formData));
+    // const formData = localStorage.getItem("formkonsul");
+    // setIsikonsul(JSON.parse(formData));
+  }, [isikonsul]);
   return (
     <>
       <div id="containerConsult">
