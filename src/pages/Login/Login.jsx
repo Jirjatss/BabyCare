@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./Login.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Swal from "sweetalert2";
 
 function Login() {
   AOS.init();
@@ -13,12 +14,20 @@ function Login() {
   const [form, setForm] = useState(true);
 
   const loginSuccess = (res) => {
+    Swal.fire({
+      title: "Sweet!",
+      text: "Selamat anda berhasil Login",
+      imageUrl: "https://scintillating-mermaid-05a0ff.netlify.app/Image/Team/Riska.PNG",
+      imageWidth: 300,
+      imageHeight: 250,
+      imageAlt: "Custom image",
+      confirmButtonText: `<a href="/" style="text-decoration: none; color: white;"> HomePage </a>`,
+    });
     console.log("LogSuccess : ", res.profileObj);
     localStorage.setItem("token", res.tokenId);
     setLoginButton(false);
     setLogoutButton(true);
     setForm(false);
-    window.location.reload();
   };
 
   const failureSuccess = (res) => {
@@ -26,11 +35,29 @@ function Login() {
   };
 
   const signoutSuccess = () => {
-    alert("You've been signed out successfully.");
+    Swal.fire({
+      title: "Anda ingin Logout?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, Logout!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Oops!",
+          text: "Anda telah Logout",
+          imageUrl: "https://scintillating-mermaid-05a0ff.netlify.app/Image/Team/Riska.PNG",
+          imageWidth: 300,
+          imageHeight: 250,
+          imageAlt: "Custom image",
+          confirmButtonText: `<a href="/Login" style="text-decoration: none; color: white;"> Silahkan Login kembali </a>`,
+        });
+      }
+    });
     setLoginButton(true);
     setLogoutButton(false);
     setForm(true);
-    window.location.reload();
     localStorage.removeItem("token");
     console.clear();
   };
@@ -61,17 +88,8 @@ function Login() {
                   <br />
                   <br />
                   <br />
+                  <br />
                   <GoogleLogout clientId={clientId} buttonText="Logout" onLogoutSuccess={signoutSuccess} />
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  <div>
-                    <a class="Populerbtn" href="/" style={{ marginTop: "3rem" }}>
-                      HomePage
-                    </a>
-                  </div>
                   <br />
                   <br />
                   <br />

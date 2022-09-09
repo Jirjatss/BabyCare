@@ -8,6 +8,7 @@ import Login from "./pages/Login/Login";
 import Registrasi from "./pages/Registrasi/Registrasi";
 import BabyShop from "./pages/BabyShop/BabyShop";
 import Consultation from "./pages/Consultation/Consultation";
+import Swal from "sweetalert2";
 
 function App() {
   return (
