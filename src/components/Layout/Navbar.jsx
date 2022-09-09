@@ -3,6 +3,7 @@ import "./Navbar.css";
 
 const Navbar = () => {
   const user = localStorage.getItem("token");
+  const user1 = localStorage.getItem("user1");
   return (
     <>
       <section id="jumbotron" class="jumbotron jumbotron-fluid">
@@ -11,7 +12,7 @@ const Navbar = () => {
             <a class="navbar-brand" href="/">
               <img style={{ width: 40 }} src={require("../../assets/brand.png")} alt="" />
             </a>
-            {user ? (
+            {user || user1 ? (
               <a href="login">
                 <div class="pl-3 pr-6">
                   <img style={{ width: 35 }} src={require("../../assets/baseline_account_circle_white_24dp.png")} alt="" />
@@ -47,7 +48,7 @@ const Navbar = () => {
                         Services
                       </a>
                     </li>
-                    {user ? (
+                    {user || user1 ? (
                       <>
                         <a class="dropdown-item" href="/News">
                           News
@@ -66,7 +67,7 @@ const Navbar = () => {
                     Team
                   </a>
                 </li>
-                {user ? (
+                {user || user1 ? (
                   <>
                     <li>
                       <a class="nav-link" href="/BabyShop">
@@ -79,7 +80,7 @@ const Navbar = () => {
                     Baby Shop
                   </a>
                 )}
-                {user ? (
+                {user || user1 ? (
                   <>
                     <li>
                       <a class="nav-link" href="/Consultation">

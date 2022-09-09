@@ -1,5 +1,5 @@
 import { GoogleLogin, GoogleLogout } from "react-google-login";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Login.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -9,9 +9,27 @@ function Login() {
   AOS.init();
   const clientId = "648341299149-1o6kq6frd26fd9pibhaivjrvsqpso70v.apps.googleusercontent.com";
 
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [userData, setUserData] = useState({});
+
   const [loginButton, setLoginButton] = useState(true);
   const [logoutButton, setLogoutButton] = useState(false);
   const [form, setForm] = useState(true);
+
+  const LogoutHandle = () => {
+    localStorage.removeItem("user1");
+    signoutSuccess();
+  };
+  const LoginHandle = () => {
+    console.log(userData);
+
+    if (email === userData.email && password === userData.password) {
+      loginSuccess();
+    } else {
+      alert("aku");
+    }
+  };
 
   const loginSuccess = (res) => {
     Swal.fire({
@@ -23,7 +41,8 @@ function Login() {
       imageAlt: "Custom image",
       confirmButtonText: `<a href="/" style="text-decoration: none; color: white;"> HomePage </a>`,
     });
-    console.log("LogSuccess : ", res.profileObj);
+    // console.log("LogSuccess : ", res.profileObj);
+    localStorage.setItem("user1", JSON.stringify(email));
     localStorage.setItem("token", res.tokenId);
     setLoginButton(false);
     setLogoutButton(true);
@@ -66,8 +85,14 @@ function Login() {
   };
 
   const user = localStorage.getItem("token");
-  console.log(user);
+  const user1 = localStorage.getItem("user1");
+  // console.log(user);
 
+  useEffect(() => {
+    setUserData();
+    let userlogin = localStorage.getItem("user");
+    setUserData(JSON.parse(userlogin));
+  }, [userData]);
   return (
     <>
       <div id="containerlogin">
@@ -84,15 +109,22 @@ function Login() {
           </div>
           <div className="row d-flex justify-content-center">
             <div class="col-12" style={{ textAlign: "center" }}>
-              {user ? (
+              {user || user1 ? (
                 <>
                   <br />
                   <br />
                   <br />
                   <br />
                   <br />
+                  <div className="col-12 mb-3">
+                    <button className="Populerbtn" onClick={() => LogoutHandle()}>
+                      Logout
+                    </button>
+                  </div>
                   <br />
-                  <GoogleLogout clientId={clientId} buttonText="Logout" onLogoutSuccess={signoutSuccess} />
+                  <div className="col-12 mb-3">
+                    <GoogleLogout clientId={clientId} buttonText="Logout" onLogoutSuccess={signoutSuccess} />
+                  </div>
                   <br />
                   <br />
                   <br />
@@ -109,7 +141,7 @@ function Login() {
                           <label for="exampleInputEmail1" class="form-label">
                             Email address
                           </label>
-                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                          <input type="email" class="form-control" onChange={(e) => setEmail(e.target.value)} />
                           <div id="emailHelp" class="form-text">
                             We'll never share your email with anyone else.
                           </div>
@@ -118,13 +150,13 @@ function Login() {
                           <label for="exampleInputPassword1" class="form-label">
                             Password
                           </label>
-                          <input type="password" class="form-control" id="exampleInputPassword1" />
+                          <input type="password" class="form-control" onChange={(e) => setPassword(e.target.value)} />
                           <div id="emailHelp" class="form-text">
                             We'll never share your password with anyone else.
                           </div>
                         </div>
                         <div className="mt-3 mb-0 " style={{ textAlign: "center" }}>
-                          <button type="button" class="btn btn-primary btn-block mb-4">
+                          <button type="button" class="btn btn-primary btn-block mb-4" onClick={() => LoginHandle()}>
                             Login
                           </button>
                         </div>
