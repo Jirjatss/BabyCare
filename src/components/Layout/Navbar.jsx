@@ -6,9 +6,9 @@ const Navbar = () => {
   const [userData, setUserData] = useState("");
 
   useEffect(() => {
-    setUserData();
-    let userlogin = localStorage.getItem("user1");
+    let userlogin = localStorage.getItem("userlogin");
     setUserData(JSON.parse(userlogin));
+    console.log(userData);
   }, [userData]);
   if (userData === "Dokter") {
     return (
