@@ -25,7 +25,7 @@ function ListBarang() {
               <h5 className="card-title">Card title</h5>
               <h6 className="card-title">Harga</h6>
               <p className="card-text">Stok : 6</p>
-              <button type="button" class="btn btn-primary btn-block mb-4">
+              <button type="button" className="btn btn-primary btn-block mb-4">
                 + Keranjang
               </button>
             </div>
@@ -38,7 +38,7 @@ function ListBarang() {
               <h5 className="card-title">Card title</h5>
               <h6 className="card-title">Harga</h6>
               <p className="card-text">Stok : 6</p>
-              <button type="button" class="btn btn-primary btn-block mb-4">
+              <button type="button" className="btn btn-primary btn-block mb-4">
                 + Keranjang
               </button>
             </div>
@@ -51,7 +51,7 @@ function ListBarang() {
               <h5 className="card-title">Card title</h5>
               <h6 className="card-title">Harga</h6>
               <p className="card-text">Stok : 6</p>
-              <button type="button" class="btn btn-primary btn-block mb-4">
+              <button type="button" className="btn btn-primary btn-block mb-4">
                 + Keranjang
               </button>
             </div>

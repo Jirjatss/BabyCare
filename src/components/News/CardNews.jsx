@@ -7,17 +7,17 @@ function CardNews(props) {
   return (
     <>
       <div data-aos="flip-left" data-aos-duration="2000">
-        <div class="populer-item">
-          <img class="img-fluid" src={props.picture} alt="" />
-          <div class="Populer-caption">
-            <h5 class="Populer-caption-heading" style={{ marginBottom: "1rem" }}>
+        <div className="populer-item">
+          <img className="img-fluid" src={props.picture} alt="" />
+          <div className="Populer-caption">
+            <h5 className="Populer-caption-heading" style={{ marginBottom: "1rem" }}>
               {props.title}
             </h5>
           </div>
         </div>
 
         <a href={props.URL} target="_blank">
-          <button style={{ marginBottom: "1.5rem" }} className="Populerbtn">
+          <button style={{ marginBottom: "1.5rem" }} className="noselect">
             Selengkapnya
           </button>
         </a>

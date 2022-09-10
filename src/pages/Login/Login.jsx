@@ -27,10 +27,7 @@ function Login() {
       Swal.fire({
         title: "Sweet!",
         text: "Selamat anda berhasil Login",
-        imageUrl: "https://pbs.twimg.com/media/FcL2eAVakAIOVdC?format=png&name=360x360",
-        imageWidth: 300,
-        imageHeight: 300,
-        imageAlt: "Custom image",
+        icon: "success",
         confirmButtonText: `<a href="/" style="text-decoration: none; color: white;"> HomePage </a>`,
       });
       localStorage.setItem("userlogin", JSON.stringify(userData[0].role));
@@ -42,11 +39,8 @@ function Login() {
   const loginSuccess = (res) => {
     Swal.fire({
       title: "Sweet!",
+      icon: "success",
       text: "Selamat anda berhasil Login",
-      imageUrl: "https://pbs.twimg.com/media/FcL2eAVakAIOVdC?format=png&name=360x360",
-      imageWidth: 300,
-      imageHeight: 300,
-      imageAlt: "Custom image",
       confirmButtonText: `<a href="/" style="text-decoration: none; color: white;"> HomePage </a>`,
     });
     // console.log("LogSuccess : ", res.profileObj);
@@ -63,22 +57,16 @@ function Login() {
 
   const loginFailed = () => {
     Swal.fire({
+      icon: "error",
       title: "Oops!",
       text: "Data tidak boleh kosong atau data yang anda masukkan salah",
-      imageUrl: "https://pbs.twimg.com/media/FcLzbbfaQAEURCc?format=png&name=small",
-      imageWidth: 300,
-      imageHeight: 300,
-      imageAlt: "Custom image",
       confirmButtonText: `<a href="/Login" style="text-decoration: none; color: white;"> Coba lagi </a>`,
     });
   };
   const signoutSuccess = () => {
     Swal.fire({
       title: "Anda ingin Logout?",
-      imageUrl: "https://scintillating-mermaid-05a0ff.netlify.app/Image/Team/Riska.PNG",
-      imageWidth: 300,
-      imageHeight: 300,
-      imageAlt: "Custom image",
+      icon: "question",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
@@ -86,12 +74,8 @@ function Login() {
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire({
-          title: "Oops!",
-          text: "Anda telah Logout",
-          imageUrl: "https://pbs.twimg.com/media/FcLzbbfaQAEURCc?format=png&name=small",
-          imageWidth: 300,
-          imageHeight: 300,
-          imageAlt: "Custom image",
+          icon: "warning",
+          title: "Anda telah logout!",
           confirmButtonText: `<a href="/Login" style="text-decoration: none; color: white;"> Silahkan Login kembali </a>`,
         });
         setLoginButton(true);
@@ -119,16 +103,16 @@ function Login() {
         <div className="row d-flex justify-content-center">
           <div data-aos="flip-in" data-aos-anchor-placement="center-center" data-aos-duration="1500">
             <div id="services">
-              <h1 id="tagline" class="section-heading">
+              <h1 id="tagline" className="section-heading">
                 Login
               </h1>
-              <h5 class="section-subheading">Silahkan Login terlebih dahulu</h5>
+              <h5 className="section-subheading">Silahkan Login terlebih dahulu</h5>
               <hr />
               <br />
             </div>
           </div>
           <div className="row d-flex justify-content-center">
-            <div class="col-12" style={{ textAlign: "center" }}>
+            <div className="col-12" style={{ textAlign: "center" }}>
               <br />
               <br />
               <br />
@@ -154,16 +138,16 @@ function Login() {
         <div className="row d-flex justify-content-center">
           <div data-aos="flip-in" data-aos-anchor-placement="center-center" data-aos-duration="1500">
             <div id="services">
-              <h1 id="tagline" class="section-heading">
+              <h1 id="tagline" className="section-heading">
                 Login
               </h1>
-              <h5 class="section-subheading">Silahkan Login terlebih dahulu</h5>
+              <h5 className="section-subheading">Silahkan Login terlebih dahulu</h5>
               <hr />
               <br />
             </div>
           </div>
           <div className="row d-flex justify-content-center">
-            <div class="col-12" style={{ textAlign: "center" }}>
+            <div className="col-12" style={{ textAlign: "center" }}>
               <br />
               <br />
               <br />
@@ -171,7 +155,7 @@ function Login() {
               <br />
               <br />
               <div className="col-12 mb-3">
-                <button className="Populerbtn" onClick={() => LogoutHandle()}>
+                <button className="noselect" onClick={() => LogoutHandle()}>
                   Logout
                 </button>
               </div>
@@ -191,10 +175,10 @@ function Login() {
         <div className="row d-flex justify-content-center">
           <div data-aos="flip-in" data-aos-anchor-placement="center-center" data-aos-duration="1500">
             <div id="services">
-              <h1 id="tagline" class="section-heading">
+              <h1 id="tagline" className="section-heading">
                 Login
               </h1>
-              <h5 class="section-subheading">Silahkan Login terlebih dahulu</h5>
+              <h5 className="section-subheading">Silahkan Login terlebih dahulu</h5>
               <hr />
               <br />
             </div>
@@ -204,33 +188,33 @@ function Login() {
               <div className="col-md-12">
                 <form style={{ border: "10px double black", padding: "3rem", marginBottom: "1rem", borderRadius: "10px" }}>
                   <h5>Login</h5>
-                  <div class="mb-12">
-                    <label for="exampleInputEmail1" class="form-label">
+                  <div className="mb-12">
+                    <label for="exampleInputEmail1" className="form-label">
                       Email address
                     </label>
-                    <input type="email" class="form-control" onChange={(e) => setEmail(e.target.value)} />
-                    <div id="emailHelp" class="form-text">
+                    <input type="email" className="form-control" onChange={(e) => setEmail(e.target.value)} />
+                    <div id="emailHelp" className="form-text">
                       We'll never share your email with anyone else.
                     </div>
                   </div>
-                  <div class="mb-12">
-                    <label for="exampleInputPassword1" class="form-label">
+                  <div className="mb-12">
+                    <label for="exampleInputPassword1" className="form-label">
                       Password
                     </label>
-                    <input type="password" class="form-control" onChange={(e) => setPassword(e.target.value)} />
-                    <div id="emailHelp" class="form-text">
+                    <input type="password" className="form-control" onChange={(e) => setPassword(e.target.value)} />
+                    <div id="emailHelp" className="form-text">
                       We'll never share your password with anyone else.
                     </div>
                   </div>
                   <div className="mt-3 mb-0 " style={{ textAlign: "center" }}>
-                    <button type="button" class="btn btn-primary btn-block mb-4" onClick={() => LoginHandle()}>
+                    <button type="button" className="noselect" onClick={() => LoginHandle()}>
                       Login
                     </button>
                   </div>
                   <div className="col-12 mb-3">
                     <GoogleLogin clientId={clientId} buttonText="Continue With Google" onSuccess={loginSuccess} onFailure={failureSuccess} cookiePolicy={"single_host_origin"} />
                   </div>
-                  <div class="text-center">
+                  <div className="text-center">
                     <p>
                       Not a member?
                       <a style={{ textDecoration: "none" }} href="/Registrasi">

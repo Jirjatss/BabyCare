@@ -15,10 +15,9 @@ function Consultation() {
   const getConsul = () => {
     const formData = localStorage.getItem("formkonsul");
     setIsikonsul(JSON.parse(formData));
-  }
+  };
 
   const formhandle = () => {
-    
     let datakonsul = {
       nama,
       layanan,
@@ -37,14 +36,12 @@ function Consultation() {
     Swal.fire({
       title: "Sweet!",
       text: "Data Berhasil terkirim",
-      imageUrl: "https://pbs.twimg.com/media/FcL2eAVakAIOVdC?format=png&name=360x360",
-      imageWidth: 300,
-      imageHeight: 300,
-      imageAlt: "Custom image",
+      icon: "success",
+      confirmButtonText: `<a href="/BabyShop" style="text-decoration: none; color: white;"> Lengakapi kebutuhan si kecil </a>`,
     });
   };
   useEffect(() => {
-    getConsul()
+    getConsul();
   }, []);
 
   useEffect(() => {
@@ -55,11 +52,12 @@ function Consultation() {
       <div id="containerConsult">
         <div data-aos="flip-in" data-aos-anchor-placement="center-center" data-aos-duration="1500">
           <div id="services">
-            <h1 id="tagline" class="section-heading">
+            <h1 id="tagline" className="section-heading">
               Consult
             </h1>
-            <h5 class="section-subheading">Anda menyampaikan kami mendengarkan</h5>
-            <h3 class="section-subheading">GRATIS!!!</h3>
+            <h5 className="section-subheading">Anda menyampaikan kami mendengarkan</h5>
+            <hr />
+            <h3 className="section-subheading">GRATIS!!!</h3>
           </div>
         </div>
       </div>
@@ -67,31 +65,31 @@ function Consultation() {
         <div className="row d-flex justify-content-between">
           <div className="col-md-12">
             <form style={{ border: "10px double black", borderRadius: "10px", marginBottom: "2rem" }}>
-              <div class="mb-12">
-                <label for="exampleInputEmail1" class="form-label">
+              <div className="mb-12">
+                <label for="exampleInputEmail1" className="form-label">
                   Name
                 </label>
-                <input type="name" class="form-control" onChange={(e) => setNama(e.target.value)} />
-                <div id="emailHelp" class="form-text">
+                <input type="name" className="form-control" onChange={(e) => setNama(e.target.value)} />
+                <div id="emailHelp" className="form-text">
                   Enter your full name.
                 </div>
               </div>
               <br />
-              <div class="mb-12">
-                <label for="exampleInputEmail1" class="form-label">
+              <div className="mb-12">
+                <label for="exampleInputEmail1" className="form-label">
                   Phone Number
                 </label>
-                <input type="number" class="form-control" onChange={(e) => setPhoneNumber(e.target.value)} />
-                <div id="emailHelp" class="form-text">
+                <input type="number" className="form-control" onChange={(e) => setPhoneNumber(e.target.value)} />
+                <div id="emailHelp" className="form-text">
                   We'll never share your email with anyone else.
                 </div>
               </div>
               <br />
-              <div class="mb-12">
-                <label for="exampleInputEmail1" class="form-label">
+              <div className="mb-12">
+                <label for="exampleInputEmail1" className="form-label">
                   Pelayanan
                 </label>
-                <select class="form-select text-center" aria-label="Default select example" onChange={(e) => setLayanan(e.target.value)}>
+                <select className="form-select text-center" aria-label="Default select example" onChange={(e) => setLayanan(e.target.value)}>
                   <option selected>Open this select menu</option>
                   <option value="Konsultasi">Konsultasi</option>
                   <option value="Posyandu">Posyandu</option>
@@ -101,14 +99,14 @@ function Consultation() {
                 </select>
               </div>
               <br />
-              <div class="form-group">
-                <label for="exampleInputEmail1" class="form-label">
+              <div className="form-group">
+                <label for="exampleInputEmail1" className="form-label">
                   Konsultasi
                 </label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" onChange={(e) => setKeluhan(e.target.value)}></textarea>
+                <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" onChange={(e) => setKeluhan(e.target.value)}></textarea>
               </div>
               <div className="mt-3 mb-0 " style={{ textAlign: "center" }}>
-                <button type="button" class="btn btn-primary btn-block mb-4" onClick={() => formhandle()}>
+                <button class="noselect" onClick={() => formhandle()}>
                   Kirim
                 </button>
               </div>
