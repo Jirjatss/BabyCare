@@ -15,7 +15,7 @@ function DaftarNama() {
       <div className="container justify-content-center konsul">
         <div className="row d-flex justify-content-center">
           <div className="col-md-12 text-center" style={{ marginBottom: "1.5rem" }}>
-            <button className="Populerbtn" onClick={() => getConsul()}>
+            <button className="noselect" onClick={() => getConsul()}>
               Tampilkan Data
             </button>
           </div>
