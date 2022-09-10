@@ -4,6 +4,7 @@ import "aos/dist/aos.css";
 
 function CardNews(props) {
   AOS.init();
+
   return (
     <>
       <div data-aos="flip-left" data-aos-duration="2000">
@@ -18,7 +19,7 @@ function CardNews(props) {
 
         <a href={props.URL} target="_blank">
           <button style={{ marginBottom: "1.5rem" }} className="noselect">
-            Selengkapnya
+            Baca
           </button>
         </a>
         <hr />

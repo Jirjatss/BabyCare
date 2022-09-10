@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./Registrasi.css";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 function Registrasi() {
-  // const [user, setUserData] = useState({});
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,27 +17,33 @@ function Registrasi() {
   };
 
   const setUser = () => {
-    Swal.fire({
-      title: "Sweet!",
-      text: "Berhasil Register",
-      imageUrl: "https://pbs.twimg.com/media/FcL2eAVakAIOVdC?format=png&name=360x360",
-      imageWidth: 300,
-      imageHeight: 300,
-      imageAlt: "Custom image",
-      confirmButtonText: `<a href="/Login" style="text-decoration: none; color: white;"> login </a>`,
-    });
-    let dataRegist = {
-      name,
-      email,
-      password,
-      role,
-    };
-    if (isiregist === null) {
-      setIsiRegist([dataRegist]);
-      localStorage.setItem("userRegist", JSON.stringify([dataRegist]));
+    if (name === "" || email === "" || password === "" || role === "") {
+      Swal.fire({
+        icon: "error",
+        title: "Oops!",
+        text: "Data tidak boleh kosong atau data yang anda masukkan salah",
+      });
     } else {
-      localStorage.setItem("userRegist", JSON.stringify([...isiregist, dataRegist]));
-      setIsiRegist([...isiregist, dataRegist]);
+      Swal.fire({
+        title: "Sweet!",
+        text: "Selamat anda berhasil Login",
+        icon: "success",
+        confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
+      });
+      navigate("/");
+      let dataRegist = {
+        name,
+        email,
+        password,
+        role,
+      };
+      if (isiregist === null) {
+        setIsiRegist([dataRegist]);
+        localStorage.setItem("userRegist", JSON.stringify([dataRegist]));
+      } else {
+        localStorage.setItem("userRegist", JSON.stringify([...isiregist, dataRegist]));
+        setIsiRegist([...isiregist, dataRegist]);
+      }
     }
   };
   useEffect(() => {

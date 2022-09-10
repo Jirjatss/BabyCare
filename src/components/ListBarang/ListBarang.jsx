@@ -1,62 +1,33 @@
 import React from "react";
 import "./ListBarang.css";
+import Aos from "aos";
 
-function ListBarang() {
+function ListBarang(props) {
+  Aos.init();
   return (
     <>
-      <div className="row row-cols-md-4 md-3 mx-3 mb-3 g-4">
-        <div className="col">
-          <div className="card">
-            <img src="https://img.freepik.com/free-vector/baby-cosmetics-bottles-with-kids-design-plastic-packages_33099-1543.jpg?size=626&ext=jpg&ga=GA1.2.329440172.1660900196" className="card-img-top" alt="Photo" />
-            <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <h6 className="card-title">Harga</h6>
-              <p className="card-text">Stok : 6</p>
-              <button type="button" className="btn btn-primary btn-block mb-4">
-                + Keranjang
-              </button>
-            </div>
+      <div data-aos="flip-left" data-aos-duration="2000">
+        <div className="populer-item">
+          <img className="img-fluid" src={props.url} alt="" />
+          <div className="Populer-caption">
+            <h5 className="Populer-caption-heading" style={{ maraginTop: "1rem" }}>
+              {props.title}
+            </h5>
+            <p>
+              <i>{props.deskripsi}</i>
+            </p>
+            <p>
+              <b> Rp. {props.harga}</b>
+            </p>
           </div>
         </div>
-        <div className="col">
-          <div className="card">
-            <img src="https://img.freepik.com/free-vector/baby-cosmetics-bottles-with-kids-design-plastic-packages_33099-1543.jpg?size=626&ext=jpg&ga=GA1.2.329440172.1660900196" className="card-img-top" alt="Photo" />
-            <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <h6 className="card-title">Harga</h6>
-              <p className="card-text">Stok : 6</p>
-              <button type="button" className="btn btn-primary btn-block mb-4">
-                + Keranjang
-              </button>
-            </div>
-          </div>
-        </div>
-        <div className="col">
-          <div className="card">
-            <img src="https://img.freepik.com/free-vector/baby-cosmetics-bottles-with-kids-design-plastic-packages_33099-1543.jpg?size=626&ext=jpg&ga=GA1.2.329440172.1660900196" className="card-img-top" alt="Photo" />
-            <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <h6 className="card-title">Harga</h6>
-              <p className="card-text">Stok : 6</p>
-              <button type="button" className="btn btn-primary btn-block mb-4">
-                + Keranjang
-              </button>
-            </div>
-          </div>
-        </div>
-        <div className="col">
-          <div className="card">
-            <img src="https://img.freepik.com/free-vector/baby-cosmetics-bottles-with-kids-design-plastic-packages_33099-1543.jpg?size=626&ext=jpg&ga=GA1.2.329440172.1660900196" className="card-img-top" alt="Photo" />
-            <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <h6 className="card-title">Harga</h6>
-              <p className="card-text">Stok : 6</p>
-              <button type="button" className="btn btn-primary btn-block mb-4">
-                + Keranjang
-              </button>
-            </div>
-          </div>
-        </div>
+
+        <a href="" target="_blank">
+          <button style={{ marginBottom: "1.5rem" }} className="noselect">
+            +Keranjang
+          </button>
+        </a>
+        <hr />
       </div>
     </>
   );

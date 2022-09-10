@@ -1,18 +1,21 @@
 .navbar {
   margin-top: 1rem;
   margin-left: 5%;
-  background-color: rgb(0, 0, 0, 0.7);
+  background-color: #ffc421;
   border-radius: 10px;
+  border: 2px solid black;
+  box-shadow: 0px 0px 0px rgb(0 0 0 / 40%);
+  transition: 500ms;
   width: 90%;
   z-index: -1;
 }
 .navbar a {
   font-family: "Sarabun", sans-serif;
-  font-size: 18px;
-  color: whitesmoke;
+  font-size: 20px;
+  color: black;
 }
 .navbar a:hover {
-  color: blanchedalmond;
+  color: whitesmoke;
 }
 .dropdown a {
   color: black;

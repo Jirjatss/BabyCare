@@ -1,5 +1,7 @@
 #footer .fixed-bottom {
-  background-color: black;
-  color: whitesmoke;
+  background-color: #ffc421;
+  box-shadow: 0px 0px 0px rgb(0 0 0 / 40%);
+  transition: 500ms;
+  color: black;
   font-family: "Sarabun", sans-serif;
 }
