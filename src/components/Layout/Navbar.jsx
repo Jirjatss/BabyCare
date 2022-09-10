@@ -10,6 +10,7 @@ const Navbar = () => {
     setUserData(JSON.parse(userlogin));
     console.log(userData);
   }, [userData]);
+
   if (userData === "Dokter") {
     return (
       <>
@@ -36,14 +37,12 @@ const Navbar = () => {
                 </>
               )}
               <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon" style={{ color: "whitesmoke" }}>
-                  Menu
-                </span>
+                <span className="navbar-toggler-icon" style={{ color: "black" }}></span>
               </button>
               <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav ms-auto">
                   <div className="dropdown" style={{ marginTop: "0.1rem" }}>
-                    <a style={{ color: "white" }} className="btn dropdown-toggle" href="" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a style={{ color: "black" }} className="btn dropdown-toggle" href="" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                       About
                     </a>
                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -86,11 +85,14 @@ const Navbar = () => {
                 <img style={{ width: 40 }} src={require("../../assets/brand.png")} alt="" />
               </a>
               {user || userData ? (
-                <a href="login">
-                  <div className="pl-3 pr-6">
-                    <img style={{ width: 35 }} src={require("../../assets/baseline_account_circle_white_24dp.png")} alt="" />
-                  </div>
-                </a>
+                <>
+                  <a href="login">
+                    <div className="pl-3 pr-3">
+                      <img style={{ width: 35 }} src={require("../../assets/baseline_account_circle_white_24dp.png")} alt="" />
+                    </div>
+                  </a>
+                  <a className="nav-link user">{userData}</a>
+                </>
               ) : (
                 <>
                   <a href="/login" ripple="light" style={{ textDecoration: "none" }}>
@@ -100,14 +102,12 @@ const Navbar = () => {
               )}
 
               <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon" style={{ color: "whitesmoke" }}>
-                  Menu
-                </span>
+                <span className="navbar-toggler-icon" style={{ color: "black" }}></span>
               </button>
               <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav ms-auto">
                   <div className="dropdown" style={{ marginTop: "0.1rem" }}>
-                    <a style={{ color: "white" }} className="btn dropdown-toggle" href="" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a style={{ color: "black" }} className="btn dropdown-toggle" href="" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                       About
                     </a>
                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">

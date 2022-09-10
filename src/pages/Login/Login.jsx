@@ -4,65 +4,81 @@ import "./Login.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate();
   AOS.init();
   const clientId = "648341299149-1o6kq6frd26fd9pibhaivjrvsqpso70v.apps.googleusercontent.com";
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [userData, setUserData] = useState();
+  const [userData, setUserData] = useState(null);
 
   const [loginButton, setLoginButton] = useState(true);
   const [logoutButton, setLogoutButton] = useState(false);
   const [form, setForm] = useState(true);
 
+  // logout via email
   const LogoutHandle = () => {
     signoutSuccess();
   };
-  const LoginHandle = () => {
-    console.log(userData);
+  // Akhir Logout via email
 
-    if (email === userData[0].email && password === userData[0].password) {
+  // Login via email
+  const LoginHandle = () => {
+    let isFoundUser = null;
+    if (userData) {
+      isFoundUser = userData.find((user) => {
+        return email === user.email && password === user.password;
+      });
+    }
+    if (isFoundUser && userData.length) {
+      localStorage.setItem("userlogin", JSON.stringify(userData[0].role));
       Swal.fire({
         title: "Sweet!",
         text: "Selamat anda berhasil Login",
         icon: "success",
-        confirmButtonText: `<a href="/" style="text-decoration: none; color: white;"> HomePage </a>`,
+        confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
       });
-      localStorage.setItem("userlogin", JSON.stringify(userData[0].role));
+      navigate("/");
     } else {
       loginFailed();
     }
   };
+  // Akhir login via email
 
+  // Login via google
   const loginSuccess = (res) => {
     Swal.fire({
       title: "Sweet!",
       icon: "success",
       text: "Selamat anda berhasil Login",
-      confirmButtonText: `<a href="/" style="text-decoration: none; color: white;"> HomePage </a>`,
+      confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
     });
-    // console.log("LogSuccess : ", res.profileObj);
-
+    navigate("/");
     localStorage.setItem("token", res.tokenId);
     setLoginButton(false);
     setLogoutButton(true);
     setForm(false);
   };
+  // AKhir login via google
 
   const failureSuccess = (res) => {
     console.log("Login Failed! : ", res);
   };
 
+  // Login Gagal
   const loginFailed = () => {
     Swal.fire({
       icon: "error",
       title: "Oops!",
       text: "Data tidak boleh kosong atau data yang anda masukkan salah",
-      confirmButtonText: `<a href="/Login" style="text-decoration: none; color: white;"> Coba lagi </a>`,
     });
   };
+  // Akhir Login Gagal
+
+  // Sign out
   const signoutSuccess = () => {
     Swal.fire({
       title: "Anda ingin Logout?",
@@ -76,8 +92,9 @@ function Login() {
         Swal.fire({
           icon: "warning",
           title: "Anda telah logout!",
-          confirmButtonText: `<a href="/Login" style="text-decoration: none; color: white;"> Silahkan Login kembali </a>`,
+          confirmButtonText: '<i class="fa fa-times"></i> Silahkan Login Kembali!',
         });
+        navigate("/Login");
         setLoginButton(true);
         setLogoutButton(false);
         setForm(true);
@@ -87,15 +104,15 @@ function Login() {
       }
     });
   };
+  // Akhir Signout
 
   const user = localStorage.getItem("token");
   const user1 = localStorage.getItem("userlogin");
-  // console.log(user);
 
   useEffect(() => {
     let userlogin = localStorage.getItem("userRegist");
     setUserData(JSON.parse(userlogin));
-  }, [userData]);
+  }, []);
 
   if (user) {
     return (
@@ -112,21 +129,10 @@ function Login() {
             </div>
           </div>
           <div className="row d-flex justify-content-center">
-            <div className="col-12" style={{ textAlign: "center" }}>
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
+            <div className="col-12" style={{ textAlign: "center", padding: "6rem" }}>
               <div className="col-12 mb-3">
                 <GoogleLogout clientId={clientId} buttonText="Logout" onLogoutSuccess={signoutSuccess} />
               </div>
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
             </div>
           </div>
         </div>
@@ -147,23 +153,12 @@ function Login() {
             </div>
           </div>
           <div className="row d-flex justify-content-center">
-            <div className="col-12" style={{ textAlign: "center" }}>
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
+            <div className="col-12" style={{ textAlign: "center", padding: "6rem" }}>
               <div className="col-12 mb-3">
                 <button className="noselect" onClick={() => LogoutHandle()}>
                   Logout
                 </button>
               </div>
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
             </div>
           </div>
         </div>
