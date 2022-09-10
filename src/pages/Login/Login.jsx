@@ -11,8 +11,8 @@ function Login() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [userData, setUserData] = useState({});
-  const [role, setRole] = useState("");
+  const [userData, setUserData] = useState();
+
   const [loginButton, setLoginButton] = useState(true);
   const [logoutButton, setLogoutButton] = useState(false);
   const [form, setForm] = useState(true);
@@ -23,8 +23,17 @@ function Login() {
   const LoginHandle = () => {
     console.log(userData);
 
-    if (email === userData.email && password === userData.password) {
-      loginSuccess();
+    if (email === userData[0].email && password === userData[0].password) {
+      Swal.fire({
+        title: "Sweet!",
+        text: "Selamat anda berhasil Login",
+        imageUrl: "https://pbs.twimg.com/media/FcL2eAVakAIOVdC?format=png&name=360x360",
+        imageWidth: 300,
+        imageHeight: 300,
+        imageAlt: "Custom image",
+        confirmButtonText: `<a href="/" style="text-decoration: none; color: white;"> HomePage </a>`,
+      });
+      localStorage.setItem("userlogin", JSON.stringify(userData[0].role));
     } else {
       loginFailed();
     }
@@ -42,7 +51,6 @@ function Login() {
     });
     // console.log("LogSuccess : ", res.profileObj);
 
-    localStorage.setItem("user1", JSON.stringify(userData.role));
     localStorage.setItem("token", res.tokenId);
     setLoginButton(false);
     setLogoutButton(true);
@@ -90,19 +98,18 @@ function Login() {
         setLogoutButton(false);
         setForm(true);
         localStorage.removeItem("token");
-        localStorage.removeItem("user1");
+        localStorage.removeItem("userlogin");
         console.clear();
       }
     });
   };
 
   const user = localStorage.getItem("token");
-  const user1 = localStorage.getItem("user1");
+  const user1 = localStorage.getItem("userlogin");
   // console.log(user);
 
   useEffect(() => {
-    setUserData();
-    let userlogin = localStorage.getItem("user");
+    let userlogin = localStorage.getItem("userRegist");
     setUserData(JSON.parse(userlogin));
   }, [userData]);
 
