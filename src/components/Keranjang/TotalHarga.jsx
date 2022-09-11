@@ -31,7 +31,7 @@ function TotalHarga() {
                     </tr>
                   </tbody>
                 </table>
-                <Link to="#" id="tombol" className="btn m-1 w-100 btn-warning tombol">
+                <Link to="/Pembayaran" id="tombol" className="btn m-1 w-100 btn-warning tombol">
                   <i className="fa fa-fw fa-shopping-cart"></i>CheckOut
                 </Link>
               </div>
