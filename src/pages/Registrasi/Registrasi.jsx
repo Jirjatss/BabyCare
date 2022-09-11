@@ -4,11 +4,13 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
 function Registrasi() {
-  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
+  const [jenis, setJenis] = useState("");
+  const navigate = useNavigate();
+
   const [isiregist, setIsiRegist] = useState([]);
 
   const getRegister = () => {
@@ -17,7 +19,7 @@ function Registrasi() {
   };
 
   const setUser = () => {
-    if (name === "" || email === "" || password === "" || role === "") {
+    if (name === "" || email === "" || password === "" || role === "" || jenis === undefined) {
       Swal.fire({
         icon: "error",
         title: "Oops!",
@@ -36,6 +38,7 @@ function Registrasi() {
         email,
         password,
         role,
+        jenis,
       };
       if (isiregist === null) {
         setIsiRegist([dataRegist]);
@@ -65,66 +68,77 @@ function Registrasi() {
           </div>
         </div>
       </div>
-      <div className="container-form d-flex justify-content-center">
-        <div className="row d-flex justify-content-between">
-          <div className="col-md-12">
-            <form className="regis" style={{ border: "10px double black", borderRadius: "10px", marginBottom: "2rem" }}>
-              <div className="mb-12">
-                <label for="exampleInputEmail1" className="form-label">
-                  Name
-                </label>
-                <input type="name" className="form-control" onChange={(e) => setName(e.target.value)} />
-                <div id="emailHelp" className="form-text">
-                  Enter your full name.
-                </div>
+      <div class="form-body">
+        <div class="row">
+          <div class="form-holder">
+            <div class="form-content">
+              <div class="form-items">
+                <h3>Register Today</h3>
+                <p>Fill in the data below.</p>
+                <form class="requires-validation" novalidate>
+                  <div class="col-md-12">
+                    <input class="form-control" type="text" name="name" placeholder="Full Name" required onChange={(e) => setName(e.target.value)} />
+                    <div class="valid-feedback">Username field is valid!</div>
+                  </div>
+
+                  <div class="col-md-12">
+                    <input class="form-control" type="email" name="email" placeholder="E-mail Address" required onChange={(e) => setEmail(e.target.value)} />
+                  </div>
+
+                  <div class="col-md-12">
+                    <select class="form-select mt-3" required onChange={(e) => setRole(e.target.value)}>
+                      <option selected disabled>
+                        Position
+                      </option>
+                      <option value="Dokter">Dokter</option>
+                      <option value="Pasien">Pasien</option>
+                    </select>
+                    <div class="valid-feedback">You selected a position!</div>
+                  </div>
+
+                  <div class="col-md-12">
+                    <input class="form-control" type="password" name="password" placeholder="Password" required onChange={(e) => setPassword(e.target.value)} />
+                    <div class="valid-feedback">Password field is valid!</div>
+                  </div>
+                  <div class="col-md-12 mt-3">
+                    <label class="mb-3 mr-1 jenis" for="gender">
+                      Gender :
+                    </label>
+
+                    <input type="radio" class="btn-check" name="gender" id="Laki-laki" autocomplete="off" required onChange={(e) => setJenis(e.target.id)} />
+                    <label class="btn btn-sm btn-outline-warning jenis" for="Laki-laki">
+                      Male
+                    </label>
+
+                    <input type="radio" class="btn-check" name="gender" id="Perempuan" autocomplete="off" required onChange={(e) => setJenis(e.target.id)} />
+                    <label class="btn btn-sm btn-outline-warning jenis" for="Perempuan">
+                      Female
+                    </label>
+
+                    <div class="valid-feedback mv-up">You selected a gender!</div>
+                    <div class="invalid-feedback mv-up">Please select a gender!</div>
+                  </div>
+                  <div class="text-center mt-2">
+                    <label class="form-check-label">
+                      <b>I confirm that all data are correct and can be responsible</b>{" "}
+                    </label>
+                  </div>
+                  <div class="form-button mt-3">
+                    <button id="submit" type="submit" class="noselect" onClick={(e) => setUser(e.preventDefault())}>
+                      Register
+                    </button>
+                  </div>
+                  <div class="col-md-12 mt-3">
+                    <h6>
+                      Already have an account?
+                      <a style={{ textDecoration: "none" }} href="/Login">
+                        Login
+                      </a>
+                    </h6>
+                  </div>
+                </form>
               </div>
-              <br />
-              <div className="mb-12">
-                <label for="exampleInputEmail1" className="form-label">
-                  Email
-                </label>
-                <input type="email" className="form-control" onChange={(e) => setEmail(e.target.value)} />
-                <div id="emailHelp" className="form-text">
-                  We'll never share your email with anyone else.
-                </div>
-              </div>
-              <br />
-              <div className="mb-12">
-                <label for="exampleInputEmail1" className="form-label">
-                  Role
-                </label>
-                <select className="form-select text-center" aria-label="Default select example" onChange={(e) => setRole(e.target.value)}>
-                  <option selected>Open this select menu</option>
-                  <option value="Dokter">Dokter</option>
-                  <option value="Pengguna">Pasien</option>
-                </select>
-              </div>
-              <br />
-              <div className="mb-12">
-                <label for="exampleInputEmail1" className="form-label">
-                  Password
-                </label>
-                <input type="password" className="form-control" onChange={(e) => setPassword(e.target.value)} />
-                <div id="emailHelp" className="form-text">
-                  We'll never share your password with anyone else.
-                </div>
-              </div>
-              <br />
-              <div className="mt-3 mb-0 " style={{ textAlign: "center" }}>
-                <button type="button" className="noselect" onClick={() => setUser()}>
-                  Register
-                </button>
-              </div>
-              <div className="text-center">
-                <p>
-                  Already have an Account?
-                  <a style={{ textDecoration: "none" }} href="/login">
-                    login
-                  </a>
-                </p>
-              </div>
-              <br />
-            </form>
+            </div>
           </div>
         </div>
       </div>

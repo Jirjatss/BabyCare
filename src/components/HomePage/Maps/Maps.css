@@ -5,21 +5,11 @@
   font-family: "Sarabun", sans-serif;
   margin-bottom: 2rem;
 }
-#mapsbtn {
+.maps {
   margin: 10rem;
   margin-top: 11rem;
+  margin-bottom: 11rem !important;
   background-color: transparent;
   color: white;
-  padding: 0.8rem;
-  border-radius: 10px;
-  border: 10px double whitesmoke;
-}
-#mapsbtn:hover {
-  margin: 10rem;
-  margin-top: 11rem;
-  background-color: whitesmoke;
-  color: black;
-  padding: 0.8rem;
-  border-radius: 10px;
-  border: 10px double black;
+  border: 2px solid white !important;
 }

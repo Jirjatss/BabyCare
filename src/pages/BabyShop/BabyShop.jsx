@@ -32,7 +32,7 @@ function BabyShop() {
           <div class="container-fluid">
             <div class="row d-flex justify-content-center">
               {data.map((data) => (
-                <div class="col-lg-3 col-sm-6 mb-3" style={{ marginLeft: "1rem", marginRight: "1rem" }}>
+                <div class="col-lg-2 col-sm-4 mb-2" style={{ marginLeft: "1rem", marginRight: "1rem" }}>
                   <div key={data.id}>
                     <ListBarang key={data.id} title={data.title} url={data.url} deskripsi={data.kategori} harga={data.harga} />
                   </div>

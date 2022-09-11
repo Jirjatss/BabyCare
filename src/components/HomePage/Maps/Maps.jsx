@@ -7,7 +7,7 @@ function Maps() {
           <div className="flex justify-center items-center h-full">
             <div className="text-left text-black mb-28 b-11 px-6 md:px-12">
               <a href={"//goo.gl/maps/YKszoqVWqPn8uwNc8"} target={"_blank"}>
-                <button id="mapsbtn" type="button">
+                <button className="noselect maps" type="button">
                   Lokasi Kami
                 </button>
               </a>

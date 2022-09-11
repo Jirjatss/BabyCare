@@ -7,27 +7,19 @@ function ListBarang(props) {
   return (
     <>
       <div data-aos="flip-left" data-aos-duration="2000">
-        <div className="populer-item">
-          <img className="img-fluid" src={props.url} alt="" />
-          <div className="Populer-caption">
-            <h5 className="Populer-caption-heading" style={{ maraginTop: "1rem" }}>
-              {props.title}
-            </h5>
-            <p>
-              <i>{props.deskripsi}</i>
-            </p>
-            <p>
-              <b> Rp. {props.harga}</b>
-            </p>
+        <div class="card h-100 shadow-sm mt-2 mb-2">
+          <img src={props.url} class="card-img-top" alt="..." />
+          <div class="card-body">
+            <div class="clearfix mb-2">
+              <span class="float-start badge rounded-pill bg-primary">{props.deskripsi}</span>
+              <span class="float-end price-hp">Rp {props.harga}</span>
+            </div>
+            <h5 class="card-title">{props.title}</h5>
+            <div class="text-center my-4 mb-1">
+              <button class="noselect">+Keranjang</button>
+            </div>
           </div>
         </div>
-
-        <a href="" target="_blank">
-          <button style={{ marginBottom: "1.5rem" }} className="noselect">
-            +Keranjang
-          </button>
-        </a>
-        <hr />
       </div>
     </>
   );
