@@ -9,6 +9,7 @@ import Registrasi from "./pages/Registrasi/Registrasi";
 import BabyShop from "./pages/BabyShop/BabyShop";
 import Consultation from "./pages/Consultation/Consultation";
 import ListKonsultasi from "./pages/List-Konsultasi/ListKonsultasi";
+import Keranjang from "./pages/Keranjang/Keranjang";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/BabyShop" element={<BabyShop />} />
         <Route path="/Consultation" element={<Consultation />} />
         <Route path="/ListKonsultasi" element={<ListKonsultasi />} />
+        <Route path="/Keranjang" element={<Keranjang />} />
       </Routes>
       <Footer />
     </div>
