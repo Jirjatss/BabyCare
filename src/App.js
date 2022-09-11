@@ -10,6 +10,7 @@ import BabyShop from "./pages/BabyShop/BabyShop";
 import Consultation from "./pages/Consultation/Consultation";
 import ListKonsultasi from "./pages/List-Konsultasi/ListKonsultasi";
 import Keranjang from "./pages/Keranjang/Keranjang";
+import Pembayaran from "./pages/Pembayaran/Pembayaran";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/Consultation" element={<Consultation />} />
         <Route path="/ListKonsultasi" element={<ListKonsultasi />} />
         <Route path="/Keranjang" element={<Keranjang />} />
+        <Route path="/Pembayaran" element={<Pembayaran />} />
       </Routes>
       <Footer />
     </div>
