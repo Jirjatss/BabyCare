@@ -24,21 +24,28 @@ function Consultation() {
       phonenumber,
       keluhan,
     };
-
-    if (isikonsul === null) {
-      setIsikonsul([datakonsul]);
-      localStorage.setItem("formkonsul", JSON.stringify([datakonsul]));
+    if (nama === "" || phonenumber === "" || layanan === "" || keluhan === "") {
+      Swal.fire({
+        icon: "error",
+        title: "Oops!",
+        text: "Data tidak boleh kosong atau data yang anda masukkan salah",
+      });
     } else {
-      localStorage.setItem("formkonsul", JSON.stringify([...isikonsul, datakonsul]));
-      setIsikonsul([...isikonsul, datakonsul]);
-    }
+      if (isikonsul === null) {
+        setIsikonsul([datakonsul]);
+        localStorage.setItem("formkonsul", JSON.stringify([datakonsul]));
+      } else {
+        localStorage.setItem("formkonsul", JSON.stringify([...isikonsul, datakonsul]));
+        setIsikonsul([...isikonsul, datakonsul]);
+      }
 
-    Swal.fire({
-      title: "Sweet!",
-      text: "Data Berhasil terkirim",
-      icon: "success",
-      confirmButtonText: `<a href="/BabyShop" style="text-decoration: none; color: white;"> Lengakapi kebutuhan si kecil </a>`,
-    });
+      Swal.fire({
+        title: "Sweet!",
+        text: "Data Berhasil terkirim",
+        icon: "success",
+        confirmButtonText: `<a href="/BabyShop" style="text-decoration: none; color: white;"> Lengakapi kebutuhan si kecil </a>`,
+      });
+    }
   };
   useEffect(() => {
     getConsul();

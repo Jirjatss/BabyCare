@@ -119,14 +119,29 @@ function Login() {
       <div id="containerlogin">
         <div className="row d-flex justify-content-center">
           <div data-aos="flip-in" data-aos-anchor-placement="center-center" data-aos-duration="1500">
-            <div id="services">
-              <h1 id="tagline" className="section-heading">
-                Login
-              </h1>
-              <h5 className="section-subheading">Silahkan Login terlebih dahulu</h5>
-              <hr />
-              <br />
-            </div>
+            {user || user1 ? (
+              <>
+                <div id="services">
+                  <h1 id="tagline" className="section-heading">
+                    Logout
+                  </h1>
+                  <h5 className="section-subheading">Logout membuat akses anda terbatas</h5>
+                  <hr />
+                  <br />
+                </div>
+              </>
+            ) : (
+              <>
+                <div id="services">
+                  <h1 id="tagline" className="section-heading">
+                    Login
+                  </h1>
+                  <h5 className="section-subheading">Silahkan Login terlebih dahulu</h5>
+                  <hr />
+                  <br />
+                </div>
+              </>
+            )}
           </div>
           <div className="row d-flex justify-content-center">
             <div className="col-12" style={{ textAlign: "center", padding: "6rem" }}>
@@ -143,14 +158,29 @@ function Login() {
       <div id="containerlogin">
         <div className="row d-flex justify-content-center">
           <div data-aos="flip-in" data-aos-anchor-placement="center-center" data-aos-duration="1500">
-            <div id="services">
-              <h1 id="tagline" className="section-heading">
-                Login
-              </h1>
-              <h5 className="section-subheading">Silahkan Login terlebih dahulu</h5>
-              <hr />
-              <br />
-            </div>
+            {user || user1 ? (
+              <>
+                <div id="services">
+                  <h1 id="tagline" className="section-heading">
+                    Logout
+                  </h1>
+                  <h5 className="section-subheading">Logout membuat akses anda terbatas</h5>
+                  <hr />
+                  <br />
+                </div>
+              </>
+            ) : (
+              <>
+                <div id="services">
+                  <h1 id="tagline" className="section-heading">
+                    Login
+                  </h1>
+                  <h5 className="section-subheading">Silahkan Login terlebih dahulu</h5>
+                  <hr />
+                  <br />
+                </div>
+              </>
+            )}
           </div>
           <div className="row d-flex justify-content-center">
             <div className="col-12" style={{ textAlign: "center", padding: "6rem" }}>
