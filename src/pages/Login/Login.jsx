@@ -30,11 +30,11 @@ function Login() {
     let isFoundUser = null;
     if (userData) {
       isFoundUser = userData.find((user) => {
-        return email === user.email && password === user.password;
+        return email === user.email && password === user.password && user.role;
       });
     }
     if (isFoundUser && userData.length) {
-      localStorage.setItem("userlogin", JSON.stringify(userData[0].role));
+      localStorage.setItem("userlogin", JSON.stringify(isFoundUser.role));
       Swal.fire({
         title: "Sweet!",
         text: "Selamat anda berhasil Login",
@@ -94,7 +94,7 @@ function Login() {
           title: "Anda telah logout!",
           confirmButtonText: '<i class="fa fa-times"></i> Silahkan Login Kembali!',
         });
-        navigate("/Login");
+        navigate("/");
         setLoginButton(true);
         setLogoutButton(false);
         setForm(true);
@@ -178,46 +178,49 @@ function Login() {
               <br />
             </div>
           </div>
-          <div className="container d-flex justify-content-center">
-            <div className="row d-flex justify-content-between">
-              <div className="col-md-12">
-                <form style={{ border: "10px double black", padding: "3rem", marginBottom: "1rem", borderRadius: "10px" }}>
-                  <h5>Login</h5>
-                  <div className="mb-12">
-                    <label for="exampleInputEmail1" className="form-label">
-                      Email address
-                    </label>
-                    <input type="email" className="form-control" onChange={(e) => setEmail(e.target.value)} />
-                    <div id="emailHelp" className="form-text">
-                      We'll never share your email with anyone else.
-                    </div>
+          <div class="form-body">
+            <div class="row">
+              <div class="form-holder">
+                <div class="form-content" id="formlogin">
+                  <div class="form-items">
+                    <h3>Login</h3>
+                    <p>Fill in the data below.</p>
+                    <form class="requires-validation" novalidate>
+                      <div class="col-md-12">
+                        <input class="form-control" type="email" name="email" placeholder="E-mail Address" onChange={(e) => setEmail(e.target.value)} />
+                      </div>
+
+                      <div class="col-md-12">
+                        <input class="form-control" type="password" name="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
+                        <div class="valid-feedback">Password field is valid!</div>
+                      </div>
+
+                      <div class="text-center mt-4">
+                        <label class="form-check-label">
+                          <h6>
+                            <b>I confirm that all data are correct and can be responsible</b>
+                          </h6>
+                        </label>
+                      </div>
+                      <div class="form-button mt-3">
+                        <button id="submit" type="submit" class="noselect" onClick={(e) => LoginHandle(e.preventDefault())}>
+                          Login
+                        </button>
+                      </div>
+                      <div className="col-12 mb-3">
+                        <GoogleLogin clientId={clientId} buttonText="Continue With Google" onSuccess={loginSuccess} onFailure={failureSuccess} cookiePolicy={"single_host_origin"} />
+                      </div>
+                      <div className="text-center">
+                        <h6>
+                          Not a member?
+                          <a style={{ textDecoration: "none" }} href="/Registrasi">
+                            Register
+                          </a>
+                        </h6>
+                      </div>
+                    </form>
                   </div>
-                  <div className="mb-12">
-                    <label for="exampleInputPassword1" className="form-label">
-                      Password
-                    </label>
-                    <input type="password" className="form-control" onChange={(e) => setPassword(e.target.value)} />
-                    <div id="emailHelp" className="form-text">
-                      We'll never share your password with anyone else.
-                    </div>
-                  </div>
-                  <div className="mt-3 mb-0 " style={{ textAlign: "center" }}>
-                    <button type="button" className="noselect" onClick={() => LoginHandle()}>
-                      Login
-                    </button>
-                  </div>
-                  <div className="col-12 mb-3">
-                    <GoogleLogin clientId={clientId} buttonText="Continue With Google" onSuccess={loginSuccess} onFailure={failureSuccess} cookiePolicy={"single_host_origin"} />
-                  </div>
-                  <div className="text-center">
-                    <p>
-                      Not a member?
-                      <a style={{ textDecoration: "none" }} href="/Registrasi">
-                        Register
-                      </a>
-                    </p>
-                  </div>
-                </form>
+                </div>
               </div>
             </div>
           </div>

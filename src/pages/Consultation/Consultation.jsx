@@ -57,63 +57,58 @@ function Consultation() {
             </h1>
             <h5 className="section-subheading">Anda menyampaikan kami mendengarkan</h5>
             <hr />
-            <h3 className="section-subheading">GRATIS!!!</h3>
           </div>
         </div>
       </div>
-      <div className="container-form d-flex justify-content-center">
-        <div className="row d-flex justify-content-between">
-          <div className="col-md-12">
-            <form style={{ border: "10px double black", borderRadius: "10px", marginBottom: "2rem" }}>
-              <div className="mb-12">
-                <label for="exampleInputEmail1" className="form-label">
-                  Name
-                </label>
-                <input type="name" className="form-control" onChange={(e) => setNama(e.target.value)} />
-                <div id="emailHelp" className="form-text">
-                  Enter your full name.
-                </div>
+      <div class="form-body">
+        <div class="row">
+          <div class="form-holder">
+            <div class="form-content" id="formlogin">
+              <div class="form-items">
+                <h3>Konsul</h3>
+                <h3 className="section-subheading" style={{ color: "red" }}>
+                  GRATIS!!! GRATIS!!! GRATIS!!!
+                </h3>
+                <form class="requires-validation" novalidate>
+                  <div class="col-md-12">
+                    <input class="form-control" type="text" name="name" placeholder="Full Name" onChange={(e) => setNama(e.target.value)} />
+                  </div>
+
+                  <div class="col-md-12 mt-3">
+                    <input class="form-control" type="number" name="number" placeholder="Phone Number" onChange={(e) => setPhoneNumber(e.target.value)} />
+                    <div class="valid-feedback">Password field is valid!</div>
+                  </div>
+
+                  <div className="col-md-12 mb-3">
+                    <select className="form-select text-center" aria-label="Default select example" onChange={(e) => setLayanan(e.target.value)}>
+                      <option selected>Pelayanan </option>
+                      <option value="Konsultasi">Konsultasi</option>
+                      <option value="Posyandu">Posyandu</option>
+                      <option value="MPASI">MPASI</option>
+                      <option value="Playground">Playground</option>
+                      <option value="BabySpa">Baby Spa</option>
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Ceritakan keluhan si kecil" onChange={(e) => setKeluhan(e.target.value)}></textarea>
+                  </div>
+                  <div class="text-center mt-4">
+                    <label class="form-check-label">
+                      <b>I confirm that all data are correct and can be responsible</b>
+                    </label>
+                  </div>
+                  <div class="form-button mt-3">
+                    <button id="submit" type="submit" class="noselect" onClick={(e) => formhandle(e.preventDefault())}>
+                      Kirimkan
+                    </button>
+                  </div>
+                </form>
               </div>
-              <br />
-              <div className="mb-12">
-                <label for="exampleInputEmail1" className="form-label">
-                  Phone Number
-                </label>
-                <input type="number" className="form-control" onChange={(e) => setPhoneNumber(e.target.value)} />
-                <div id="emailHelp" className="form-text">
-                  We'll never share your email with anyone else.
-                </div>
-              </div>
-              <br />
-              <div className="mb-12">
-                <label for="exampleInputEmail1" className="form-label">
-                  Pelayanan
-                </label>
-                <select className="form-select text-center" aria-label="Default select example" onChange={(e) => setLayanan(e.target.value)}>
-                  <option selected>Open this select menu</option>
-                  <option value="Konsultasi">Konsultasi</option>
-                  <option value="Posyandu">Posyandu</option>
-                  <option value="MPASI">MPASI</option>
-                  <option value="Playground">Playground</option>
-                  <option value="BabySpa">Baby Spa</option>
-                </select>
-              </div>
-              <br />
-              <div className="form-group">
-                <label for="exampleInputEmail1" className="form-label">
-                  Konsultasi
-                </label>
-                <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" onChange={(e) => setKeluhan(e.target.value)}></textarea>
-              </div>
-              <div className="mt-3 mb-0 " style={{ textAlign: "center" }}>
-                <button class="noselect" onClick={() => formhandle()}>
-                  Kirim
-                </button>
-              </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
+      ;
     </>
   );
 }
