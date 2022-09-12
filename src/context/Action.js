@@ -5,7 +5,7 @@ export function addCart(dispatch, state) {
     title: "Sweet!",
     text: "Berhasil Masuk ke Keranjang",
     icon: "success",
-    confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
+    confirmButtonText: '<i className="fa fa-thumbs-up"></i> Great!',
   });
   console.log(state);
   return dispatch({
@@ -19,7 +19,7 @@ export function delCart(dispatch, state) {
     title: "Sweet!",
     text: "Data  berhasil dihapus",
     icon: "success",
-    confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
+    confirmButtonText: '<i className="fa fa-thumbs-up"></i> Great!',
   });
   console.log(state);
   return dispatch({

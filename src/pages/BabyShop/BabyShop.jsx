@@ -49,11 +49,11 @@ function BabyShop() {
       <div id="containernews">
         <div data-aos="zoom-out-up" data-aos-duration="1500">
           <div id="services">
-            <div class="text-center">
-              <h1 id="tagline" class="section-heading">
+            <div className="text-center">
+              <h1 id="tagline" className="section-heading">
                 Baby Shop
               </h1>
-              <h5 class="section-subheading">Lengkapi kebutuhan si kecil anda</h5>
+              <h5 className="section-subheading">Lengkapi kebutuhan si kecil anda</h5>
               <hr />
             </div>
           </div>
@@ -65,9 +65,9 @@ function BabyShop() {
               <div className="col-3">
                 <Link to="/keranjang" style={{ textDecoration: "none", color: "black", fontWeight: "bolder" }}>
                   Keranjang
-                  <img class="mt-12" style={{ width: 25, height: 30 }} src={require("../../assets/shopping-cart.png")} alt="" />
+                  <img className="mt-12" style={{ width: 25, height: 30 }} src={require("../../assets/shopping-cart.png")} alt="" />
                 </Link>
-                <span style={{ width: 40, height: 25 }} class="inline-block mt-14 pt-1 px-1.5 leading-none text-center  font-bold bg-red-600 text-white rounded">
+                <span style={{ width: 40, height: 25 }} className="inline-block mt-14 pt-1 px-1.5 leading-none text-center  font-bold bg-red-600 text-white rounded">
                   {state.items.length}
                 </span>
                 <span className="dropdown" style={{ marginTop: "0.1rem" }}>
@@ -91,10 +91,10 @@ function BabyShop() {
             </div>
           </div>
 
-          <div class="container-fluid" style={{ marginBottom: "22rem" }}>
-            <div class="row d-flex justify-content-center">
+          <div className="container-fluid" style={{ marginBottom: "22rem" }}>
+            <div className="row d-flex justify-content-center">
               {filtered.map((barang) => (
-                <div class="col-lg-2 col-sm-4 mb-2" style={{ marginLeft: "1rem", marginRight: "1rem" }}>
+                <div className="col-lg-2 col-sm-4 mb-2" style={{ marginLeft: "1rem", marginRight: "1rem" }}>
                   <div key={barang.id}>
                     <ListBarang key={barang.id} title={barang.title} url={barang.url} deskripsi={barang.kategori} harga={barang.harga} addToCart={() => addCart(dispatch, barang)} />
                   </div>
@@ -104,14 +104,14 @@ function BabyShop() {
           </div>
         </div>
         <div id="keranjang" style={{ marginBottom: "12rem" }}>
-          <div class="text-center">
-            <h1 id="tagline" class="section-heading">
+          <div className="text-center">
+            <h1 id="tagline" className="section-heading">
               Baby Shop
             </h1>
-            <h5 class="section-subheading">Lengkapi kebutuhan si kecil anda</h5>
+            <h5 className="section-subheading">Lengkapi kebutuhan si kecil anda</h5>
             <hr />
           </div>
-          <div class="pt-44 pb-10">
+          <div className="pt-44 pb-10">
             <KeranjangSaya />
 
             {state.items.map((list) => (

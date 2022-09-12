@@ -5,13 +5,13 @@ function SearchShop(props) {
 
   return (
     <>
-      <div class="container h-100">
-        <div class="d-flex justify-content-center h-100">
-          <div class="searchbar">
-            <p class="control has-icons-left">
-              <input class="input is-warning" type="text" placeholder="Cari Produk Disini" value={keyword} onChange={(e) => onSearch(e.target.value)} />
-              <span class="icon is-left">
-                <i class="fas fa-search" aria-hidden="true"></i>
+      <div className="container h-100">
+        <div className="d-flex justify-content-center h-100">
+          <div className="searchbar">
+            <p className="control has-icons-left">
+              <input className="input is-warning" type="text" placeholder="Cari Produk Disini" value={keyword} onChange={(e) => onSearch(e.target.value)} />
+              <span className="icon is-left">
+                <i className="fas fa-search" aria-hidden="true"></i>
               </span>
             </p>
           </div>

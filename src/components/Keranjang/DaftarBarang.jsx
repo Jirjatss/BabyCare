@@ -6,7 +6,7 @@ function DaftarBarang(props) {
   Aos.init();
   return (
     <>
-      <div class="flex pt-8 justify-center" id={props.key}>
+      <div className="flex pt-8 justify-center" id={props.key}>
         <div data-aos="zoom-out-up" data-aos-duration="1500">
           <div className="container fluid mt-4 daftar">
             <div className="row">
@@ -33,7 +33,7 @@ function DaftarBarang(props) {
                     <div className="col-2 rincianbarang kata" style={{ textalign: "center" }}>
                       <button className="noselect" onClick={props.DelCart}>
                         <span href="/keranjang" style={{ textDecoration: "none", color: "black", fontWeight: "bolder" }}>
-                          <img class="mt-12" style={{ width: 25, height: 30 }} src={require("../../assets/delete.png")} alt="" />
+                          <img className="mt-12" style={{ width: 25, height: 30 }} src={require("../../assets/delete.png")} alt="" />
                         </span>
                       </button>
                     </div>

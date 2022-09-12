@@ -39,7 +39,7 @@ function Login() {
         title: "Sweet!",
         text: "Selamat anda berhasil Login",
         icon: "success",
-        confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
+        confirmButtonText: '<i className="fa fa-thumbs-up"></i> Great!',
       });
       navigate("/");
     } else {
@@ -54,7 +54,7 @@ function Login() {
       title: "Sweet!",
       icon: "success",
       text: "Selamat anda berhasil Login",
-      confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
+      confirmButtonText: '<i className="fa fa-thumbs-up"></i> Great!',
     });
     navigate("/");
     localStorage.setItem("token", res.tokenId);
@@ -92,7 +92,7 @@ function Login() {
         Swal.fire({
           icon: "warning",
           title: "Anda telah logout!",
-          confirmButtonText: '<i class="fa fa-times"></i> Silahkan Login Kembali!',
+          confirmButtonText: '<i className="fa fa-times"></i> Silahkan Login Kembali!',
         });
         navigate("/");
         setLoginButton(true);
@@ -208,32 +208,32 @@ function Login() {
               <br />
             </div>
           </div>
-          <div class="form-body">
-            <div class="row">
-              <div class="form-holder">
-                <div class="form-content" id="formlogin">
-                  <div class="form-items">
+          <div className="form-body">
+            <div className="row">
+              <div className="form-holder">
+                <div className="form-content" id="formlogin">
+                  <div className="form-items">
                     <h3>Login</h3>
                     <p>Fill in the data below.</p>
-                    <form class="requires-validation" novalidate>
-                      <div class="col-md-12">
-                        <input class="form-control" type="email" name="email" placeholder="E-mail Address" onChange={(e) => setEmail(e.target.value)} />
+                    <form className="requires-validation" novalidate>
+                      <div className="col-md-12">
+                        <input className="form-control" type="email" name="email" placeholder="E-mail Address" onChange={(e) => setEmail(e.target.value)} />
                       </div>
 
-                      <div class="col-md-12">
-                        <input class="form-control" type="password" name="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
-                        <div class="valid-feedback">Password field is valid!</div>
+                      <div className="col-md-12">
+                        <input className="form-control" type="password" name="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
+                        <div className="valid-feedback">Password field is valid!</div>
                       </div>
 
-                      <div class="text-center mt-4">
-                        <label class="form-check-label">
+                      <div className="text-center mt-4">
+                        <label className="form-check-label">
                           <h6>
                             <b>I confirm that all data are correct and can be responsible</b>
                           </h6>
                         </label>
                       </div>
-                      <div class="form-button mt-3">
-                        <button id="submit" type="submit" class="noselect" onClick={(e) => LoginHandle(e.preventDefault())}>
+                      <div className="form-button mt-3">
+                        <button id="submit" type="submit" className="noselect" onClick={(e) => LoginHandle(e.preventDefault())}>
                           Login
                         </button>
                       </div>
