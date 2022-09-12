@@ -4,6 +4,7 @@ import Aos from "aos";
 
 function ListBarang(props) {
   Aos.init();
+
   return (
     <>
       <div data-aos="flip-left" data-aos-duration="2000">
@@ -16,7 +17,9 @@ function ListBarang(props) {
             </div>
             <h5 class="card-title">{props.title}</h5>
             <div class="text-center my-4 mb-1">
-              <button class="noselect">+Keranjang</button>
+              <button class="noselect" onClick={props.addToCart}>
+                +Keranjang
+              </button>
             </div>
           </div>
         </div>

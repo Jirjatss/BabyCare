@@ -24,7 +24,7 @@ function App() {
         <Route path="/BabyShop" element={<BabyShop />} />
         <Route path="/Consultation" element={<Consultation />} />
         <Route path="/ListKonsultasi" element={<ListKonsultasi />} />
-        <Route path="/Keranjang" element={<Keranjang />} />
+        <Route path="/keranjang" element={<Keranjang />} />
         <Route path="/Pembayaran" element={<Pembayaran />} />
       </Routes>
       <Footer />

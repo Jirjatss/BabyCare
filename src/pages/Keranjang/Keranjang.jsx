@@ -2,8 +2,14 @@ import React from "react";
 import KeranjangSaya from "../../components/Keranjang/KeranjangSaya";
 import DaftarBarang from "../../components/Keranjang/DaftarBarang";
 import TotalHarga from "../../components/Keranjang/TotalHarga";
+import { useAuthState, useAuthDispatch } from "../../context/store";
+import { useEffect } from "react";
 
 function Keranjang() {
+  const state = useAuthState();
+  useEffect(() => {
+    console.log("ini state", state.items);
+  }, [state]);
   return (
     <>
       <section className="page-section" id="babyshop">
@@ -18,7 +24,9 @@ function Keranjang() {
         </div>
       </section>
       <KeranjangSaya />
-      <DaftarBarang />
+      {state.items.map((list) => (
+        <DaftarBarang title={list.title} harga={list.harga} deskripsi={list.deskripsi} url={list.url} />
+      ))}
       <TotalHarga />
     </>
   );
