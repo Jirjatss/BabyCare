@@ -13,3 +13,17 @@ export function addCart(dispatch, state) {
     addCart: state,
   });
 }
+
+export function delCart(dispatch, state) {
+  Swal.fire({
+    title: "Sweet!",
+    text: "Data  berhasil dihapus",
+    icon: "success",
+    confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
+  });
+  console.log(state);
+  return dispatch({
+    type: "DEL_CART",
+    delCart: state,
+  });
+}

@@ -4,8 +4,9 @@ import "./BabyShop.css";
 import { useEffect, useState } from "react";
 import SearchShop from "../../components/Search/SearchShop";
 import * as searchHelper from "./Search.Helper";
-import { addCart, totalCart } from "../../context/Action";
+import { addCart, delCart, totalCart } from "../../context/Action";
 import { useAuthDispatch, useAuthState } from "../../context/store";
+import { Link } from "react-router-dom";
 
 import DaftarBarang from "../../components/Keranjang/DaftarBarang";
 import KeranjangSaya from "../../components/Keranjang/KeranjangSaya";
@@ -62,12 +63,12 @@ function BabyShop() {
                 <SearchShop keyword={keyword} onSearch={handleSearch} />
               </div>
               <div className="col-3">
-                <a href="/keranjang" style={{ textDecoration: "none", color: "black", fontWeight: "bolder" }}>
+                <Link to="/keranjang" style={{ textDecoration: "none", color: "black", fontWeight: "bolder" }}>
                   Keranjang
                   <img class="mt-12" style={{ width: 25, height: 30 }} src={require("../../assets/shopping-cart.png")} alt="" />
-                </a>
-                <span style={{ color: "red" }}>
-                  <b>{state.items.length}</b>
+                </Link>
+                <span style={{ width: 40, height: 25 }} class="inline-block mt-14 pt-1 px-1.5 leading-none text-center  font-bold bg-red-600 text-white rounded">
+                  {state.items.length}
                 </span>
                 <span className="dropdown" style={{ marginTop: "0.1rem" }}>
                   <a style={{ color: "black" }} className="btn dropdown-toggle" href="" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
@@ -110,10 +111,13 @@ function BabyShop() {
             <h5 class="section-subheading">Lengkapi kebutuhan si kecil anda</h5>
             <hr />
           </div>
-          <div>
+          <div class="pt-44 pb-10">
             <KeranjangSaya />
+
             {state.items.map((list) => (
-              <DaftarBarang title={list.title} harga={list.harga} deskripsi={list.deskripsi} url={list.url} />
+              <div key={list.id}>
+                <DaftarBarang key={list.id} title={list.title} harga={list.harga} deskripsi={list.deskripsi} url={list.url} DelCart={() => delCart(dispatch, list)} />
+              </div>
             ))}
           </div>
         </div>

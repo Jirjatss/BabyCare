@@ -8,10 +8,12 @@ function SearchShop(props) {
       <div class="container h-100">
         <div class="d-flex justify-content-center h-100">
           <div class="searchbar">
-            <input class="search_input" type="text" name="" id="exampleSearch2" placeholder="Cari Produk Disini" value={keyword} onChange={(e) => onSearch(e.target.value)} />
-            <a href="#" class="search_icon">
-              <i class="fas fa-search"></i>
-            </a>
+            <p class="control has-icons-left">
+              <input class="input is-warning" type="text" placeholder="Cari Produk Disini" value={keyword} onChange={(e) => onSearch(e.target.value)} />
+              <span class="icon is-left">
+                <i class="fas fa-search" aria-hidden="true"></i>
+              </span>
+            </p>
           </div>
         </div>
       </div>
