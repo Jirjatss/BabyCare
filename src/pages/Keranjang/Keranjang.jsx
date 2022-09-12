@@ -8,7 +8,7 @@ import { useEffect } from "react";
 function Keranjang() {
   const state = useAuthState();
   useEffect(() => {
-    console.log("ini state", state.items);
+    console.log("ini state", state);
   }, [state]);
   return (
     <>
