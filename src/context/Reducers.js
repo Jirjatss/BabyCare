@@ -14,7 +14,7 @@ export const Reducer = (state = initialState, action) => {
       };
     case "DEL_CART":
       return {
-        items: state.items.filter((item) => item.id !== 50),
+        items: state.items.filter((item) => item.id !== action.delCart.id),
       };
 
     default:

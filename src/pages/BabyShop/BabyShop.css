@@ -119,3 +119,9 @@
 .img-fluid {
   height: 250px !important;
 }
+.tglr {
+  color: white;
+  background-color: red;
+  padding: 0.5rem;
+  border-radius: 50%;
+}

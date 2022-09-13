@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Consultation.css";
 import Aos from "aos";
 import Swal from "sweetalert2";
+import Navbar from "../../components/Layout/Navbar";
 
 function Consultation() {
   Aos.init();
@@ -56,6 +57,7 @@ function Consultation() {
   }, [isikonsul]);
   return (
     <>
+      <Navbar />
       <div id="containerConsult">
         <div data-aos="flip-in" data-aos-anchor-placement="center-center" data-aos-duration="1500">
           <div id="services">
@@ -76,7 +78,7 @@ function Consultation() {
                 <h3 className="section-subheading" style={{ color: "red" }}>
                   GRATIS!!! GRATIS!!! GRATIS!!!
                 </h3>
-                <form className="requires-validation" novalidate>
+                <form className="requires-validation" noValidate>
                   <div className="col-md-12">
                     <input className="form-control" type="text" name="name" placeholder="Full Name" onChange={(e) => setNama(e.target.value)} />
                   </div>

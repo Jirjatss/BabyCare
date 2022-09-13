@@ -3,6 +3,7 @@ import CardNews from "../../components/News/CardNews";
 import "./News.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Navbar from "../../components/Layout/Navbar";
 
 function News() {
   const [data, setData] = useState([]);
@@ -18,6 +19,7 @@ function News() {
 
   return (
     <>
+      <Navbar />
       <div id="containernews">
         <div data-aos="zoom-out-up" data-aos-duration="1500">
           <div id="services">

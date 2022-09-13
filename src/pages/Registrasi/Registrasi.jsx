@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Registrasi.css";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../../components/Layout/Navbar";
 
 function Registrasi() {
   const [name, setName] = useState("");
@@ -59,6 +60,7 @@ function Registrasi() {
 
   return (
     <>
+      <Navbar />
       <div id="containerConsult">
         <div data-aos="flip-in" data-aos-anchor-placement="center-center" data-aos-duration="1500">
           <div id="services">
@@ -75,7 +77,7 @@ function Registrasi() {
               <div className="form-items">
                 <h3>Register Today</h3>
                 <p>Fill in the data below.</p>
-                <form className="requires-validation" novalidate>
+                <form className="requires-validation" noValidate>
                   <div className="col-md-12">
                     <input className="form-control" type="text" name="name" placeholder="Full Name" required onChange={(e) => setName(e.target.value)} />
                     <div className="valid-feedback">Username field is valid!</div>
@@ -87,7 +89,7 @@ function Registrasi() {
 
                   <div className="col-md-12">
                     <select className="form-select mt-3" required onChange={(e) => setRole(e.target.value)}>
-                      <option selected disabled>
+                      <option value="Dokter" selected disabled>
                         Position
                       </option>
                       <option value="Dokter">Dokter</option>
@@ -101,17 +103,17 @@ function Registrasi() {
                     <div className="valid-feedback">Password field is valid!</div>
                   </div>
                   <div className="col-md-12 mt-3">
-                    <label className="mb-3 mr-1 jenis" for="gender">
+                    <label className="mb-3 mr-1 jenis" htmlFor="gender">
                       Gender :
                     </label>
 
-                    <input type="radio" className="btn-check" name="gender" id="Laki-laki" autocomplete="off" required onChange={(e) => setJenis(e.target.id)} />
-                    <label className="btn btn-sm btn-outline-warning jenis" for="Laki-laki">
+                    <input type="radio" className="btn-check" name="gender" id="Laki-laki" autoComplete="off" required onChange={(e) => setJenis(e.target.id)} />
+                    <label className="btn btn-sm btn-outline-warning jenis" htmlFor="Laki-laki">
                       Male
                     </label>
 
-                    <input type="radio" className="btn-check" name="gender" id="Perempuan" autocomplete="off" required onChange={(e) => setJenis(e.target.id)} />
-                    <label className="btn btn-sm btn-outline-warning jenis" for="Perempuan">
+                    <input type="radio" className="btn-check" name="gender" id="Perempuan" autoComplete="off" required onChange={(e) => setJenis(e.target.id)} />
+                    <label className="btn btn-sm btn-outline-warning jenis" htmlFor="Perempuan">
                       Female
                     </label>
 

@@ -30,6 +30,13 @@ a {
 }
 
 .user {
-  font-size: 1rem;
   color: whitesmoke;
+  background-color: transparent;
+  font-family: "Sarabun", sans-serif;
+  border: none;
+  color: black;
+  font-size: 20px !important;
+}
+.dropdown {
+  font-family: "Sarabun", sans-serif;
 }
