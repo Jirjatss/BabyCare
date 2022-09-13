@@ -1,17 +1,19 @@
 import React from "react";
-import KeranjangSaya from "../../components/Keranjang/KeranjangSaya";
 import DaftarBarang from "../../components/Keranjang/DaftarBarang";
-import TotalHarga from "../../components/Keranjang/TotalHarga";
 import { useAuthState, useAuthDispatch } from "../../context/store";
+import { delCart } from "../../context/Action";
 import { useEffect } from "react";
+import Navbar from "../../components/Layout/Navbar";
 
 function Keranjang() {
   const state = useAuthState();
+  const dispatch = useAuthDispatch();
   useEffect(() => {
     console.log("ini state", state);
   }, [state]);
   return (
     <>
+      <Navbar />
       <section className="page-section" id="babyshop">
         <div className="container">
           <div className="text-center">
@@ -23,11 +25,12 @@ function Keranjang() {
           </div>
         </div>
       </section>
-      <KeranjangSaya />
+
       {state.items.map((list) => (
-        <DaftarBarang title={list.title} harga={list.harga} deskripsi={list.deskripsi} url={list.url} />
+        <div key={list.id}>
+          <DaftarBarang key={list.id} title={list.title} harga={list.harga} deskripsi={list.kategori} url={list.url} Kondisi={list.Kondisi} BeratSatuan={list.BeratSatuan} DelCart={() => delCart(dispatch, list)} />
+        </div>
       ))}
-      <TotalHarga />
     </>
   );
 }

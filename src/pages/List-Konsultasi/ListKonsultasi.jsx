@@ -1,10 +1,12 @@
 import React from "react";
 
 import DaftarNama from "../../components/DaftarKonsultasi/DaftarNama";
+import Navbar from "../../components/Layout/Navbar";
 
 function ListKonsultasi() {
   return (
     <>
+      <Navbar />
       <section className="page-section" id="babyshop">
         <div className="container">
           <div className="text-center">

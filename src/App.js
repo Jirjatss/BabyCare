@@ -1,5 +1,4 @@
 import "./App.css";
-import Navbar from "./components/Layout/Navbar";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import Footer from "./components/Layout/Footer";
@@ -15,7 +14,6 @@ import Pembayaran from "./pages/Pembayaran/Pembayaran";
 function App() {
   return (
     <div className="App">
-      <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/News" element={<News />} />

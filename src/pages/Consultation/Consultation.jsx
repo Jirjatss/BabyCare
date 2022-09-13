@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Consultation.css";
 import Aos from "aos";
 import Swal from "sweetalert2";
+import Navbar from "../../components/Layout/Navbar";
 
 function Consultation() {
   Aos.init();
@@ -56,6 +57,7 @@ function Consultation() {
   }, [isikonsul]);
   return (
     <>
+      <Navbar />
       <div id="containerConsult">
         <div data-aos="flip-in" data-aos-anchor-placement="center-center" data-aos-duration="1500">
           <div id="services">
@@ -67,23 +69,23 @@ function Consultation() {
           </div>
         </div>
       </div>
-      <div class="form-body">
-        <div class="row">
-          <div class="form-holder">
-            <div class="form-content" id="formlogin">
-              <div class="form-items">
+      <div className="form-body">
+        <div className="row">
+          <div className="form-holder">
+            <div className="form-content" id="formlogin">
+              <div className="form-items">
                 <h3>Konsul</h3>
                 <h3 className="section-subheading" style={{ color: "red" }}>
                   GRATIS!!! GRATIS!!! GRATIS!!!
                 </h3>
-                <form class="requires-validation" novalidate>
-                  <div class="col-md-12">
-                    <input class="form-control" type="text" name="name" placeholder="Full Name" onChange={(e) => setNama(e.target.value)} />
+                <form className="requires-validation" noValidate>
+                  <div className="col-md-12">
+                    <input className="form-control" type="text" name="name" placeholder="Full Name" onChange={(e) => setNama(e.target.value)} />
                   </div>
 
-                  <div class="col-md-12 mt-3">
-                    <input class="form-control" type="number" name="number" placeholder="Phone Number" onChange={(e) => setPhoneNumber(e.target.value)} />
-                    <div class="valid-feedback">Password field is valid!</div>
+                  <div className="col-md-12 mt-3">
+                    <input className="form-control" type="number" name="number" placeholder="Phone Number" onChange={(e) => setPhoneNumber(e.target.value)} />
+                    <div className="valid-feedback">Password field is valid!</div>
                   </div>
 
                   <div className="col-md-12 mb-3">
@@ -99,13 +101,13 @@ function Consultation() {
                   <div className="form-group">
                     <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Ceritakan keluhan si kecil" onChange={(e) => setKeluhan(e.target.value)}></textarea>
                   </div>
-                  <div class="text-center mt-4">
-                    <label class="form-check-label">
+                  <div className="text-center mt-4">
+                    <label className="form-check-label">
                       <b>I confirm that all data are correct and can be responsible</b>
                     </label>
                   </div>
-                  <div class="form-button mt-3">
-                    <button id="submit" type="submit" class="noselect" onClick={(e) => formhandle(e.preventDefault())}>
+                  <div className="form-button mt-3">
+                    <button id="submit" type="submit" className="noselect" onClick={(e) => formhandle(e.preventDefault())}>
                       Kirimkan
                     </button>
                   </div>
