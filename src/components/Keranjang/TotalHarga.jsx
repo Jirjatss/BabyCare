@@ -1,44 +1,85 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function TotalHarga() {
+function TotalHarga(props) {
+  const harga = new Intl.NumberFormat("id-ID", {
+    style: "currency",
+    currency: "IDR",
+  }).format(props.harga);
+
+  const hargatotal = new Intl.NumberFormat("id-ID", {
+    style: "currency",
+    currency: "IDR",
+  }).format(props.hargatotal);
+
+  const hargaongkir = 40000;
+  const ongkir = new Intl.NumberFormat("id-ID", {
+    style: "currency",
+    currency: "IDR",
+  }).format(hargaongkir);
   return (
     <>
-      <div className="row mt-3 ms-5 mx-5 mb-3" style={{ fontFamily: "sans-serif", borderRadius: "5px" }}>
-        <div className="container-fluid bg-light bg-outline-warning">
-          <div className="row mt-5 ms-5 mx-5 mb-3">
-            <div className="col-md-12" id="rincianpembayaran">
-              <h5 className="text-dark" style={{ textAlign: "center" }}>
-                Rincian Pembayaran
-              </h5>
-              <div className="table-responsive">
-                <table className="table">
-                  <thead>
-                    <tr></tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <b>Jumlah Barang</b>
-                      </td>
-                      <td className="text-dark" id="jumlahbarang"></td>
-                    </tr>
-                    <tr>
-                      <td className="text-dark" style={{ color: "red", fontsize: "x-large", fontfamily: "sans-serif" }}>
-                        <b>Total Pembayaran (Rp)</b>
-                      </td>
-                      <td className="text-dark" id="totalpembayaran"></td>
-                    </tr>
-                  </tbody>
-                </table>
-                <Link to="/Pembayaran" id="tombol" className="btn m-1 w-100 btn-warning tombol">
-                  <i className="fa fa-fw fa-shopping-cart"></i>CheckOut
-                </Link>
+      <from>
+        <div className="row d-flex justify-content-beetwen mt-0">
+          <div className="col">
+            <div className="container" style={{ fontFamily: "serif", fontSize: "1rem" }}>
+              <div className="container-fluid" id="pembayaran">
+                <div className="row d-flex justify-content-center">
+                  <div className="col-8" id="rincianpembayaran">
+                    <h3 className="text-center mb-3" style={{ textalign: "center" }}>
+                      Rincian Keranjang
+                    </h3>
+                    <div className="table-responsive">
+                      <table className="table">
+                        <thead>
+                          <tr></tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <b className="text-center">Jumlah Barang</b>
+                            </td>
+                            <td className="text-center">
+                              <span>{props.totalbarang}</span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <b className="">Total Harga Barang</b>
+                            </td>
+                            <td className="text-center">
+                              <span>{harga}</span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <b className="">Biaya Pengiriman</b>
+                            </td>
+                            <td className="text-center">{ongkir}</td>
+                          </tr>
+                          <tr>
+                            <td className="">
+                              <b>Total Pembayaran</b>
+                            </td>
+                            <td className="text-center">{hargatotal}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="row d-flex justify-content-center">
+                <div className="col-12 text-center">
+                  <Link to="" className="noselect text-center p-3" style={{ textDecoration: "none", color: "black" }}>
+                    Bayar Sekarang
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </from>
     </>
   );
 }

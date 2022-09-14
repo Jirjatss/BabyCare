@@ -1,5 +1,3 @@
-import { addCart } from "./Action";
-
 export const initialState = {
   items: [],
   total: 0,
@@ -15,6 +13,10 @@ export const Reducer = (state = initialState, action) => {
     case "DEL_CART":
       return {
         items: state.items.filter((item) => item.id !== action.delCart.id),
+      };
+    case "TOTAL_CART":
+      return {
+        counterCart: action.totalCart,
       };
 
     default:
