@@ -3,6 +3,10 @@ import React from "react";
 import "./Daftar.css";
 
 function DaftarBarang(props) {
+  const harga = new Intl.NumberFormat("id-ID", {
+    style: "currency",
+    currency: "IDR",
+  }).format(props.harga);
   Aos.init();
   return (
     <>
@@ -16,20 +20,20 @@ function DaftarBarang(props) {
                 <p class="information"></p>
               </div>
             </div>
-            <div className="col-4 product-details">
+            <div className="col-3 product-details">
               <button className="minus ms-2 me-2">+</button>
               <span>1</span>
               <button className="minus ms-2 me-2">-</button>
               <div>
                 <br />
-                <button className="plus ms-2">
+                <button className="plus ms-2" onClick={props.DelCart}>
                   <span style={{ textDecoration: "none", color: "black", fontWeight: "bolder" }}>
                     <img className="mt-12" style={{ width: 30, height: 30 }} src={require("../../assets/au.png")} alt="" />
                   </span>
                 </button>
               </div>
             </div>
-            <div className="col-4">
+            <div className="col-5">
               <div class="product-image">
                 <img src={props.url} alt="" />
 
@@ -42,15 +46,11 @@ function DaftarBarang(props) {
                     </li>
                     <li>
                       <strong>Harga : </strong>
-                      {props.harga}
+                      {harga}
                     </li>
                     <li>
                       <strong>Kondisi : </strong>
                       {props.Kondisi}
-                    </li>
-                    <li>
-                      <strong>Berat : </strong>
-                      {props.BeratSatuan}
                     </li>
                   </ul>
                 </div>

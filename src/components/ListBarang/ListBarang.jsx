@@ -3,6 +3,10 @@ import "./ListBarang.css";
 import Aos from "aos";
 
 function ListBarang(props) {
+  const harga = new Intl.NumberFormat("id-ID", {
+    style: "currency",
+    currency: "IDR",
+  }).format(props.harga);
   Aos.init();
 
   return (
@@ -13,7 +17,7 @@ function ListBarang(props) {
           <div className="card-body">
             <div className="clearfix mb-2">
               <span className="float-start badge rounded-pill bg-primary">{props.deskripsi}</span>
-              <span className="float-end price-hp">Rp {props.harga}</span>
+              <span className="float-end price-hp">{harga}</span>
             </div>
             <h5 className="card-title">{props.title}</h5>
             <div className="text-center my-4 mb-1">

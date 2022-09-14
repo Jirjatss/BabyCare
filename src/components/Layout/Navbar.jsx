@@ -34,7 +34,7 @@ const Navbar = () => {
               <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav ms-auto">
                   <div className="dropdown nav-link" style={{ marginTop: "0.1rem" }}>
-                    <button style={{ color: "black" }} className="btn dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button style={{ color: "black" }} className="btn dropdown-toggle" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                       About
                     </button>
                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -108,7 +108,7 @@ const Navbar = () => {
               <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav ms-auto">
                   <div className="dropdown" style={{ marginTop: "0.1rem" }}>
-                    <button style={{ color: "black" }} className="btn dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button style={{ color: "black" }} className="btn dropdown-toggle" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                       About
                     </button>
                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -164,7 +164,7 @@ const Navbar = () => {
               <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav ms-auto">
                   <div className="dropdown" style={{ marginTop: "0.1rem" }}>
-                    <button style={{ color: "black" }} className="btn dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button style={{ color: "black" }} className="btn dropdown-toggle" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                       About
                     </button>
                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -178,7 +178,7 @@ const Navbar = () => {
                          Services
                        </Link> */}
                       </li>
-                      <Link className="dropdown-item" to="/Login">
+                      <Link className="dropdown-item" to="/News">
                         News
                       </Link>
                     </ul>
@@ -188,63 +188,10 @@ const Navbar = () => {
                       Team
                     </Link>
                   </li>
-                  <Link className="nav-link" to="/Login">
+                  <Link className="nav-link" to="/BabyShop">
                     Baby Shop
                   </Link>
-                  <Link className="nav-link" to="/Login">
-                    Consult
-                  </Link>
-                </ul>
-              </div>
-            </div>
-          </nav>
-        </section>
-      )}
-      {!user && (
-        <section id="jumbotron" className="jumbotron jumbotron-fluid">
-          <nav className="navbar navbar-expand-lg fixed-top">
-            <div className="container">
-              <Link className="navbar-brand" to="/">
-                <img style={{ width: 40 }} src={require("../../assets/brand.png")} alt="" />
-              </Link>
-              <Link to="/login" ripple="light" style={{ textDecoration: "none" }}>
-                Login
-              </Link>
-              <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon" style={{ color: "black" }}></span>
-              </button>
-              <div className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-nav ms-auto">
-                  <div className="dropdown" style={{ marginTop: "0.1rem" }}>
-                    <button style={{ color: "black" }} className="btn dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                      About
-                    </button>
-                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                      <li>
-                        {/* <Link className="dropdown-item" id="/#About">
-                         About Us
-                       </Link> */}
-                      </li>
-                      <li>
-                        {/* <Link className="dropdown-item" id="/#services">
-                         Services
-                       </Link> */}
-                      </li>
-                      <Link className="dropdown-item" to="/Login">
-                        News
-                      </Link>
-                    </ul>
-                  </div>
-
-                  <li className="nav-item">
-                    <Link className="nav-link" to="/">
-                      Team
-                    </Link>
-                  </li>
-                  <Link className="nav-link" to="/Login">
-                    Baby Shop
-                  </Link>
-                  <Link className="nav-link" to="/Login">
+                  <Link className="nav-link" to="/Consultation">
                     Consult
                   </Link>
                 </ul>

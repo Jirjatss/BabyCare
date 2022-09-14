@@ -7,6 +7,7 @@
   box-shadow: 0 15px 30px 1px grey;
   height: 200px !important;
   background: rgba(255, 255, 255, 0.9);
+  font-family: "Sarabun", sans-serif;
   text-align: center;
   border-radius: 5px;
   overflow: hidden;
@@ -69,7 +70,7 @@
 
 .info {
   background: rgba(27, 26, 26, 0.9);
-  font-family: "Bree Serif", serif;
+  font-family: "Sarabun", sans-serif;
   transition: all 0.3s ease-out;
   transform: translateX(-100%);
   position: absolute;
@@ -119,4 +120,7 @@
   border-radius: 10px;
   color: white;
   font-size: 20px;
+}
+.table {
+  margin-bottom: 3rem !important;
 }
