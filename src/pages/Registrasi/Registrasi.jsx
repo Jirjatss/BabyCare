@@ -19,7 +19,7 @@ function Registrasi() {
     setIsiRegist(JSON.parse(formData));
   };
 
-  const setUser = () => {
+  const setUser = async () => {
     if (name === "" || email === "" || password === "" || role === "" || jenis === undefined) {
       Swal.fire({
         icon: "error",
@@ -41,13 +41,23 @@ function Registrasi() {
         role,
         jenis,
       };
-      if (isiregist === null) {
-        setIsiRegist([dataRegist]);
-        localStorage.setItem("userRegist", JSON.stringify([dataRegist]));
-      } else {
-        localStorage.setItem("userRegist", JSON.stringify([...isiregist, dataRegist]));
-        setIsiRegist([...isiregist, dataRegist]);
-      }
+
+      fetch("https://631cc4864fa7d3264cb66955.mockapi.io/UserRegist", {
+        method: "POST",
+        body: JSON.stringify(dataRegist),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => JSON.parse(response))
+        .then((data) => setIsiRegist(data));
+      // if (isiregist === null) {
+      //   setIsiRegist([dataRegist]);
+      //   localStorage.setItem("userRegist", JSON.stringify([dataRegist]));
+      // } else {
+      //   localStorage.setItem("userRegist", JSON.stringify([...isiregist, dataRegist]));
+      //   setIsiRegist([...isiregist, dataRegist]);
+      // }
     }
   };
   useEffect(() => {

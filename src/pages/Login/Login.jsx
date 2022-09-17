@@ -111,8 +111,11 @@ function Login() {
   const user1 = localStorage.getItem("userlogin");
 
   useEffect(() => {
-    let userlogin = localStorage.getItem("userRegist");
-    setUserDataForm(JSON.parse(userlogin));
+    fetch("https://631cc4864fa7d3264cb66955.mockapi.io/UserRegist", {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((data) => setUserDataForm(data));
   }, []);
 
   if (user) {
