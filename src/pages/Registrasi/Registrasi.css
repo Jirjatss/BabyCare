@@ -40,7 +40,6 @@ form {
   cursor: pointer;
   font-size: 15px;
   font-family: "Staatliches", cursive;
-  letter-spacing: 5px;
   background: #ffc421;
   border: 2px solid black;
   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.4);
@@ -92,7 +91,7 @@ form {
   outline: none;
 }
 .form-content {
-  margin-top: -5rem;
+  margin-top: -7rem !important;
 }
 .form-holder {
   display: flex;

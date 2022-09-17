@@ -4,7 +4,7 @@ import { useAuthState, useAuthDispatch } from "../../context/store";
 import { delCart } from "../../context/Action";
 import Navbar from "../../components/Layout/Navbar";
 import TotalHarga from "../../components/Keranjang/TotalHarga";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function Keranjang() {
   const state = useAuthState();
@@ -45,7 +45,7 @@ function Keranjang() {
             <button onClick={handel} className="noselect">
               Tutup
             </button>
-            <TotalHarga totalbarang={jumlah} harga={Harga} hargatotal={40000 + Harga} />
+            <TotalHarga totalbarang={jumlah} harga={Harga} hargatotal={40000 + Harga} link={"/Pembayaran"} />
           </>
         )}
 
@@ -56,11 +56,10 @@ function Keranjang() {
         )}
         {state.items.map((list) => (
           <div key={list.id}>
-            <DaftarBarang key={list.id} title={list.title} harga={list.harga} deskripsi={list.kategori} url={list.url} Kondisi={list.Kondisi} BeratSatuan={list.BeratSatuan} DelCart={() => delCart(dispatch, list, setShow(!show))} />
+            <DaftarBarang key={list.id} title={list.title} harga={list.harga} deskripsi={list.kategori} url={list.url} Kondisi={list.Kondisi} BeratSatuan={list.BeratSatuan} DelCart={() => delCart(dispatch, list, setShow(false))} />
           </div>
         ))}
       </section>
-      (
     </>
   );
 }

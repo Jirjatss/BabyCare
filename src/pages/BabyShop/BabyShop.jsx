@@ -40,7 +40,7 @@ function BabyShop() {
       setFiltered(data);
       console.log("ini state", state);
     }
-  }, [keyword, state]);
+  }, [keyword, state, data]);
 
   const handleSearch = (updates) => {
     setKeyword(updates);
@@ -61,23 +61,21 @@ function BabyShop() {
             </div>
           </div>
           <div className="container">
-            <div className="row mb-3 d-flex justify-content-end">
+            <div className="row mb-3 d-flex justify-content-center">
               <div className="col-3 ">
                 <SearchShop keyword={keyword} onSearch={handleSearch} />
               </div>
-              <div className="col-3">
+              <div className="col-3 position-relative text-end">
                 <Link to="/keranjang" style={{ textDecoration: "none", color: "black", fontWeight: "bolder" }}>
                   Keranjang
                   <img className="mt-12" style={{ width: 25, height: 30 }} src={require("../../assets/shopping-cart.png")} alt="" />
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{state.items.length}</span>
                 </Link>
-                <span style={{ width: 40, height: 25 }} className="tglr">
-                  {state.items.length}
-                </span>
               </div>
             </div>
           </div>
 
-          <div className="container-fluid" style={{ marginBottom: "22rem" }}>
+          <div className="container-fluid">
             <div className="row d-flex justify-content-center">
               {filtered.map((barang) => (
                 <div key={barang.id} className="col-lg-2 col-sm-4 mb-2" style={{ marginLeft: "1rem", marginRight: "1rem" }}>

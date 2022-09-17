@@ -1,6 +1,9 @@
 .team-member {
   text-align: center;
   margin-bottom: 2rem;
+
+  padding: 2rem;
+  border-radius: 10px;
 }
 .team-member img {
   width: 150px;
@@ -26,4 +29,11 @@
   padding-top: 6rem;
   font-family: "Sarabun", sans-serif;
   font-weight: bolder;
+}
+#ourTeam img {
+  width: 250px;
+  height: auto;
+}
+.businessColumn:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }

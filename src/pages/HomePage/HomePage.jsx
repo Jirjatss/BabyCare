@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Masthead from "../../components/HomePage/Masthead/Masthead";
 import OurTeam from "../../components/HomePage/OurTeam/OurTeam";
 import About from "../../components/HomePage/About/About";

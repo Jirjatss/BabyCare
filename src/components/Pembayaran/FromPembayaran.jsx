@@ -1,119 +1,87 @@
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
+import { useAuthState } from "../../context/store";
+import TotalHarga from "../Keranjang/TotalHarga";
 import { Link } from "react-router-dom";
+import TotalBayar from "./TotalBayar";
 
 function FromPembayaran() {
+  const state = useAuthState();
+  const [nama, setNama] = useState("");
+  const [phonenumber, setPhoneNumber] = useState("");
+  const [alamat, setAlamat] = useState("");
+  const [metode, setMetode] = useState("");
+  const [show, setShow] = useState(true);
+
+  const [Harga, setHarga] = useState([]);
+  const [jumlah, setJumlah] = useState("");
+
+  useEffect(() => {
+    const harga = state.items.map((list) => {
+      return parseInt(list.harga);
+    });
+    setJumlah(state.items.length);
+    const result = harga.reduce(function (total, currentValue) {
+      return total + currentValue;
+    }, 0);
+    setHarga(result);
+    setShow(!show);
+  });
   return (
     <>
-      <from>
-        <div className="row d-flex justify-content-beetwen mt-0">
-          <div className="col">
-            <div className="container" style={{ fontFamily: "serif", fontSize: "1rem" }}>
+      <div className="container">
+        <div className="row d-flex justofy-content-center">
+          <div className="col-lg-6 col-sm-12">
+            <div className="form-body">
               <div className="row">
-                <div className="col-lg-6 col-sm-12 mb-4">
-                  <label for="" className="form-label">
-                    Nama Awal
-                  </label>
-                  <input type="text" className="form-control" id="name" aria-describedby="emailHelp" required />
-                  <div className="form-text">Enter your full name.</div>
-                </div>
-                <div className="col-lg-6 col-sm-12 mb-4">
-                  <label for="" className="form-label">
-                    Nama Akhir
-                  </label>
-                  <input type="text" className="form-control" id="name" aria-describedby="emailHelp" required />
-                  <div className="form-text">Enter your full name.</div>
-                </div>
-                <div className="col-lg-6 col-sm-12 mb-4">
-                  <label for="" className="form-label">
-                    Alamat Lengkap
-                  </label>
-                  <input type="text" className="form-control" id="address" aria-describedby="emailHelp" required />
-                  <div className="form-text">We will never share your address with others</div>
-                </div>
-
-                <div className="col-lg-6 col-sm-12 mb-4">
-                  <label for="" className="form-label">
-                    Nomor HandPhone
-                  </label>
-                  <input type="number" className="form-control" id="numberphone" aria-describedby="emailHelp" required />
-                  <div className="form-text">Enter a phone number where you can be reached</div>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-lg-12 col-sm-12 mb-4">
-                  <div className="col-12 col-sm-12 mb-4" style={{ margintop: "2rem" }}>
-                    <select className="form-select" aria-label="Default select example" required>
-                      <label for="" className="form-label">
-                        Pilih Salah Satu
-                      </label>
-                      <option selected>Metode Pembayaran</option>
-                      <option value="1">COD(Bayar Di Tempat)</option>
-                      <option value="2">Transfer Bank</option>
-                      <option value="3">Bayar Tunai DiMitra/Agen</option>
-                      <option value="4">Kartu Kredit/Debit</option>
-                      <option value="5">DANA</option>
-                      <option value="6">OVO</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div className="container-fluid" id="pembayaran">
-                <div className="row">
-                  <div className="col-12 col-sm-12" id="rincianpembayaran">
-                    <h5 className="text-dark" style={{ textalign: "center" }}>
-                      Rincian Pembayaran
-                    </h5>
-                    <div className="table-responsive">
-                      <table className="table">
-                        <thead>
-                          <tr></tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>
-                              <b className="">Jumlah Barang</b>
-                            </td>
-                            <td className="text-dark"></td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <b className="">Total Harga Barang</b>
-                            </td>
-                            <td className="text-dark"></td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <b className="">Biaya Pengiriman</b>
-                            </td>
-                            <td className="text-dark">40000</td>
-                          </tr>
-                          <tr>
-                            <td className="">
-                              <b>Total Pembayaran</b>
-                            </td>
-                            <td className="text-dark">Rp. </td>
-                          </tr>
-                        </tbody>
-                      </table>
+                <div className="">
+                  <form className="requires-validation" noValidate>
+                    <div className="col-md-12">
+                      <input className="form-control" type="text" name="name" placeholder="Full Name" onChange={(e) => setNama(e.target.value)} />
                     </div>
-                  </div>
+
+                    <div className="col-md-12 mt-3">
+                      <input className="form-control" type="number" name="number" placeholder="Phone Number" onChange={(e) => setPhoneNumber(e.target.value)} />
+                      <div className="valid-feedback">Password field is valid!</div>
+                    </div>
+                    <div className="col-md-12 mt-3 mb-3">
+                      <input className="form-control" type="text" name="text" placeholder="Alamat Lengkap" onChange={(e) => setAlamat(e.target.value)} />
+                      <div className="valid-feedback">Adress is invalid!</div>
+                    </div>
+
+                    <div className="col-md-12 mb-3">
+                      <select className="form-select text-center" aria-label="Default select example" onChange={(e) => setMetode(e.target.value)}>
+                        <option selected>Metode Pembayaran </option>
+                        <option value="COD">COD</option>
+                        <option value="Transfer Bank">Transfer Bank</option>
+                        <option value="Dana">Dana</option>
+                        <option value="Ovo">Ovo</option>
+                      </select>
+                    </div>
+
+                    <div className="text-center mt-4">
+                      <label className="form-check-label">
+                        <b>I confirm that all data are correct and can be responsible</b>
+                      </label>
+                    </div>
+                  </form>
                 </div>
-              </div>
-              <div className="caption hide" style={{ textalign: "center", fontweight: "bold", color: "Green" }}>
-                {/* <p style={{ textAlign: "center" }}>Transaksi Berhasil, Paket Anda akan Segera dikirimkan ke Alamat Tujuan ....</p> */}
-                <Link to="#" id="tombol" className="btn m-1 w-100 btn-warning tombol">
-                  <i className="fa fa-fw fa-shopping-cart"></i>Bayar Sekarang
-                </Link>
-              </div>
-              <div className="col-12" style={{ textalign: "center" }} id="tombol">
-                <button className="btn m-1 w-100 btn-Warning tombol" id="bayar">
-                  <i className="fa fa-fw fa-shopping-cart"></i>
-                </button>
               </div>
             </div>
           </div>
+          <div className="col-lg-6 col-sm-12">
+            <TotalBayar totalbarang={jumlah} harga={Harga} hargatotal={40000 + Harga} />
+          </div>
+          <div className="row d-flex justify-content-center mt-5" style={{ marginBottom: "5rem" }}>
+            <div className="col-12 text-center">
+              <Link to="" className="noselect text-center p-3" style={{ textDecoration: "none", color: "black" }}>
+                Bayar Sekarang
+              </Link>
+            </div>
+          </div>
         </div>
-      </from>
+      </div>
     </>
   );
 }
