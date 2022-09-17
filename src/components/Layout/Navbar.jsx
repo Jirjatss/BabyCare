@@ -4,11 +4,19 @@ import { Link } from "react-router-dom";
 import { useCheckLogin } from "../../helper/getLocalStorage";
 import { useCheckGoogle } from "../../helper/getUserGoogle";
 import { HashLink } from "react-router-hash-link";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
   const { userData } = useCheckLogin();
   const { user } = useCheckGoogle();
 
+  const tes = () => {
+    Swal.fire({
+      icon: "error",
+      title: "Oops!",
+      text: "Silahkan Login Terlebih Dahulu",
+    });
+  };
   useEffect(() => {
     console.log(userData);
     console.log(user);
@@ -64,7 +72,7 @@ const Navbar = () => {
                   {userData.role === "Pasien" ? (
                     <>
                       <li className="nav-item">
-                        <HashLink className="nav-link" to="/#ourteam">
+                        <HashLink className="nav-link" to="/#ourteam" smooth>
                           Team
                         </HashLink>
                       </li>
@@ -82,7 +90,7 @@ const Navbar = () => {
                   ) : (
                     <>
                       <li className="nav-item">
-                        <HashLink className="nav-link" to="/#ourteam">
+                        <HashLink className="nav-link" to="/#ourteam" smooth>
                           Team
                         </HashLink>
                       </li>
@@ -121,30 +129,30 @@ const Navbar = () => {
                     </button>
                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
                       <li>
-                        <HashLink className="dropdown-item" to="/#About">
+                        <HashLink className="dropdown-item" to="/#About" smooth>
                           About Us
                         </HashLink>
                       </li>
                       <li>
-                        <HashLink className="dropdown-item" to="/#services">
+                        <HashLink className="dropdown-item" to="/#services" smooth>
                           Services
                         </HashLink>
                       </li>
-                      <Link className="dropdown-item" to="/Login">
+                      <Link className="dropdown-item" to="/Login" onClick={() => tes()}>
                         News
                       </Link>
                     </ul>
                   </div>
 
                   <li className="nav-item">
-                    <HashLink className="nav-link" to="/#ourteam">
+                    <HashLink className="nav-link" to="/#ourteam" smooth>
                       Team
                     </HashLink>
                   </li>
-                  <Link className="nav-link" to="/Login">
+                  <Link className="nav-link" to="/Login" onClick={() => tes()}>
                     Baby Shop
                   </Link>
-                  <Link className="nav-link" to="/Login">
+                  <Link className="nav-link" to="/Login" onClick={() => tes()}>
                     Consult
                   </Link>
                 </ul>
@@ -177,12 +185,12 @@ const Navbar = () => {
                     </button>
                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
                       <li>
-                        <HashLink className="dropdown-item" to="/#About">
+                        <HashLink className="dropdown-item" to="/#About" smooth>
                           About Us
                         </HashLink>
                       </li>
                       <li>
-                        <HashLink className="dropdown-item" to="/#services">
+                        <HashLink className="dropdown-item" to="/#services" smooth>
                           Services
                         </HashLink>
                       </li>
@@ -192,7 +200,7 @@ const Navbar = () => {
                     </ul>
                   </div>
                   <li className="nav-item">
-                    <HashLink className="nav-link" to="/#ourteam">
+                    <HashLink className="nav-link" to="/#ourteam" smooth>
                       Team
                     </HashLink>
                   </li>
