@@ -5,11 +5,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-import { useCheckLogin } from "../../helper/getLocalStorage";
 import Navbar from "../../components/Layout/Navbar";
 
 function Login() {
-  const { userData, setUserData } = useCheckLogin();
   const navigate = useNavigate();
   AOS.init();
   const clientId = "648341299149-1o6kq6frd26fd9pibhaivjrvsqpso70v.apps.googleusercontent.com";

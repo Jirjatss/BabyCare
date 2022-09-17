@@ -3,6 +3,7 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { useCheckLogin } from "../../helper/getLocalStorage";
 import { useCheckGoogle } from "../../helper/getUserGoogle";
+import { HashLink } from "react-router-hash-link";
 
 const Navbar = () => {
   const { userData } = useCheckLogin();
@@ -33,20 +34,20 @@ const Navbar = () => {
               </button>
               <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav ms-auto">
-                  <div className="dropdown nav-link" style={{ marginTop: "0.1rem" }}>
-                    <button style={{ color: "black" }} className="btn dropdown-toggle" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                  <div className="dropdown nav-link" style={{ marginTop: "-0.2rem" }}>
+                    <button style={{ color: "black", fontSize: "20px" }} className="btn dropdown-toggle" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                       About
                     </button>
                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
                       <li>
-                        {/* <Link className="dropdown-item" id="/#About">
+                        <HashLink className="dropdown-item" to="/#About">
                           About Us
-                        </Link> */}
+                        </HashLink>
                       </li>
                       <li>
-                        {/* <Link className="dropdown-item" id="/#services">
+                        <HashLink className="dropdown-item" to="/#services" smooth>
                           Services
-                        </Link> */}
+                        </HashLink>
                       </li>
                       {userData.role === "Pasien" ? (
                         <>
@@ -63,9 +64,9 @@ const Navbar = () => {
                   {userData.role === "Pasien" ? (
                     <>
                       <li className="nav-item">
-                        <Link className="nav-link" to="/">
+                        <HashLink className="nav-link" to="/#ourteam">
                           Team
-                        </Link>
+                        </HashLink>
                       </li>
                       <li>
                         <Link className="nav-link" to="/BabyShop">
@@ -79,11 +80,18 @@ const Navbar = () => {
                       </li>
                     </>
                   ) : (
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/ListKonsultasi">
-                        ListKonsul
-                      </Link>
-                    </li>
+                    <>
+                      <li className="nav-item">
+                        <HashLink className="nav-link" to="/#ourteam">
+                          Team
+                        </HashLink>
+                      </li>
+                      <li className="nav-item">
+                        <Link className="nav-link" to="/ListKonsultasi">
+                          ListKonsul
+                        </Link>
+                      </li>
+                    </>
                   )}
                 </ul>
               </div>
@@ -107,20 +115,20 @@ const Navbar = () => {
               </button>
               <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav ms-auto">
-                  <div className="dropdown" style={{ marginTop: "0.1rem" }}>
-                    <button style={{ color: "black" }} className="btn dropdown-toggle" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                  <div className="dropdown nav-link" style={{ marginTop: "-0.2rem" }}>
+                    <button style={{ color: "black", fontSize: "20px" }} className="btn dropdown-toggle" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                       About
                     </button>
                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
                       <li>
-                        {/* <Link className="dropdown-item" id="/#About">
+                        <HashLink className="dropdown-item" to="/#About">
                           About Us
-                        </Link> */}
+                        </HashLink>
                       </li>
                       <li>
-                        {/* <Link className="dropdown-item" id="/#services">
+                        <HashLink className="dropdown-item" to="/#services">
                           Services
-                        </Link> */}
+                        </HashLink>
                       </li>
                       <Link className="dropdown-item" to="/Login">
                         News
@@ -129,9 +137,9 @@ const Navbar = () => {
                   </div>
 
                   <li className="nav-item">
-                    <Link className="nav-link" to="/">
+                    <HashLink className="nav-link" to="/#ourteam">
                       Team
-                    </Link>
+                    </HashLink>
                   </li>
                   <Link className="nav-link" to="/Login">
                     Baby Shop
@@ -161,22 +169,22 @@ const Navbar = () => {
               <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon" style={{ color: "black" }}></span>
               </button>
-              <div className="collapse navbar-collapse" id="navbarNav">
+              <div className="collapse navbar-collapse">
                 <ul className="navbar-nav ms-auto">
-                  <div className="dropdown" style={{ marginTop: "0.1rem" }}>
-                    <button style={{ color: "black" }} className="btn dropdown-toggle" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                  <div className="dropdown nav-link" style={{ marginTop: "-0.2rem" }}>
+                    <button style={{ color: "black", fontSize: "20px" }} className="btn dropdown-toggle" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                       About
                     </button>
                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
                       <li>
-                        {/* <Link className="dropdown-item" id="/#About">
-                         About Us
-                       </Link> */}
+                        <HashLink className="dropdown-item" to="/#About">
+                          About Us
+                        </HashLink>
                       </li>
                       <li>
-                        {/* <Link className="dropdown-item" id="/#services">
-                         Services
-                       </Link> */}
+                        <HashLink className="dropdown-item" to="/#services">
+                          Services
+                        </HashLink>
                       </li>
                       <Link className="dropdown-item" to="/News">
                         News
@@ -184,9 +192,9 @@ const Navbar = () => {
                     </ul>
                   </div>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/">
+                    <HashLink className="nav-link" to="/#ourteam">
                       Team
-                    </Link>
+                    </HashLink>
                   </li>
                   <Link className="nav-link" to="/BabyShop">
                     Baby Shop

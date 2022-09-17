@@ -3,7 +3,6 @@ import CardServices from "../CardServices/CardServices";
 import "./Services.css";
 
 function Services() {
-  const user = localStorage.getItem("token");
   return (
     <>
       <div id="containerservices">

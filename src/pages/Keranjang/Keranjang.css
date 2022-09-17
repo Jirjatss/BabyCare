@@ -17,3 +17,7 @@
   pointer-events: none;
   z-index: -1;
 }
+.altselect {
+  border: none !important;
+  background-color: transparent !important;
+}

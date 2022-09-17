@@ -1,7 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-function TotalHarga(props) {
+function TotalBayar(props) {
   const harga = new Intl.NumberFormat("id-ID", {
     style: "currency",
     currency: "IDR",
@@ -20,7 +19,7 @@ function TotalHarga(props) {
   return (
     <>
       <from>
-        <div className="row d-flex justify-content-beetwen mt-0">
+        <div className="row d-flex justify-content-beetwen mt-3">
           <div className="col">
             <div className="container" style={{ fontFamily: "serif", fontSize: "1rem" }}>
               <div className="container-fluid" id="pembayaran">
@@ -69,13 +68,6 @@ function TotalHarga(props) {
                   </div>
                 </div>
               </div>
-              <div className="row d-flex justify-content-center">
-                <div className="col-12 text-center">
-                  <Link to={props.link} className="noselect text-center p-3" style={{ textDecoration: "none", color: "black" }}>
-                    Bayar Sekarang
-                  </Link>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -84,4 +76,4 @@ function TotalHarga(props) {
   );
 }
 
-export default TotalHarga;
+export default TotalBayar;

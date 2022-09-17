@@ -3,9 +3,11 @@ import "./Consultation.css";
 import Aos from "aos";
 import Swal from "sweetalert2";
 import Navbar from "../../components/Layout/Navbar";
+import { useNavigate } from "react-router-dom";
 
 function Consultation() {
   Aos.init();
+  const navigate = useNavigate();
 
   const [nama, setNama] = useState("");
   const [phonenumber, setPhoneNumber] = useState("");
@@ -44,8 +46,9 @@ function Consultation() {
         title: "Sweet!",
         text: "Data Berhasil terkirim",
         icon: "success",
-        confirmButtonText: `<a href="/BabyShop" style="text-decoration: none; color: white;"> Lengakapi kebutuhan si kecil </a>`,
+        confirmButtonText: "Lengakpi Kebutuhan Si Kecil",
       });
+      navigate("/BabyShop");
     }
   };
   useEffect(() => {

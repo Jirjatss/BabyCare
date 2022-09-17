@@ -14,10 +14,10 @@ function DaftarBarang(props) {
         <div id="container" key={props.id}>
           <div className="row d-flex-justify-content-center">
             <div className="col-4">
-              <div class="product-details text-center">
+              <div className="product-details text-center">
                 <h4>{props.title}</h4>
 
-                <p class="information"></p>
+                <p className="information"></p>
               </div>
             </div>
             <div className="col-3 product-details">
@@ -34,10 +34,10 @@ function DaftarBarang(props) {
               </div>
             </div>
             <div className="col-5">
-              <div class="product-image">
+              <div className="product-image">
                 <img src={props.url} alt="" />
 
-                <div class="info">
+                <div className="info">
                   <h4> Description</h4>
                   <ul>
                     <li>
