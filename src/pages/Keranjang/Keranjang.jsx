@@ -81,9 +81,7 @@ function Keranjang() {
             </button>
           )}
           {state.items.map((list) => (
-            <div key={list.id}>
-              <DaftarBarang key={list.id} title={list.title} harga={list.harga} deskripsi={list.kategori} url={list.url} Kondisi={list.Kondisi} BeratSatuan={list.BeratSatuan} DelCart={() => delCart(dispatch, list, setShow(false))} />
-            </div>
+            <DaftarBarang key={list.id} title={list.title} harga={list.harga} deskripsi={list.kategori} url={list.url} Kondisi={list.Kondisi} BeratSatuan={list.BeratSatuan} DelCart={() => delCart(dispatch, list, setShow(false))} />
           ))}
         </section>
       </>

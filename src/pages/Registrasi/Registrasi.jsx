@@ -29,7 +29,7 @@ function Registrasi() {
     } else {
       Swal.fire({
         title: "Sweet!",
-        text: "Selamat anda berhasil Login",
+        text: "Selamat anda berhasil Registrasi",
         icon: "success",
         confirmButtonText: '<i className="fa fa-thumbs-up"></i> Great!',
       });
