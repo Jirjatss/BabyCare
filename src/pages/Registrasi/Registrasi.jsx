@@ -81,75 +81,73 @@ function Registrasi() {
         </div>
       </div>
       <div className="form-body">
-        <div className="row">
-          <div className="form-holder">
-            <div className="form-content">
-              <div className="form-items">
-                <h3>Register Today</h3>
-                <p>Fill in the data below.</p>
-                <form className="requires-validation" noValidate>
-                  <div className="col-md-12">
-                    <input className="form-control" type="text" name="name" placeholder="Full Name" required onChange={(e) => setName(e.target.value)} />
-                    <div className="valid-feedback">Username field is valid!</div>
-                  </div>
+        <div className="form-holder">
+          <div className="form-content">
+            <div className="form-items">
+              <h3>Register Today</h3>
+              <p>Fill in the data below.</p>
+              <form className="requires-validation" noValidate>
+                <div className="col-md-12">
+                  <input className="form-control" type="text" name="name" placeholder="Full Name" required onChange={(e) => setName(e.target.value)} />
+                  <div className="valid-feedback">Username field is valid!</div>
+                </div>
 
-                  <div className="col-md-12">
-                    <input className="form-control" type="email" name="email" placeholder="E-mail Address" required onChange={(e) => setEmail(e.target.value)} />
-                  </div>
+                <div className="col-md-12">
+                  <input className="form-control" type="email" name="email" placeholder="E-mail Address" required onChange={(e) => setEmail(e.target.value)} />
+                </div>
 
-                  <div className="col-md-12">
-                    <select className="form-select mt-3" required onChange={(e) => setRole(e.target.value)}>
-                      <option value="Dokter" selected disabled>
-                        Position
-                      </option>
-                      <option value="Dokter">Dokter</option>
-                      <option value="Pasien">Pasien</option>
-                    </select>
-                    <div className="valid-feedback">You selected a position!</div>
-                  </div>
+                <div className="col-md-12">
+                  <select className="form-select mt-3" required onChange={(e) => setRole(e.target.value)}>
+                    <option value="Dokter" selected disabled>
+                      Position
+                    </option>
+                    <option value="Dokter">Dokter</option>
+                    <option value="Pasien">Pasien</option>
+                  </select>
+                  <div className="valid-feedback">You selected a position!</div>
+                </div>
 
-                  <div className="col-md-12">
-                    <input className="form-control" type="password" name="password" placeholder="Password" required onChange={(e) => setPassword(e.target.value)} />
-                    <div className="valid-feedback">Password field is valid!</div>
-                  </div>
-                  <div className="col-md-12 mt-3">
-                    <label className="mb-3 mr-1 jenis" htmlFor="gender">
-                      Gender :
-                    </label>
+                <div className="col-md-12">
+                  <input className="form-control" type="password" name="password" placeholder="Password" required onChange={(e) => setPassword(e.target.value)} />
+                  <div className="valid-feedback">Password field is valid!</div>
+                </div>
+                <div className="col-md-12 mt-3">
+                  <label className="mb-3 mr-1 jenis" htmlFor="gender">
+                    Gender :
+                  </label>
 
-                    <input type="radio" className="btn-check" name="gender" id="Laki-laki" autoComplete="off" required onChange={(e) => setJenis(e.target.id)} />
-                    <label className="btn btn-sm btn-outline-warning jenis" htmlFor="Laki-laki">
-                      Male
-                    </label>
+                  <input type="radio" className="btn-check" name="gender" id="Laki-laki" autoComplete="off" required onChange={(e) => setJenis(e.target.id)} />
+                  <label className="btn btn-sm btn-outline-warning jenis" htmlFor="Laki-laki">
+                    Male
+                  </label>
 
-                    <input type="radio" className="btn-check" name="gender" id="Perempuan" autoComplete="off" required onChange={(e) => setJenis(e.target.id)} />
-                    <label className="btn btn-sm btn-outline-warning jenis" htmlFor="Perempuan">
-                      Female
-                    </label>
+                  <input type="radio" className="btn-check" name="gender" id="Perempuan" autoComplete="off" required onChange={(e) => setJenis(e.target.id)} />
+                  <label className="btn btn-sm btn-outline-warning jenis" htmlFor="Perempuan">
+                    Female
+                  </label>
 
-                    <div className="valid-feedback mv-up">You selected a gender!</div>
-                    <div className="invalid-feedback mv-up">Please select a gender!</div>
-                  </div>
-                  <div className="text-center mt-2">
-                    <label className="form-check-label">
-                      <b>I confirm that all data are correct and can be responsible</b>{" "}
-                    </label>
-                  </div>
-                  <div className="form-button mt-3">
-                    <button id="submit" type="submit" className="noselect" onClick={(e) => setUser(e.preventDefault())}>
-                      Register
-                    </button>
-                  </div>
-                  <div className="col-md-12 mt-3">
-                    <h6 style={{ color: "black" }}>
-                      Already have an account?
-                      <a style={{ textDecoration: "none" }} href="/Login">
-                        Login
-                      </a>
-                    </h6>
-                  </div>
-                </form>
-              </div>
+                  <div className="valid-feedback mv-up">You selected a gender!</div>
+                  <div className="invalid-feedback mv-up">Please select a gender!</div>
+                </div>
+                <div className="text-center mt-2">
+                  <label className="form-check-label">
+                    <b>I confirm that all data are correct and can be responsible</b>{" "}
+                  </label>
+                </div>
+                <div className="form-button mt-3">
+                  <button id="submit" type="submit" className="noselect" onClick={(e) => setUser(e.preventDefault())}>
+                    Register
+                  </button>
+                </div>
+                <div className="col-md-12 mt-3">
+                  <h6 style={{ color: "black" }}>
+                    Already have an account?
+                    <a style={{ textDecoration: "none" }} href="/Login">
+                      Login
+                    </a>
+                  </h6>
+                </div>
+              </form>
             </div>
           </div>
         </div>

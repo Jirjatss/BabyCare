@@ -15,7 +15,7 @@ function OurTeam() {
             <hr />
           </div>
           <div className="row d-flex justify-content-between">
-            <div className="col-lg-4 col-sm-6 mb-4">
+            <div className="col-lg-4 col-sm-12 mb-3">
               <CardTeam
                 nama={"Hijir Sajad"}
                 role={"Dokter"}
@@ -25,7 +25,7 @@ function OurTeam() {
                 fb={"https://www.facebook.com/profile.php?id=100076359733301"}
               />
             </div>
-            <div className="col-lg-4 col-sm-6 mb-4">
+            <div className="col-lg-4 col-sm-12 mb-4">
               <CardTeam
                 nama={"Riska Amalia"}
                 role={"Assisten Dokter"}
@@ -35,7 +35,7 @@ function OurTeam() {
                 fb={"https://www.facebook.com/riskaamala0898"}
               />
             </div>
-            <div className="col-lg-4 col-sm-6 mb-4">
+            <div className="col-lg-4 col-sm-12 mb-4">
               <CardTeam
                 nama={"Achmad Ghufran"}
                 role={"Mantri"}

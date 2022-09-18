@@ -223,45 +223,43 @@ function Login() {
           </div>
         </div>
         <div className="form-body sajad">
-          <div className="row">
-            <div className="form-holder">
-              <div className="form-content">
-                <div className="form-items">
-                  <h3>Login</h3>
-                  <p>Fill in the data below.</p>
-                  <form className="requires-validation">
-                    <div className="col-md-12">
-                      <input className="form-control" type="email" name="email" placeholder="E-mail Address" onChange={(e) => setEmail(e.target.value)} />
-                    </div>
-                    <div className="col-md-12">
-                      <input className="form-control" type="password" name="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
-                      <div className="valid-feedback">Password field is valid!</div>
-                    </div>
-                    <div className="text-center mt-4">
-                      <label className="form-check-label">
-                        <h6>
-                          <b>I confirm that all data are correct and can be responsible</b>
-                        </h6>
-                      </label>
-                    </div>
-                    <div className="form-button mt-3">
-                      <button id="submit" type="submit" className="noselect" onClick={(e) => LoginHandle(e.preventDefault())}>
-                        Login
-                      </button>
-                    </div>
-                    <div className="col-12 mb-3">
-                      <GoogleLogin clientId={clientId} buttonText="Continue With Google" onSuccess={loginSuccess} onFailure={failureSuccess} cookiePolicy={"single_host_origin"} />
-                    </div>
-                    <div className="text-center">
-                      <h6 style={{ color: "black" }}>
-                        Not a member?
-                        <a style={{ textDecoration: "none" }} href="/Registrasi">
-                          Register
-                        </a>
+          <div className="form-holder">
+            <div className="form-content">
+              <div className="form-items">
+                <h3>Login</h3>
+                <p>Fill in the data below.</p>
+                <form className="requires-validation">
+                  <div className="col-md-12">
+                    <input className="form-control" type="email" name="email" placeholder="E-mail Address" onChange={(e) => setEmail(e.target.value)} />
+                  </div>
+                  <div className="col-md-12">
+                    <input className="form-control" type="password" name="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
+                    <div className="valid-feedback">Password field is valid!</div>
+                  </div>
+                  <div className="text-center mt-4">
+                    <label className="form-check-label">
+                      <h6>
+                        <b>I confirm that all data are correct and can be responsible</b>
                       </h6>
-                    </div>
-                  </form>
-                </div>
+                    </label>
+                  </div>
+                  <div className="form-button mt-3">
+                    <button id="submit" type="submit" className="noselect" onClick={(e) => LoginHandle(e.preventDefault())}>
+                      Login
+                    </button>
+                  </div>
+                  <div className="col-12 mb-3">
+                    <GoogleLogin clientId={clientId} buttonText="Continue With Google" onSuccess={loginSuccess} onFailure={failureSuccess} cookiePolicy={"single_host_origin"} />
+                  </div>
+                  <div className="text-center">
+                    <h6 style={{ color: "black" }}>
+                      Not a member?
+                      <a style={{ textDecoration: "none" }} href="/Registrasi">
+                        Register
+                      </a>
+                    </h6>
+                  </div>
+                </form>
               </div>
             </div>
           </div>

@@ -6,8 +6,8 @@
   border-radius: 10px;
 }
 .team-member img {
-  width: 80%;
-  height: 150px;
+  width: 70%;
+  height: 50% !important;
   margin-bottom: 1rem;
 }
 

@@ -73,49 +73,47 @@ function Consultation() {
         </div>
       </div>
       <div className="form-body">
-        <div className="row">
-          <div className="form-holder">
-            <div className="form-content" id="formlogin">
-              <div className="form-items">
-                <h3>Konsul</h3>
-                <h3 className="section-subheading" style={{ color: "red" }}>
-                  GRATIS!!! GRATIS!!! GRATIS!!!
-                </h3>
-                <form className="requires-validation" noValidate>
-                  <div className="col-md-12">
-                    <input className="form-control" type="text" name="name" placeholder="Full Name" onChange={(e) => setNama(e.target.value)} />
-                  </div>
+        <div className="form-holder">
+          <div className="form-content" id="formlogin">
+            <div className="form-items">
+              <h3>Konsul</h3>
+              <h3 className="section-subheading" style={{ color: "red" }}>
+                GRATIS!!! GRATIS!!! GRATIS!!!
+              </h3>
+              <form className="requires-validation" noValidate>
+                <div className="col-md-12">
+                  <input className="form-control" type="text" name="name" placeholder="Full Name" onChange={(e) => setNama(e.target.value)} />
+                </div>
 
-                  <div className="col-md-12 mt-3">
-                    <input className="form-control" type="number" name="number" placeholder="Phone Number" onChange={(e) => setPhoneNumber(e.target.value)} />
-                    <div className="valid-feedback">Password field is valid!</div>
-                  </div>
+                <div className="col-md-12 mt-3">
+                  <input className="form-control" type="number" name="number" placeholder="Phone Number" onChange={(e) => setPhoneNumber(e.target.value)} />
+                  <div className="valid-feedback">Password field is valid!</div>
+                </div>
 
-                  <div className="col-md-12 mb-3">
-                    <select className="form-select text-center" aria-label="Default select example" onChange={(e) => setLayanan(e.target.value)}>
-                      <option selected>Pelayanan </option>
-                      <option value="Konsultasi">Konsultasi</option>
-                      <option value="Posyandu">Posyandu</option>
-                      <option value="MPASI">MPASI</option>
-                      <option value="Playground">Playground</option>
-                      <option value="BabySpa">Baby Spa</option>
-                    </select>
-                  </div>
-                  <div className="form-group">
-                    <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Ceritakan keluhan si kecil" onChange={(e) => setKeluhan(e.target.value)}></textarea>
-                  </div>
-                  <div className="text-center mt-4">
-                    <label className="form-check-label">
-                      <b>I confirm that all data are correct and can be responsible</b>
-                    </label>
-                  </div>
-                  <div className="form-button mt-3">
-                    <button id="submit" type="submit" className="noselect" onClick={(e) => formhandle(e.preventDefault())}>
-                      Kirimkan
-                    </button>
-                  </div>
-                </form>
-              </div>
+                <div className="col-md-12 mb-3">
+                  <select className="form-select text-center" aria-label="Default select example" onChange={(e) => setLayanan(e.target.value)}>
+                    <option selected>Pelayanan </option>
+                    <option value="Konsultasi">Konsultasi</option>
+                    <option value="Posyandu">Posyandu</option>
+                    <option value="MPASI">MPASI</option>
+                    <option value="Playground">Playground</option>
+                    <option value="BabySpa">Baby Spa</option>
+                  </select>
+                </div>
+                <div className="form-group">
+                  <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Ceritakan keluhan si kecil" onChange={(e) => setKeluhan(e.target.value)}></textarea>
+                </div>
+                <div className="text-center mt-4">
+                  <label className="form-check-label">
+                    <b>I confirm that all data are correct and can be responsible</b>
+                  </label>
+                </div>
+                <div className="form-button mt-3">
+                  <button id="submit" type="submit" className="noselect" onClick={(e) => formhandle(e.preventDefault())}>
+                    Kirimkan
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>

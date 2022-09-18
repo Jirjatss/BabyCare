@@ -242,6 +242,11 @@ const Navbar = () => {
                             </Link>
                           </li>
                           <li>
+                            <Link className="dropdown-item" to="/keranjang" smooth>
+                              Keranjang
+                            </Link>
+                          </li>
+                          <li>
                             <Link className="dropdown-item" to="/Pembayaran" smooth>
                               Pembayaran
                             </Link>
