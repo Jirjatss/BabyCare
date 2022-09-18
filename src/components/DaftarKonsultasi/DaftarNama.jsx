@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./DaftarNama.css";
+import { Whatsapp } from "react-bootstrap-icons";
 
 function DaftarNama() {
   const [isikonsul, setIsikonsul] = useState([]);
@@ -39,9 +40,7 @@ function DaftarNama() {
                         <p className="list">Layanan : {nama.layanan}</p>
                         <p className="list">Keluhan : {nama.keluhan}</p>
                         <button className="tp" onClick={() => whatssap(nama)}>
-                          <span>
-                            <img className="tp" style={{ width: 40, height: 30 }} src={require("../../assets/whatssapp.png")} alt="" />
-                          </span>
+                          <Whatsapp color="royalblue" size={30} />
                         </button>
                       </div>
                     </div>

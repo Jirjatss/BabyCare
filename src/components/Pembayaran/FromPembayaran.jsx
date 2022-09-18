@@ -1,13 +1,15 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { useAuthState } from "../../context/store";
-import TotalHarga from "../Keranjang/TotalHarga";
-import { Link } from "react-router-dom";
 import TotalBayar from "./TotalBayar";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
+import { useAuthDispatch, useAuthState } from "../../context/store";
+import { delstate } from "../../context/Action";
 
 function FromPembayaran() {
   const state = useAuthState();
+  const dispatch = useAuthDispatch();
   const [nama, setNama] = useState("");
   const [phonenumber, setPhoneNumber] = useState("");
   const [alamat, setAlamat] = useState("");
@@ -16,6 +18,59 @@ function FromPembayaran() {
 
   const [Harga, setHarga] = useState([]);
   const [jumlah, setJumlah] = useState("");
+  const navigate = useNavigate();
+  const [isipesan, setIsipesan] = useState([]);
+
+  const getpesanan = () => {
+    const pesan = localStorage.getItem("listpembayaran");
+    setIsipesan(JSON.parse(pesan));
+  };
+
+  const bayar = () => {
+    let listdata = [
+      {
+        nama: nama,
+        nohp: phonenumber,
+        alamat: alamat,
+        metode: metode,
+        hargatotal: Harga,
+        jumlahtotal: jumlah,
+      },
+    ];
+
+    if (nama === "" || phonenumber === "" || alamat === "" || metode === "") {
+      Swal.fire({
+        title: "Oops",
+        icon: "error",
+        text: "Silahkan isi form dengan benar",
+        confirmButtonText: '<i className="fa fa-thumbs-up"></i> Great!',
+      });
+    } else if (!Harga || !jumlah) {
+      Swal.fire({
+        title: "Oops",
+        icon: "error",
+        text: "Rincian Keranjang belum ditambahkan",
+        confirmButtonText: '<i className="fa fa-thumbs-up"></i> Great!',
+      });
+    } else {
+      if (isipesan === null) {
+        setIsipesan([listdata]);
+        localStorage.setItem("listpembayaran", JSON.stringify(listdata));
+      } else {
+        localStorage.setItem("listpembayaran", JSON.stringify(isipesan.concat(listdata)));
+        setIsipesan(isipesan.concat(listdata));
+      }
+
+      Swal.fire({
+        title: "Sweet!",
+        icon: "success",
+        text: "Selamat Pembayaran Berhasil",
+        confirmButtonText: '<i className="fa fa-thumbs-up"></i> Great!',
+      });
+      navigate("/Pemesanan");
+      delstate(dispatch, state);
+    }
+  };
 
   useEffect(() => {
     const harga = state.items.map((list) => {
@@ -27,7 +82,12 @@ function FromPembayaran() {
     }, 0);
     setHarga(result);
     setShow(!show);
-  });
+    getpesanan();
+  }, []);
+
+  useEffect(() => {
+    console.log(isipesan);
+  }, [isipesan]);
   return (
     <>
       <div className="container">
@@ -75,9 +135,9 @@ function FromPembayaran() {
           </div>
           <div className="row d-flex justify-content-center mt-5" style={{ marginBottom: "5rem" }}>
             <div className="col-12 text-center">
-              <Link to="" className="noselect text-center p-3" style={{ textDecoration: "none", color: "black" }}>
+              <button onClick={() => bayar()} className="noselect text-center p-3" style={{ textDecoration: "none", color: "black" }}>
                 Bayar Sekarang
-              </Link>
+              </button>
             </div>
           </div>
         </div>

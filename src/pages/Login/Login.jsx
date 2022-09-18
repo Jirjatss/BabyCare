@@ -6,6 +6,7 @@ import "aos/dist/aos.css";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../../components/Layout/Navbar";
+import { Link } from "react-router-dom";
 
 function Login() {
   const navigate = useNavigate();
@@ -38,7 +39,7 @@ function Login() {
       localStorage.setItem("userlogin", JSON.stringify(isFoundUser));
       Swal.fire({
         title: "Sweet!",
-        text: "Selamat anda berhasil Login",
+        text: `Selamat Datang ${isFoundUser.name}`,
         icon: "success",
         confirmButtonText: '<i className="fa fa-thumbs-up"></i> Great!',
       });
@@ -208,66 +209,74 @@ function Login() {
     return (
       <>
         <Navbar />
-        <div id="containerlogin">
-          <div className="row d-flex justify-content-center">
-            <div data-aos="flip-in" data-aos-anchor-placement="center-center" data-aos-duration="1500">
-              <div id="services">
-                <h1 id="tagline" className="section-heading">
-                  Login
-                </h1>
-                <h5 className="section-subheading">Silahkan Login terlebih dahulu</h5>
-                <hr />
-                <br />
-              </div>
-            </div>
-            <div className="form-body">
-              <div className="row">
-                <div className="form-holder">
-                  <div className="form-content" id="formlogin">
-                    <div className="form-items">
-                      <h3>Login</h3>
-                      <p>Fill in the data below.</p>
-                      <form className="requires-validation" noValidate>
-                        <div className="col-md-12">
-                          <input className="form-control" type="email" name="email" placeholder="E-mail Address" onChange={(e) => setEmail(e.target.value)} />
-                        </div>
-
-                        <div className="col-md-12">
-                          <input className="form-control" type="password" name="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
-                          <div className="valid-feedback">Password field is valid!</div>
-                        </div>
-
-                        <div className="text-center mt-4">
-                          <label className="form-check-label">
-                            <h6>
-                              <b>I confirm that all data are correct and can be responsible</b>
-                            </h6>
-                          </label>
-                        </div>
-                        <div className="form-button mt-3">
-                          <button id="submit" type="submit" className="noselect" onClick={(e) => LoginHandle(e.preventDefault())}>
-                            Login
-                          </button>
-                        </div>
-                        <div className="col-12 mb-3">
-                          <GoogleLogin clientId={clientId} buttonText="Continue With Google" onSuccess={loginSuccess} onFailure={failureSuccess} cookiePolicy={"single_host_origin"} />
-                        </div>
-                        <div className="text-center">
-                          <h6>
-                            Not a member?
-                            <a style={{ textDecoration: "none" }} href="/Registrasi">
-                              Register
-                            </a>
-                          </h6>
-                        </div>
-                      </form>
+        <section id="login">
+          <div class="container block">
+            <div class="row">
+              <div class="col-lg-6 col-sm-12">
+                <header class="mast">
+                  <div class="container-fluid hal">
+                    <div class="masthead-subheading">
+                      <img
+                        className="poster"
+                        src={"https://see.fontimg.com/api/renderfont4/K7axe/eyJyIjoiZnMiLCJoIjoxMTYsInciOjEyNTAsImZzIjo5MywiZmdjIjoiIzEyMTIxMiIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/QmFieSBDYXJl/hugh-is-life-personal-use-italic.png"}
+                        alt=""
+                      />
+                    </div>
+                    <div style={{ zIndex: "1" }} class="masthead-heading">
+                      <img
+                        className="poster"
+                        src={"https://see.fontimg.com/api/renderfont4/gv11/eyJyIjoiZnMiLCJoIjo1MSwidyI6MTI1MCwiZnMiOjQxLCJmZ2MiOiIjMTIxMjEyIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/eW91ciBiYWJ5IHNvbHV0aW9ucw/cookiemonster.png"}
+                        alt=""
+                      />
                     </div>
                   </div>
-                </div>
+                </header>
+              </div>
+              <div class="col-lg-6 col-sm-12">
+                <form id="form">
+                  <fieldset>
+                    <legend>
+                      <b>Login</b>
+                    </legend>
+                    <div class="field login">
+                      <label className="text-center">Masukkan Email</label>
+                      <br />
+                      <br />
+                      <input id="email" type="email" name="email" onChange={(e) => setEmail(e.target.value)} />
+                      <br />
+                    </div>
+                    <div class="field login ">
+                      <label>Masukkan Password</label>
+                      <br />
+                      <br />
+                      <input id="password" type="password" name="password" onChange={(e) => setPassword(e.target.value)} />
+                      <br />
+                    </div>
+                    <div>
+                      <p id="hasil"></p>
+                    </div>
+                    <div className="form-button mt-5 mb-3">
+                      <button id="submit" type="submit" className="noselect" onClick={(e) => LoginHandle(e)}>
+                        Login
+                      </button>
+                    </div>
+                    <div className="col-12 mb-3">
+                      <GoogleLogin clientId={clientId} buttonText="Continue With Google" onSuccess={loginSuccess} onFailure={failureSuccess} cookiePolicy={"single_host_origin"} />
+                    </div>
+                    <div className="text-center">
+                      <h6>
+                        Not a member?
+                        <Link style={{ textDecoration: "none" }} to="/Registrasi">
+                          Register
+                        </Link>
+                      </h6>
+                    </div>
+                  </fieldset>
+                </form>
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </>
     );
   }
