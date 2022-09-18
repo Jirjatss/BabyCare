@@ -61,7 +61,7 @@ function Consultation() {
   return (
     <>
       <Navbar />
-      <div id="containerConsult">
+      <div id="containerConsult" className="mb-3">
         <div data-aos="flip-in" data-aos-anchor-placement="center-center" data-aos-duration="1500">
           <div id="services">
             <h1 id="tagline" className="section-heading">
