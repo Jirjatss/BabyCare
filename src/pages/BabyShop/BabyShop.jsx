@@ -65,8 +65,8 @@ function BabyShop() {
               <div className="col-3 ">
                 <SearchShop keyword={keyword} onSearch={handleSearch} />
               </div>
-              <div className="col-3 position-relative text-end">
-                <Link to="/keranjang" style={{ textDecoration: "none", color: "black", fontWeight: "bolder" }}>
+              <div className="col-md-3 position-relative text-end">
+                <Link to="/keranjang" style={{ textDecoration: "none", color: "black", fontWeight: "bolder", fontFamily: "sans-serif" }}>
                   Keranjang
                   <img className="mt-12" style={{ width: 25, height: 30 }} src={require("../../assets/shopping-cart.png")} alt="" />
                   <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{state.items.length}</span>

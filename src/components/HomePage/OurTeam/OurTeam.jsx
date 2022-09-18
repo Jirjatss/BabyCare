@@ -31,7 +31,7 @@ function OurTeam() {
                 role={"Assisten Dokter"}
                 url={require("../../../assets/Riska.webp")}
                 wa={"https://wa.me/6287898525530"}
-                ig={"https://www.instagram.com/invites/contact/?i=14sjwy7aj9yzu&utm_content=1fgw585"}
+                ig={"https://www.instagram.com/riskaamaliiaa_?r=nametag"}
                 fb={"https://www.facebook.com/riskaamala0898"}
               />
             </div>

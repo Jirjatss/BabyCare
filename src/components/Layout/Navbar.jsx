@@ -92,6 +92,11 @@ const Navbar = () => {
                                 </Link>
                               </li>
                               <li>
+                                <Link className="dropdown-item" to="/keranjang">
+                                  Keranjang
+                                </Link>
+                              </li>
+                              <li>
                                 <Link className="dropdown-item" to="/Pembayaran" smooth>
                                   Pembayaran
                                 </Link>
@@ -239,6 +244,11 @@ const Navbar = () => {
                           <li>
                             <Link className="dropdown-item" to="/BabyShop">
                               Shop
+                            </Link>
+                          </li>
+                          <li>
+                            <Link className="dropdown-item" to="/keranjang">
+                              Keranjang
                             </Link>
                           </li>
                           <li>
