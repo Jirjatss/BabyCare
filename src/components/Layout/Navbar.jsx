@@ -1,88 +1,270 @@
-import React from "react";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
+import { useCheckLogin } from "../../helper/getLocalStorage";
+import { useCheckGoogle } from "../../helper/getUserGoogle";
+import { HashLink } from "react-router-hash-link";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
-  const user = localStorage.getItem("token");
+  const { userData } = useCheckLogin();
+  const { user } = useCheckGoogle();
+
+  const tes = () => {
+    Swal.fire({
+      icon: "error",
+      title: "Oops!",
+      text: "Silahkan Login Terlebih Dahulu",
+    });
+  };
+  // useEffect(() => {
+  //   console.log(userData);
+  //   console.log(user);
+  // }, [userData, user]);
+
   return (
     <>
-      <section id="jumbotron" class="jumbotron jumbotron-fluid">
-        <nav class="navbar navbar-expand-lg fixed-top">
-          <div class="container">
-            <a class="navbar-brand" href="/">
-              <img style={{ width: 40 }} src={require("../../assets/brand.png")} alt="" />
-            </a>
-            {user ? (
-              <a href="login">
-                <div class="pl-3 pr-6">
-                  <img style={{ width: 35 }} src={require("../../assets/baseline_account_circle_white_24dp.png")} alt="" />{" "}
+      {userData && (
+        <section id="jumbotron" className="jumbotron jumbotron-fluid">
+          <nav className="navbar navbar-expand-lg fixed-top">
+            <div className="container">
+              <Link className="navbar-brand" to="/">
+                <img style={{ width: 40 }} src={require("../../assets/brand.png")} alt="" />
+              </Link>
+              <Link to="/Login">
+                <div className="pl-3 pr-3">
+                  <img style={{ width: 35 }} src={require("../../assets/baseline_account_circle_white_24dp.png")} alt="" />
                 </div>
-              </a>
-            ) : (
-              <>
-                <a href="/login" ripple="light" style={{ textDecoration: "none" }}>
-                  Login
-                </a>
-              </>
-            )}
+              </Link>
+              <button className="nav-link user">
+                <b>{userData.role}</b>
+              </button>
+              <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon" style={{ color: "black" }}></span>
+              </button>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon" style={{ color: "whitesmoke" }}>
-                Menu
-              </span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ms-auto">
-                <div class="dropdown" style={{ marginTop: "0.1rem" }}>
-                  <a style={{ color: "white" }} class="btn dropdown-toggle" href="" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                    About
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <li>
-                      <a class="dropdown-item" href="/#About">
-                        About Us
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="/#services">
-                        Services
-                      </a>
-                    </li>
-                    {user ? (
-                      <>
-                        <a class="dropdown-item" href="/News">
-                          News
-                        </a>
-                      </>
-                    ) : (
-                      <a class="dropdown-item" href="/Login">
-                        News
-                      </a>
-                    )}
-                  </ul>
-                </div>
+              <div className="collapse navbar-collapse" id="navbarNav">
+                <ul className="navbar-nav ms-auto">
+                  <div className="dropdown nav-link" style={{ marginTop: "-0.2rem" }}>
+                    <button style={{ color: "black", fontSize: "20px" }} className="btn dropdown-toggle" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                      About
+                    </button>
+                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <li>
+                        <HashLink className="dropdown-item" to="/#About">
+                          About Us
+                        </HashLink>
+                      </li>
+                      <li>
+                        <HashLink className="dropdown-item" to="/#services" smooth>
+                          Services
+                        </HashLink>
+                      </li>
+                      {userData.role === "Pasien" ? (
+                        <>
+                          <Link className="dropdown-item" to="/News">
+                            News
+                          </Link>
+                        </>
+                      ) : (
+                        <></>
+                      )}
+                    </ul>
+                  </div>
 
-                <li class="nav-item">
-                  <a class="nav-link" href="/#ourteam">
-                    Team
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="">
-                    Baby Shop
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="">
-                    Consultation
-                  </a>
-                </li>
-              </ul>
+                  {userData.role === "Pasien" ? (
+                    <>
+                      <li className="nav-item">
+                        <HashLink className="nav-link" to="/#ourteam" smooth>
+                          Team
+                        </HashLink>
+                      </li>
+
+                      <div className="collapse navbar-collapse" id="navbarNav">
+                        <ul className="navbar-nav ms-auto">
+                          <div className="dropdown nav-link" style={{ marginTop: "-0.2rem" }}>
+                            <button style={{ color: "black", fontSize: "20px" }} className="btn dropdown-toggle" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                              Baby Shop
+                            </button>
+                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                              <li>
+                                <Link className="dropdown-item" to="/BabyShop">
+                                  Shop
+                                </Link>
+                              </li>
+                              <li>
+                                <Link className="dropdown-item" to="/Pembayaran" smooth>
+                                  Pembayaran
+                                </Link>
+                              </li>
+                              <li>
+                                <Link className="dropdown-item" to="/Pemesanan" smooth>
+                                  Pemesanan
+                                </Link>
+                              </li>
+                            </ul>
+                          </div>
+                        </ul>
+                      </div>
+
+                      <li>
+                        <Link className="nav-link" to="/Consultation">
+                          Consult
+                        </Link>
+                      </li>
+                    </>
+                  ) : (
+                    <>
+                      <li className="nav-item">
+                        <HashLink className="nav-link" to="/#ourteam" smooth>
+                          Team
+                        </HashLink>
+                      </li>
+                      <li className="nav-item">
+                        <Link className="nav-link" to="/ListKonsultasi">
+                          ListKonsul
+                        </Link>
+                      </li>
+                    </>
+                  )}
+                </ul>
+              </div>
             </div>
-          </div>
-        </nav>
-      </section>
+          </nav>
+        </section>
+      )}
+
+      {!userData && (
+        <section id="jumbotron" className="jumbotron jumbotron-fluid">
+          <nav className="navbar navbar-expand-lg fixed-top">
+            <div className="container">
+              <Link className="navbar-brand" to="/">
+                <img style={{ width: 40 }} src={require("../../assets/brand.png")} alt="" />
+              </Link>
+              <Link to="/login" ripple="light" style={{ textDecoration: "none" }}>
+                Login
+              </Link>
+              <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon" style={{ color: "black" }}></span>
+              </button>
+              <div className="collapse navbar-collapse" id="navbarNav">
+                <ul className="navbar-nav ms-auto">
+                  <div className="dropdown nav-link" style={{ marginTop: "-0.2rem" }}>
+                    <button style={{ color: "black", fontSize: "20px" }} className="btn dropdown-toggle" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                      About
+                    </button>
+                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <li>
+                        <HashLink className="dropdown-item" to="/#About" smooth>
+                          About Us
+                        </HashLink>
+                      </li>
+                      <li>
+                        <HashLink className="dropdown-item" to="/#services" smooth>
+                          Services
+                        </HashLink>
+                      </li>
+                      <Link className="dropdown-item" to="/Login" onClick={() => tes()}>
+                        News
+                      </Link>
+                    </ul>
+                  </div>
+
+                  <li className="nav-item">
+                    <HashLink className="nav-link" to="/#ourteam" smooth>
+                      Team
+                    </HashLink>
+                  </li>
+                  <Link className="nav-link" to="/Login" onClick={() => tes()}>
+                    Baby Shop
+                  </Link>
+                  <Link className="nav-link" to="/Login" onClick={() => tes()}>
+                    Consult
+                  </Link>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </section>
+      )}
+      {user && (
+        <section id="jumbotron" className="jumbotron jumbotron-fluid">
+          <nav className="navbar navbar-expand-lg fixed-top">
+            <div className="container">
+              <Link className="navbar-brand" to="/">
+                <img style={{ width: 40 }} src={require("../../assets/brand.png")} alt="" />
+              </Link>
+              <Link to="/Login">
+                <div className="pl-3 pr-3">
+                  <img style={{ width: 35 }} src={require("../../assets/baseline_account_circle_white_24dp.png")} alt="" />
+                </div>
+              </Link>
+              <button className="nav-link user">Pasien</button>
+              <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon" style={{ color: "black" }}></span>
+              </button>
+              <div className="collapse navbar-collapse">
+                <ul className="navbar-nav ms-auto">
+                  <div className="dropdown nav-link" style={{ marginTop: "-0.2rem" }}>
+                    <button style={{ color: "black", fontSize: "20px" }} className="btn dropdown-toggle" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                      About
+                    </button>
+                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <li>
+                        <HashLink className="dropdown-item" to="/#About" smooth>
+                          About Us
+                        </HashLink>
+                      </li>
+                      <li>
+                        <HashLink className="dropdown-item" to="/#services" smooth>
+                          Services
+                        </HashLink>
+                      </li>
+                      <Link className="dropdown-item" to="/News">
+                        News
+                      </Link>
+                    </ul>
+                  </div>
+                  <li className="nav-item">
+                    <HashLink className="nav-link" to="/#ourteam" smooth>
+                      Team
+                    </HashLink>
+                  </li>
+                  <div className="collapse navbar-collapse" id="navbarNav">
+                    <ul className="navbar-nav ms-auto">
+                      <div className="dropdown nav-link" style={{ marginTop: "-0.2rem" }}>
+                        <button style={{ color: "black", fontSize: "20px" }} className="btn dropdown-toggle" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                          Baby Shop
+                        </button>
+                        <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                          <li>
+                            <Link className="dropdown-item" to="/BabyShop">
+                              Shop
+                            </Link>
+                          </li>
+                          <li>
+                            <Link className="dropdown-item" to="/Pembayaran" smooth>
+                              Pembayaran
+                            </Link>
+                          </li>
+                          <li>
+                            <Link className="dropdown-item" to="/Pemesanan" smooth>
+                              Pemesanan
+                            </Link>
+                          </li>
+                        </ul>
+                      </div>
+                    </ul>
+                  </div>
+                  <Link className="nav-link" to="/Consultation">
+                    Consult
+                  </Link>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </section>
+      )}
     </>
   );
 };
-
 export default Navbar;

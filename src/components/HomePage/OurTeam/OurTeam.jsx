@@ -5,30 +5,45 @@ import "./OurTeam.css";
 function OurTeam() {
   return (
     <>
-      <section class="page-section" id="ourteam">
-        <div class="container">
-          <div class="text-center">
-            <h2 id="tagline" class="section-heading">
+      <section className="page-section" id="ourteam">
+        <div className="container">
+          <div className="text-center">
+            <h2 id="tagline" className="section-heading">
               Tim Terbaik
             </h2>
-            <h5 class="section-subheading">Kenalan dulu sama Pegawainya</h5>
+            <h5 className="section-subheading">Kenalan dulu sama Pegawainya</h5>
             <hr />
           </div>
-          <div class="row d-flex justify-content-between">
-            <div class="col-lg-2 col-sm-6 mb-4">
-              <CardTeam nama={"Hijir Sajad"} role={"Dokter"} url={"https://scintillating-mermaid-05a0ff.netlify.app/Image/Team/sajad.JPG"} />
+          <div className="row d-flex justify-content-between">
+            <div className="col-lg-4 col-sm-6 mb-4">
+              <CardTeam
+                nama={"Hijir Sajad"}
+                role={"Dokter"}
+                url={"https://scintillating-mermaid-05a0ff.netlify.app/Image/Team/sajad.JPG"}
+                wa={"https://wa.me/6281233623106"}
+                ig={"https://www.instagram.com/Jirjatss/"}
+                fb={"https://www.facebook.com/profile.php?id=100076359733301"}
+              />
             </div>
-            <div class="col-lg-2 col-sm-6 mb-4">
-              <CardTeam nama={"Riska Amalia"} role={"Assisten Dokter"} url={"https://scintillating-mermaid-05a0ff.netlify.app/Image/Team/Riska.PNG"} />
+            <div className="col-lg-4 col-sm-6 mb-4">
+              <CardTeam
+                nama={"Riska Amalia"}
+                role={"Assisten Dokter"}
+                url={require("../../../assets/Riska.webp")}
+                wa={"https://wa.me/6287898525530"}
+                ig={"https://www.instagram.com/invites/contact/?i=14sjwy7aj9yzu&utm_content=1fgw585"}
+                fb={"https://www.facebook.com/riskaamala0898"}
+              />
             </div>
-            <div class="col-lg-2 col-sm-6 mb-4">
-              <CardTeam nama={"Achmad Ghufran"} role={"Mantri"} url={"https://scintillating-mermaid-05a0ff.netlify.app/Image/Team/Ghufron.PNG"} />
-            </div>
-            <div class="col-lg-2 col-sm-6 mb-4">
-              <CardTeam nama={"Dwi Wahyuni"} role={"Bidan"} url={"https://scintillating-mermaid-05a0ff.netlify.app/Image/Team/Dwi.PNG"} />
-            </div>
-            <div class="col-lg-2 col-sm-6 mb-4">
-              <CardTeam nama={"Bayu"} role={"Office Boy"} url={"https://scintillating-mermaid-05a0ff.netlify.app/Image/Team/Bayu.PNG"} />
+            <div className="col-lg-4 col-sm-6 mb-4">
+              <CardTeam
+                nama={"Achmad Ghufran"}
+                role={"Mantri"}
+                url={"https://scintillating-mermaid-05a0ff.netlify.app/Image/Team/Ghufron.PNG"}
+                wa={"https://wa.me/6285238035370"}
+                ig={"https://www.instagram.com/Jirjatss/"}
+                fb={"https://www.facebook.com/profile.php?id=100076359733301"}
+              />
             </div>
           </div>
         </div>

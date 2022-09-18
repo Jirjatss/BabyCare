@@ -3,24 +3,27 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 function CardNews(props) {
+  const openInNewTab = (url) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
   AOS.init();
+
   return (
     <>
       <div data-aos="flip-left" data-aos-duration="2000">
-        <div class="populer-item">
-          <img class="img-fluid" src={props.picture} alt="" />
-          <div class="Populer-caption">
-            <h5 class="Populer-caption-heading" style={{ marginBottom: "1rem" }}>
+        <div className="populer-item">
+          <img className="img-fluid" src={props.picture} alt="" />
+          <div className="Populer-caption p-2 mb-4">
+            <h5 className="Populer-caption-heading" style={{ marginBottom: "1rem" }}>
               {props.title}
             </h5>
           </div>
         </div>
 
-        <a href={props.URL} target="_blank">
-          <button style={{ marginBottom: "1.5rem" }} className="Populerbtn">
-            Selengkapnya
-          </button>
-        </a>
+        <button style={{ marginBottom: "1.5rem" }} className="noselect" onClick={() => openInNewTab(props.URL)}>
+          Baca
+        </button>
+
         <hr />
       </div>
     </>
