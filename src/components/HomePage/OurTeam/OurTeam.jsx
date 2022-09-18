@@ -1,5 +1,5 @@
 import CardTeam from "../CardTeam/CardTeam";
-
+import React from "react";
 import "./OurTeam.css";
 
 function OurTeam() {

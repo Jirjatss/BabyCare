@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../../components/Layout/Navbar";
 import { Link } from "react-router-dom";
+import React from "react";
 
 function Login() {
   const navigate = useNavigate();

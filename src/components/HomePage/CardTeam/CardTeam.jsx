@@ -1,12 +1,14 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Instagram, Facebook, Whatsapp } from "react-bootstrap-icons";
+import React from "react";
 
 function CardTeam(props) {
+  AOS.init();
+
   const openInNewTab = (url) => {
     window.open(url, "_blank", "noopener,noreferrer");
   };
-  AOS.init();
 
   return (
     <>

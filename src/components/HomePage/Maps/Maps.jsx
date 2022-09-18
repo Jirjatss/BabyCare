@@ -1,3 +1,4 @@
+import React from "react";
 import "./Maps.css";
 import { Link } from "react-router-dom";
 function Maps() {
