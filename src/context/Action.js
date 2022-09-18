@@ -27,9 +27,10 @@ export function delCart(dispatch, state) {
     delCart: state,
   });
 }
-export function totalCart(dispatch, state) {
+export function delstate(dispatch, state) {
+  console.log(dispatch, state);
   return dispatch({
-    type: "TOTAL_CART",
-    totalCart: state + 1,
+    type: "DEL_STATE",
+    delstate: state,
   });
 }

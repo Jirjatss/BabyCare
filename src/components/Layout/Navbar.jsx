@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { useCheckLogin } from "../../helper/getLocalStorage";
@@ -17,10 +16,10 @@ const Navbar = () => {
       text: "Silahkan Login Terlebih Dahulu",
     });
   };
-  useEffect(() => {
-    console.log(userData);
-    console.log(user);
-  }, [userData, user]);
+  // useEffect(() => {
+  //   console.log(userData);
+  //   console.log(user);
+  // }, [userData, user]);
 
   return (
     <>
@@ -36,10 +35,13 @@ const Navbar = () => {
                   <img style={{ width: 35 }} src={require("../../assets/baseline_account_circle_white_24dp.png")} alt="" />
                 </div>
               </Link>
-              <button className="nav-link user">{userData.role}</button>
+              <button className="nav-link user">
+                <b>{userData.role}</b>
+              </button>
               <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon" style={{ color: "black" }}></span>
               </button>
+
               <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav ms-auto">
                   <div className="dropdown nav-link" style={{ marginTop: "-0.2rem" }}>
@@ -76,11 +78,34 @@ const Navbar = () => {
                           Team
                         </HashLink>
                       </li>
-                      <li>
-                        <Link className="nav-link" to="/BabyShop">
-                          Baby Shop
-                        </Link>
-                      </li>
+
+                      <div className="collapse navbar-collapse" id="navbarNav">
+                        <ul className="navbar-nav ms-auto">
+                          <div className="dropdown nav-link" style={{ marginTop: "-0.2rem" }}>
+                            <button style={{ color: "black", fontSize: "20px" }} className="btn dropdown-toggle" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                              Baby Shop
+                            </button>
+                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                              <li>
+                                <Link className="dropdown-item" to="/BabyShop">
+                                  Shop
+                                </Link>
+                              </li>
+                              <li>
+                                <Link className="dropdown-item" to="/Pembayaran" smooth>
+                                  Pembayaran
+                                </Link>
+                              </li>
+                              <li>
+                                <Link className="dropdown-item" to="/Pemesanan" smooth>
+                                  Pemesanan
+                                </Link>
+                              </li>
+                            </ul>
+                          </div>
+                        </ul>
+                      </div>
+
                       <li>
                         <Link className="nav-link" to="/Consultation">
                           Consult
@@ -204,9 +229,32 @@ const Navbar = () => {
                       Team
                     </HashLink>
                   </li>
-                  <Link className="nav-link" to="/BabyShop">
-                    Baby Shop
-                  </Link>
+                  <div className="collapse navbar-collapse" id="navbarNav">
+                    <ul className="navbar-nav ms-auto">
+                      <div className="dropdown nav-link" style={{ marginTop: "-0.2rem" }}>
+                        <button style={{ color: "black", fontSize: "20px" }} className="btn dropdown-toggle" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                          Baby Shop
+                        </button>
+                        <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                          <li>
+                            <Link className="dropdown-item" to="/BabyShop">
+                              Shop
+                            </Link>
+                          </li>
+                          <li>
+                            <Link className="dropdown-item" to="/Pembayaran" smooth>
+                              Pembayaran
+                            </Link>
+                          </li>
+                          <li>
+                            <Link className="dropdown-item" to="/Pemesanan" smooth>
+                              Pemesanan
+                            </Link>
+                          </li>
+                        </ul>
+                      </div>
+                    </ul>
+                  </div>
                   <Link className="nav-link" to="/Consultation">
                     Consult
                   </Link>

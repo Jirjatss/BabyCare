@@ -10,6 +10,7 @@ import Consultation from "./pages/Consultation/Consultation";
 import ListKonsultasi from "./pages/List-Konsultasi/ListKonsultasi";
 import Keranjang from "./pages/Keranjang/Keranjang";
 import Pembayaran from "./pages/Pembayaran/Pembayaran";
+import Pemesanan from "./pages/Pemesanan/Pemesanan";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/ListKonsultasi" element={<ListKonsultasi />} />
         <Route path="/keranjang" element={<Keranjang />} />
         <Route path="/Pembayaran" element={<Pembayaran />} />
+        <Route path="/Pemesanan" element={<Pemesanan />} />
       </Routes>
       <Footer />
     </div>

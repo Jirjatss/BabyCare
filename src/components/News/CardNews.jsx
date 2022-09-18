@@ -3,6 +3,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 function CardNews(props) {
+  const openInNewTab = (url) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
   AOS.init();
 
   return (
@@ -17,11 +20,10 @@ function CardNews(props) {
           </div>
         </div>
 
-        <a href={props.URL}>
-          <button style={{ marginBottom: "1.5rem" }} className="noselect">
-            Baca
-          </button>
-        </a>
+        <button style={{ marginBottom: "1.5rem" }} className="noselect" onClick={() => openInNewTab(props.URL)}>
+          Baca
+        </button>
+
         <hr />
       </div>
     </>
