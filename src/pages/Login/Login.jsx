@@ -10,7 +10,7 @@ import Navbar from "../../components/Layout/Navbar";
 function Login() {
   const navigate = useNavigate();
   AOS.init();
-  const clientId = "648341299149-1o6kq6frd26fd9pibhaivjrvsqpso70v.apps.googleusercontent.com";
+  const clientId = "513009040271-p09lrpl30dbe94micdr009kevohsapv7.apps.googleusercontent.com";
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
