@@ -1,0 +1,15 @@
+#contact {
+  background: url("https://wallpapercave.com/wp/wp1936868.jpg") no-repeat fixed;
+  background-size: 100%;
+  text-align: center;
+  font-family: "Sarabun", sans-serif;
+  margin-bottom: 2rem;
+}
+.maps {
+  margin: 10rem;
+  margin-top: 11rem;
+  margin-bottom: 11rem !important;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white !important;
+}
