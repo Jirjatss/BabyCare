@@ -12,6 +12,7 @@
   margin: 0 auto;
   max-width: 50%;
   margin-top: 13rem;
+  margin-bottom: 5rem;
 }
 .tombol {
   text-decoration: none;
@@ -94,6 +95,15 @@
   padding-top: 5rem !important;
   padding-bottom: 5rem !important ;
   background-image: url("../../assets/bg-login.jpg");
+  text-align: center;
+  color: whitesmoke;
+  background-size: 100%;
+  height: 100%;
+}
+.mast1 {
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important ;
+  background-image: url("../../assets/Project.jpg");
   text-align: center;
   color: whitesmoke;
   background-size: 100%;

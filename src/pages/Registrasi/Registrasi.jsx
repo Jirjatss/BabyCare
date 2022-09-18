@@ -83,7 +83,7 @@ function Registrasi() {
         <div class="container block">
           <div class="row">
             <div class="col-lg-6 col-sm-12">
-              <header class="mast">
+              <header class="mast1">
                 <div class="container-fluid hal">
                   <div class="masthead-subheading">
                     <img
