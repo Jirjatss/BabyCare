@@ -39,7 +39,7 @@ function OurTeam() {
               <CardTeam
                 nama={"Achmad Ghufran"}
                 role={"Mantri"}
-                url={"https://scintillating-mermaid-05a0ff.netlify.app/Image/Team/Ghufron.PNG"}
+                url={require("../../../assets/Ghufron.jpeg")}
                 wa={"https://wa.me/6285238035370"}
                 ig={"https://www.instagram.com/Jirjatss/"}
                 fb={"https://www.facebook.com/profile.php?id=100076359733301"}

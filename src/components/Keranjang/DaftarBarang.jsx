@@ -21,38 +21,38 @@ function DaftarBarang(props) {
               </div>
             </div>
             <div className="col-3 product-details">
-              <button className="minus ms-2 me-2">+</button>
-              <span>1</span>
-              <button className="minus ms-2 me-2">-</button>
-              <div>
-                <br />
-                <button className="plus ms-2" onClick={props.DelCart}>
-                  <span style={{ textDecoration: "none", color: "black", fontWeight: "bolder" }}>
-                    <img className="mt-12" style={{ width: 30, height: 30 }} src={require("../../assets/au.png")} alt="" />
-                  </span>
-                </button>
-              </div>
+              <button className="plus ms-2" onClick={props.DelCart}>
+                <span style={{ textDecoration: "none", color: "black", fontWeight: "bolder" }}>
+                  <img className="mt-12" style={{ width: 30, height: 30 }} src={require("../../assets/au.png")} alt="" />
+                </span>
+              </button>
             </div>
             <div className="col-5">
               <div className="product-image">
                 <img src={props.url} alt="" />
 
                 <div className="info">
-                  <h4> Description</h4>
-                  <ul>
-                    <li>
+                  <p className="q"> Description</p>
+
+                  <div>
+                    <span className="p">
                       <strong>Kategori : </strong>
+
                       {props.deskripsi}
-                    </li>
-                    <li>
+                    </span>
+                  </div>
+                  <div>
+                    <span className="p">
                       <strong>Harga : </strong>
                       {harga}
-                    </li>
-                    <li>
+                    </span>
+                  </div>
+                  <div>
+                    <span className="p">
                       <strong>Kondisi : </strong>
                       {props.Kondisi}
-                    </li>
-                  </ul>
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>

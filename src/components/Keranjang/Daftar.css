@@ -32,6 +32,12 @@
     padding-top: 3rem !important;
     padding-bottom: 0rem;
   }
+  .info .p {
+    font-size: 8px !important;
+  }
+  .info .q {
+    font-size: 12px !important;
+  }
 }
 .product-details {
   padding-top: 5rem;
@@ -101,6 +107,12 @@
   width: 100%;
   left: 0;
   top: 0;
+}
+.info .p {
+  font-size: 18px;
+}
+.info .q {
+  font-size: 25px;
 }
 
 .product-image:hover .info {
