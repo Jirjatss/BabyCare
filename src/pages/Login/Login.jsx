@@ -6,6 +6,7 @@ import "aos/dist/aos.css";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../../components/Layout/Navbar";
+import { gapi } from "gapi-script";
 
 function Login() {
   const navigate = useNavigate();
@@ -58,7 +59,7 @@ function Login() {
       confirmButtonText: '<i className="fa fa-thumbs-up"></i> Great!',
     });
     navigate("/");
-    localStorage.setItem("token", res.tokenId);
+    localStorage.setItem("token", res.credential);
     setLoginButton(false);
     setLogoutButton(true);
     setForm(false);
@@ -118,6 +119,16 @@ function Login() {
       .then((data) => setUserDataForm(data));
   }, []);
 
+  useEffect(() => {
+    function start() {
+      gapi.client.init({
+        clientId: clientId,
+        scope: "",
+      });
+    }
+    gapi.load("client:auth2", start);
+  });
+
   if (user) {
     return (
       <>
@@ -151,7 +162,7 @@ function Login() {
             </div>
             <div className="row d-flex justify-content-center">
               <div className="col-12" style={{ textAlign: "center", padding: "6rem" }}>
-                <div className="col-12 mb-3">
+                <div className="col-12 mb-3" id="signInDiv">
                   <GoogleLogout clientId={clientId} buttonText="Logout" onLogoutSuccess={signoutSuccess} />
                 </div>
               </div>
