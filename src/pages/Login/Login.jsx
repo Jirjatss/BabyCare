@@ -59,7 +59,7 @@ function Login() {
       confirmButtonText: '<i className="fa fa-thumbs-up"></i> Great!',
     });
     navigate("/");
-    localStorage.setItem("token", res.credential);
+    localStorage.setItem("token", res.tokenId);
     setLoginButton(false);
     setLogoutButton(true);
     setForm(false);
