@@ -1,9 +1,10 @@
 import React from "react";
-
+import Aos from "aos";
 import DaftarNama from "../../components/DaftarKonsultasi/DaftarNama";
 import Navbar from "../../components/Layout/Navbar";
 
 function ListKonsultasi() {
+  Aos.init();
   return (
     <>
       <Navbar />
@@ -17,7 +18,9 @@ function ListKonsultasi() {
             <hr />
           </div>
           <div className="container">
-            <DaftarNama />
+            <div data-aos="zoom-in" data-aos-duration="2000">
+              <DaftarNama />
+            </div>
           </div>
         </div>
       </section>

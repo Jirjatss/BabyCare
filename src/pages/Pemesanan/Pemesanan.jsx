@@ -1,8 +1,10 @@
 import React from "react";
 import DaftarPemesanan from "../../components/DaftarPemesanan/DaftarPemesanan";
 import Navbar from "../../components/Layout/Navbar";
+import Aos from "aos";
 
 function Pemesanan() {
+  Aos.init();
   return (
     <>
       <Navbar />
@@ -18,8 +20,9 @@ function Pemesanan() {
             </div>
           </div>
         </section>
-
-        <DaftarPemesanan />
+        <div data-aos="zoom-out" data-aos-duration="2000">
+          <DaftarPemesanan />
+        </div>
       </div>
     </>
   );

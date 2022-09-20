@@ -49,35 +49,23 @@ const Navbar = () => {
                       About
                     </button>
                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                      <li>
-                        <HashLink className="dropdown-item" to="/#About">
-                          About Us
-                        </HashLink>
-                      </li>
-                      <li>
-                        <HashLink className="dropdown-item" to="/#services" smooth>
-                          Services
-                        </HashLink>
-                      </li>
-                      {userData.role === "Pasien" ? (
-                        <>
-                          <Link className="dropdown-item" to="/News">
-                            News
-                          </Link>
-                        </>
-                      ) : (
-                        <></>
-                      )}
+                      <HashLink className="dropdown-item" to="/#About">
+                        About Us
+                      </HashLink>
+                      <HashLink className="dropdown-item" to="/#services" smooth>
+                        Services
+                      </HashLink>
+                      <HashLink className="dropdown-item" to="/#ourteam" smooth>
+                        Team
+                      </HashLink>
                     </ul>
                   </div>
 
                   {userData.role === "Pasien" ? (
                     <>
-                      <li className="nav-item">
-                        <HashLink className="nav-link" to="/#ourteam" smooth>
-                          Team
-                        </HashLink>
-                      </li>
+                      <Link className="nav-link" to="/News">
+                        News
+                      </Link>
 
                       <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav ms-auto">
@@ -119,11 +107,6 @@ const Navbar = () => {
                     </>
                   ) : (
                     <>
-                      <li className="nav-item">
-                        <HashLink className="nav-link" to="/#ourteam" smooth>
-                          Team
-                        </HashLink>
-                      </li>
                       <li className="nav-item">
                         <Link className="nav-link" to="/ListKonsultasi">
                           ListKonsul
@@ -168,16 +151,16 @@ const Navbar = () => {
                           Services
                         </HashLink>
                       </li>
-                      <Link className="dropdown-item" to="/Login" onClick={() => tes()}>
-                        News
-                      </Link>
+                      <HashLink className="dropdown-item" to="/#ourteam" smooth>
+                        Team
+                      </HashLink>
                     </ul>
                   </div>
 
                   <li className="nav-item">
-                    <HashLink className="nav-link" to="/#ourteam" smooth>
-                      Team
-                    </HashLink>
+                    <Link className="nav-link" to="/Login" onClick={() => tes()}>
+                      News
+                    </Link>
                   </li>
                   <Link className="nav-link" to="/Login" onClick={() => tes()}>
                     Baby Shop
@@ -224,15 +207,15 @@ const Navbar = () => {
                           Services
                         </HashLink>
                       </li>
-                      <Link className="dropdown-item" to="/News">
-                        News
-                      </Link>
+                      <HashLink className="dropdown-item" to="/#ourteam" smooth>
+                        Team
+                      </HashLink>
                     </ul>
                   </div>
                   <li className="nav-item">
-                    <HashLink className="nav-link" to="/#ourteam" smooth>
-                      Team
-                    </HashLink>
+                    <Link className="nav-link" to="/News">
+                      News
+                    </Link>
                   </li>
                   <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ms-auto">

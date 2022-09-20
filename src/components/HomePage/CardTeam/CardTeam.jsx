@@ -10,7 +10,7 @@ function CardTeam(props) {
 
   return (
     <>
-      <div data-aos="flip-right" data-aos-duration="2000">
+      <div data-aos="flip-up" data-aos-duration="2000">
         <div className="team-member" style={{ textAlign: "center" }}>
           <div class="bg-white rounded shadow-sm py-5 px-4">
             <img src={props.url} alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm" />

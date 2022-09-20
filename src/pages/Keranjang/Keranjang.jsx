@@ -6,8 +6,10 @@ import Navbar from "../../components/Layout/Navbar";
 import TotalHarga from "../../components/Keranjang/TotalHarga";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Aos from "aos";
 
 function Keranjang() {
+  Aos.init();
   const state = useAuthState();
   const dispatch = useAuthDispatch();
 
@@ -71,7 +73,9 @@ function Keranjang() {
               <button onClick={handel} className="noselect">
                 Tutup
               </button>
-              <TotalHarga totalbarang={jumlah} harga={Harga} hargatotal={40000 + Harga} link={"/Pembayaran"} />
+              <div data-aos="zoom-in" data-aos-duration="1000">
+                <TotalHarga totalbarang={jumlah} harga={Harga} hargatotal={40000 + Harga} link={"/Pembayaran"} />
+              </div>
             </>
           )}
 
@@ -81,7 +85,9 @@ function Keranjang() {
             </button>
           )}
           {state.items.map((list) => (
-            <DaftarBarang key={list.id} title={list.title} harga={list.harga} deskripsi={list.kategori} url={list.url} Kondisi={list.Kondisi} BeratSatuan={list.BeratSatuan} DelCart={() => delCart(dispatch, list, setShow(false))} />
+            <div data-aos="flip-right" data-aos-duration="2000">
+              <DaftarBarang key={list.id} title={list.title} harga={list.harga} deskripsi={list.kategori} url={list.url} Kondisi={list.Kondisi} BeratSatuan={list.BeratSatuan} DelCart={() => delCart(dispatch, list, setShow(false))} />
+            </div>
           ))}
         </section>
       </>
