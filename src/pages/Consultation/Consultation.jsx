@@ -34,13 +34,22 @@ function Consultation() {
         text: "Data tidak boleh kosong atau data yang anda masukkan salah",
       });
     } else {
-      if (isikonsul === null) {
-        setIsikonsul([datakonsul]);
-        localStorage.setItem("formkonsul", JSON.stringify([datakonsul]));
-      } else {
-        localStorage.setItem("formkonsul", JSON.stringify([...isikonsul, datakonsul]));
-        setIsikonsul([...isikonsul, datakonsul]);
-      }
+      // if (isikonsul === null) {
+      //   setIsikonsul([datakonsul]);
+      //   localStorage.setItem("formkonsul", JSON.stringify([datakonsul]));
+      // } else {
+      //   localStorage.setItem("formkonsul", JSON.stringify([...isikonsul, datakonsul]));
+      //   setIsikonsul([...isikonsul, datakonsul]);
+      // }
+      fetch("https://631cc4864fa7d3264cb66955.mockapi.io/UserKonsul", {
+        method: "POST",
+        body: JSON.stringify(datakonsul),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => JSON.parse(response))
+        .then((data) => setIsikonsul(data));
 
       Swal.fire({
         title: "Sweet!",

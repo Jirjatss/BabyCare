@@ -8,11 +8,18 @@ function DaftarNama() {
     let url = `https://api.whatsapp.com/send/?phone=62${nama.phonenumber}&text=` + "Nama : " + nama.nama + "%0a" + "Layanan : " + nama.layanan + "%0a" + "Keluhan : " + nama.keluhan + "%0a" + "Jawaban Dokter : ";
     window.open(url);
   };
-
   useEffect(() => {
-    const formData = localStorage.getItem("formkonsul");
-    setIsikonsul(JSON.parse(formData));
-  }, [isikonsul]);
+    fetch("https://631cc4864fa7d3264cb66955.mockapi.io/UserKonsul", {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((data) => setIsikonsul(data));
+  }, []);
+
+  // useEffect(() => {
+  //   const formData = localStorage.getItem("formkonsul");
+  //   setIsikonsul(JSON.parse(formData));
+  // }, [isikonsul]);
 
   if (isikonsul === null) {
     return (
