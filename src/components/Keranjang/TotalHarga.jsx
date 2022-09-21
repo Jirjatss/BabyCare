@@ -37,6 +37,14 @@ function TotalHarga(props) {
                         <tbody>
                           <tr>
                             <td>
+                              <b className="text-center">Detail Barang</b>
+                            </td>
+                            <td className="text-center">
+                              <span>{props.detailbarang}</span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
                               <b className="text-center">Jumlah Barang</b>
                             </td>
                             <td className="text-center">

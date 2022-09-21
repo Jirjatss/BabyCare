@@ -15,7 +15,7 @@ function FromPembayaran() {
   const [alamat, setAlamat] = useState("");
   const [metode, setMetode] = useState("");
   const [show, setShow] = useState(true);
-
+  const [barang, setBarang] = useState();
   const [Harga, setHarga] = useState([]);
   const [jumlah, setJumlah] = useState("");
   const navigate = useNavigate();
@@ -33,6 +33,7 @@ function FromPembayaran() {
         nohp: phonenumber,
         alamat: alamat,
         metode: metode,
+        detail: barang,
         hargatotal: Harga,
         jumlahtotal: jumlah,
       },
@@ -73,6 +74,9 @@ function FromPembayaran() {
   };
 
   useEffect(() => {
+    const barang = state.items.map((list) => {
+      return list;
+    });
     const harga = state.items.map((list) => {
       return parseInt(list.harga);
     });
@@ -83,6 +87,8 @@ function FromPembayaran() {
     setHarga(result);
     setShow(!show);
     getpesanan();
+    setBarang(barang);
+    console.log("inibarang", barang);
   }, []);
 
   useEffect(() => {

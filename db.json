@@ -296,3 +296,21 @@
     ]
   }
 ]
+[
+  {
+    user: "pandji",
+    email: "Pandji@gmail.com",
+    pwd: "!Qq12345",
+    transaksi: [
+      { dataPemesan: { user: "pandjisetiya", address: "dasan anyar", email: "pandji@gmail.com", handphone: "082227535169" }, pemenasan: { kotaDestinasi: "Sumbawa Besar, Samota", tujuan: "Pantai Ai Lemak", tipeTrip: "", date: "" } },
+    ],
+    id: "1",
+  },
+  {
+    user: "pandji",
+    email: "pandji@gmail.com",
+    pwd: "!Qq12345",
+    transaksi: [{ dataPemesan: { user: "", address: "", email: "", handphone: "" }, pemenasan: { kotaDestinasi: "Sumbawa Besar, Samota", tujuan: "Pantai Ai Lemak", tipeTrip: "", date: "" } }],
+    id: "2",
+  },
+];
