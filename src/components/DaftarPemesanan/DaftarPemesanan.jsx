@@ -20,9 +20,9 @@ function DaftarPemesanan() {
               {data.map((nama) => (
                 <>
                   <div className="container sajad mb-3">
-                    <div className="row">
+                    <div className="row d-flex justify-content-center">
                       <div class="content text-start d-flex justify-content-center">
-                        <div className="col-6 me-4">
+                        <div className="col-lg-3 col-md-4 col-sm-4 me-4">
                           <p className="list">Nama : {nama.nama}</p>
 
                           <p className="list">No Hp : {nama.nohp}</p>
@@ -32,7 +32,7 @@ function DaftarPemesanan() {
                           <p className="list">Metode : {nama.metode}</p>
                         </div>
 
-                        <div className="col-3 text-end">
+                        <div className="col-lg-3 col-md-4 col-sm-4 text-end">
                           <p className="list">Rincian Pemesanan</p>
                           <p className="list">Detail</p>
                           <p className="list">Jumlah Barang : {nama.jumlahtotal}</p>
