@@ -16,7 +16,7 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [userDataForm, setUserDataForm] = useState(null);
-
+  const [change, setChange] = useState("password");
   const [loginButton, setLoginButton] = useState(true);
   const [logoutButton, setLogoutButton] = useState(false);
   const [form, setForm] = useState(true);
@@ -107,6 +107,15 @@ function Login() {
     });
   };
   // Akhir Signout
+
+  const getpassword = () => {
+    setChange("text");
+    console.log(change);
+  };
+
+  const hidepassword = () => {
+    setChange("password");
+  };
 
   const user = localStorage.getItem("token");
   const user1 = localStorage.getItem("userlogin");
@@ -244,8 +253,22 @@ function Login() {
                     <input className="form-control" type="email" name="email" placeholder="E-mail Address" onChange={(e) => setEmail(e.target.value)} />
                   </div>
                   <div className="col-md-12">
-                    <input className="form-control" type="password" name="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
-                    <div className="valid-feedback">Password field is valid!</div>
+                    {change === "password" && (
+                      <>
+                        <input className="form-control" type="password" name="password" id="password-input" placeholder="Password" required onChange={(e) => setPassword(e.target.value, setChange(e.target.type))} />
+                        <button className="btn-tombol mt-4" onClick={(e) => getpassword(e.preventDefault())}>
+                          Show Password
+                        </button>
+                      </>
+                    )}
+                    {change === "text" && (
+                      <>
+                        <input className="form-control" type="text" name="password" id="password-input" placeholder="Password" value={password} />
+                        <button className="btn-tombol mt-4" onClick={(e) => hidepassword(e.preventDefault())}>
+                          Delete Password
+                        </button>
+                      </>
+                    )}
                   </div>
                   <div className="text-center mt-4">
                     <label className="form-check-label">

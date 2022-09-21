@@ -11,9 +11,17 @@ function Registrasi() {
   const [role, setRole] = useState("");
   const [jenis, setJenis] = useState("");
   const navigate = useNavigate();
-
+  const [change, setChange] = useState("password");
   const [isiregist, setIsiRegist] = useState([]);
 
+  const getpassword = () => {
+    setChange("text");
+    console.log(change);
+  };
+
+  const hidepassword = () => {
+    setChange("password");
+  };
   const getRegister = () => {
     const formData = localStorage.getItem("userRegist");
     setIsiRegist(JSON.parse(formData));
@@ -88,7 +96,7 @@ function Registrasi() {
               <p>Fill in the data below.</p>
               <form className="requires-validation" noValidate>
                 <div className="col-md-12">
-                  <input className="form-control" type="text" name="name" placeholder="Full Name" required onChange={(e) => setName(e.target.value)} />
+                  <input className="form-control" change="text" name="name" placeholder="Full Name" required onChange={(e) => setName(e.target.value)} />
                   <div className="valid-feedback">Username field is valid!</div>
                 </div>
 
@@ -108,8 +116,22 @@ function Registrasi() {
                 </div>
 
                 <div className="col-md-12">
-                  <input className="form-control" type="password" name="password" placeholder="Password" required onChange={(e) => setPassword(e.target.value)} />
-                  <div className="valid-feedback">Password field is valid!</div>
+                  {change === "password" && (
+                    <>
+                      <input className="form-control" type="password" name="password" id="password-input" placeholder="Password" required onChange={(e) => setPassword(e.target.value, setChange(e.target.type))} />
+                      <button className="btn-tombol mt-4" onClick={(e) => getpassword(e.preventDefault())}>
+                        Show Password
+                      </button>
+                    </>
+                  )}
+                  {change === "text" && (
+                    <>
+                      <input className="form-control" type="text" name="password" id="password-input" placeholder="Password" value={password} />
+                      <button className="btn-tombol mt-4" onClick={(e) => hidepassword(e.preventDefault())}>
+                        Delete Password
+                      </button>
+                    </>
+                  )}
                 </div>
                 <div className="col-md-12 mt-3">
                   <label className="mb-3 mr-1 jenis" htmlFor="gender">
