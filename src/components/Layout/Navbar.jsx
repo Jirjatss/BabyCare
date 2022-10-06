@@ -28,12 +28,10 @@ const Navbar = () => {
           <nav className="navbar navbar-expand-lg fixed-top">
             <div className="container">
               <Link className="navbar-brand" to="/">
-                <img style={{ width: 40 }} src={require("../../assets/brand.png")} alt="" />
+                {/* <img style={{ width: 40 }} src={require("../../assets/brand.png")} alt="" /> */}
               </Link>
               <Link to="/Login">
-                <div className="pl-3 pr-3">
-                  <img style={{ width: 35 }} src={require("../../assets/baseline_account_circle_white_24dp.png")} alt="" />
-                </div>
+                <div className="pl-3 pr-3">{/* <img style={{ width: 35 }} src={require("../../assets/baseline_account_circle_white_24dp.png")} alt="" /> */}</div>
               </Link>
               <button className="nav-link user">
                 <b>{userData.role}</b>
