@@ -21,7 +21,7 @@ function News() {
     <>
       <Navbar />
       <div id="containernews">
-        <div data-aos="zoom-out-up" data-aos-duration="1500">
+        <div data-aos="fade-up">
           <div id="services">
             <div className="text-center">
               <h1 id="tagline" className="section-heading">

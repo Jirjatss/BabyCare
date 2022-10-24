@@ -19,7 +19,7 @@ function OurTeam() {
               <CardTeam
                 nama={"Hijir Sajad"}
                 role={"Dokter"}
-                url={"https://scintillating-mermaid-05a0ff.netlify.app/Image/Team/sajad.JPG"}
+                url={"https://greenstoreindonesia.netlify.app/Image/Team/sajad.JPG"}
                 wa={"https://wa.me/6281233623106"}
                 ig={"https://www.instagram.com/Jirjatss/"}
                 fb={"https://www.facebook.com/profile.php?id=100076359733301"}
